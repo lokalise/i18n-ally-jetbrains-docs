@@ -57,14 +57,6 @@ sprintf("Welcome, %s", $name) // trans('welcome', ['name' => $name]) // sprintf 
 
 Placeholder names are determined automatically.
 
-## Renaming from the editor
-
-If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
-
-Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
-
-![PHP renaming key and placeholder from editor screencast](assets/php-renaming.gif){:width="795px" height="auto"}
-
 ## What's not supported
 
 * Non-ICU placeholders, for example: `Hello, %user%!` string with `trans('hello', ['%user%' => $user])`.
@@ -85,7 +77,15 @@ Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<
 * Full SQL queries and most of SQL parts,
 * Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
 
-## Wire dependencies manually, as plugin doesn't cover it
+## Renaming from the editor
+
+If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
+
+Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
+
+![PHP renaming key and placeholder from editor screencast](assets/php-renaming.gif){:width="795px" height="auto"}
+
+## Wire dependencies manually
 
 When extracting a translation you should still wire dependencies manually if they are not global like [Laravel's helper `__(…)`](https://laravel.com/docs/8.x/localization#retrieving-translation-strings) or [static method in Yii 2.0 `\Yii::t(…)`](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n#1-wrap-a-text-message).
 
