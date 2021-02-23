@@ -17,15 +17,47 @@ Select `Project files` to include all PHP files in your project. Note that for f
 
 ## Inline tags
 
-TBD
+List of tags that would be taked inside keys, like `a`, `strong` or `span`. Filled by default with [all "inline" tags listed on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements).
+
+An example of extaction result difference between block and inline tags:
+{% highlight twig %}{% raw %}
+Three <p>different</p> pieces.
+{{ 'three'|trans }} <p>{{ 'different'|trans }}</p> {{ 'pieces'|trans }}
+
+
+One <b>big</b> piece.
+{{ 'one_big_piece'|trans|raw }}
+{% endraw %}{% endhighlight %}
+
+Notice the `raw` filter appended to the key that contains inline tags. i18n Ally adds it automatically to ensure corrent rendering of the content.
+
+You can add custom tags, like `icon`, by appending a new tag to the comma-separated list.
 
 ## Translatable attribute names
 
-TBD
+Translatable attributes are also checked for the translatable text:
+{% highlight twig %}{% raw %}
+<img src="…" 
+    alt="Checked by default" 
+    title="Checked by default" 
+    data-bs-content="Requires configuration" />
+{% endraw %}{% endhighlight %}
+
+You can add custom attribues, like `data-bs-content`, by appending a new attribute to the comma-separated list.
 
 ## Filter name
 
-TBD
+Filter name to use for extraction is the default one in Symfony framework: `trans` would became {% raw %}`'key'|trans`{% endraw %}.
+
+If you have a custom function or an array for fetching translations you [create a custom filter](https://twig.symfony.com/doc/3.x/advanced.html#filters):
+
+{% highlight php %}
+$filter = new \Twig\TwigFilter('translate', function ($key, $domain = 'messages') {
+    textdomain($domain);
+    return gettext($key);
+});
+{% endhighlight %}
+
 
 ## Arguments template
 
@@ -45,19 +77,13 @@ Domain (could be called a "namespace") usually means a part of language file pat
 
 ## Supported language constructs
 
-TBD
-
-## Renaming from the editor
-
-If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
-
-Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
-
-![Twig renaming key and placeholder from editor screencast](assets/twig-renaming.gif){:width="744px" height="auto"}
+All strings inside tags and translatable attributes are checked.
 
 ## What's not supported
 
 * Strings inside twig expressions, like {% raw %}`{% set var = 'Hello!' %}`{% endraw %}
+* Extraction with function, like {% raw %}`{{ trans('key') %}`{% endraw %}, or array, like {% raw %}`{{ lang.key %}`{% endraw %}
+* Extraction with `trans` blocks
 
 ## What strings are skipped
 
@@ -67,6 +93,14 @@ Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<
 * Content inside `verbatim` tag.
 * Content inside `script` and `pre` tags.
 * Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
+
+## Renaming from the editor
+
+If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
+
+Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
+
+![Twig renaming key and placeholder from editor screencast](assets/twig-renaming.gif){:width="744px" height="auto"}
 
 ## Deal with branching in two steps
 
