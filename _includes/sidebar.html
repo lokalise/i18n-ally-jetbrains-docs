@@ -11,7 +11,7 @@
       <ul>
         {% for sub_item in item.sub_paths %}
           <li>
-            <a href="{{ site.baseurl }}/{{ item.path }}{% if item.path != '' %}/{% endif %}{{ sub_item.path }}">
+            <a href="{{ site.baseurl }}/{{ item.path }}{% if item.path != '' %}/{% endif %}{{ sub_item.path }}.html">
               {{ sub_item.title }}
             </a>
           </li>
