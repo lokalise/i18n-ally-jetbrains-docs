@@ -72,7 +72,7 @@ Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<
 * Using an array for message retrieval (common appraoch in PHP legacy codebases, for example `$lang['key']`).
 * Adding the default domain to the translation function (in Yii there shuold always be a domain, `\Yii:t('app', 'key')`).
 
-## What strings are skipped:
+## What strings are skipped
 
 * All arguments passed to functions or methods (except constructors),
 * HEREDOC and NOWDOC strings,
