@@ -49,7 +49,11 @@ TBD
 
 ## Renaming from the editor
 
-TBD
+If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
+
+Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
+
+![Twig renaming key and placeholder from editor screencast](assets/twig-renaming.gif){:width="744px" height="auto"}
 
 ## What's not supported
 
