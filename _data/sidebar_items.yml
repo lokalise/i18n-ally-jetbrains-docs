@@ -24,6 +24,8 @@
       path: yaml
     - title: XLIFF
       path: xliff
+    - title: Symfony-specific
+      path: symfony
 - title: Configure source code
   path: configure-source-code
   sub_paths:
