@@ -63,7 +63,7 @@ If an existing key or atomatically captured placeholder is not an optimal one yo
 
 Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
 
-![PHP Source Code Preferences screenshot](assets/php-renaming.gif){:width="795px" height="auto"}
+![PHP renaming key and placeholder from editor screencast](assets/php-renaming.gif){:width="795px" height="auto"}
 
 ## What's not supported
 
