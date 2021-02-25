@@ -6,10 +6,15 @@ layout: default
 
 Install from a received file:
 
-## Usage
+## Install closed beta version from files
 
-TBD
+![Install closed beta version from code](assets/install-plugin-from-files.png){:width="884px" height="auto"}
 
+* Go to Preferences, then Plugins
+* Click on the ⚙️ cog icon
+* Select Install plugin from disk...
+* Select plugin archive
+* Click apply
 
 ## Additional info
 
