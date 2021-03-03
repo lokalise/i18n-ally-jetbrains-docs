@@ -102,6 +102,12 @@ Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<
 
 ![Twig renaming key and placeholder from editor screencast](assets/twig-renaming.gif){:width="744px" height="auto"}
 
+## Extract selected string
+
+If you need to extract one string into a multiple keys, then select part of a string you want to extract, click `Alt+Enter` or right-click and select "Show Context Actions":
+
+![Twig extracting selection from editor screencast](assets/twig-extract-selection.gif){:width="843px" height="auto"}
+
 ## Deal with branching in two steps
 
 It's commont to have a small simple branches in the Twig templates for presentation purposes:
