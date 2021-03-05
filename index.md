@@ -4,9 +4,7 @@ layout: default
 
 # i18n Ally JetBrains plugin (closed beta)
 
-Install from a received file:
-
-## Install closed beta version from files
+## Install closed beta version from a received file
 
 ![Install closed beta version from code](assets/install-plugin-from-files.png){:width="884px" height="auto"}
 
@@ -16,10 +14,20 @@ Install from a received file:
 * Select plugin archive
 * Click apply
 
-## Additional info
+## How to extract harcoded strings
 
-TBD
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3Lnt-aBy98E?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
+* Top menu → Tools Run → i18n Ally inspections…
+* Specify what files to check (use "Whole project" if unsure) [as described in the JetBrains documentation](https://www.jetbrains.com/help/idea/specify-inspection-scope-dialog.html).
+* Open a tree of inspection results up to the last level.
+* Click on the first problem found.
+* Press `Alt+Enter` (called "Show Context Actions" in Preferences → Keymap)
+* Select extraction.
+* Select where to extract, if having a multiple translation files per language and confirm selection by pressing `Enter`.
+* Edit a translation key and confirm extraction by pressing `Enter`.
 
 ## Previewing the docs locally
 
