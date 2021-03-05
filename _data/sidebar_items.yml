@@ -1,35 +1,14 @@
-- title: Basics
+- title: Getting started
   path: ''
   sub_paths:
-    - title: Symfony autoconfiguration
-      path: symfony-autoconfiguration
-    - title: Manual configuration
-      path: manual-configuration
-    - title: Estimate internationalization
-      path: estimate-internationalization
-    - title: Internationalize an app
-      path: internationalize-an-app
-    - title: Internationalize a feature
-      path: internationalize-a-feature
     - title: Changelog
       path: changelog
     - title: License
       path: license
-- title: Configure language files
-  path: configure-language-files
-  sub_paths:
-    - title: JSON
-      path: json
-    - title: YAML
-      path: yaml
-    - title: XLIFF
-      path: xliff
-    - title: Symfony-specific
-      path: symfony
 - title: Configure source code
   path: configure-source-code
   sub_paths:
     - title: PHP
-      path: php
+      path: configure-source-code/php
     - title: Twig
-      path: twig
+      path: configure-source-code/twig
