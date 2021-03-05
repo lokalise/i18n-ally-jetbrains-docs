@@ -9,6 +9,6 @@
   path: configure-source-code
   sub_paths:
     - title: PHP
-      path: configure-source-code/php
+      path: php
     - title: Twig
-      path: configure-source-code/twig
+      path: twig
