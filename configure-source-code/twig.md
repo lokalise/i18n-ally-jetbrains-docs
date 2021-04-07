@@ -130,8 +130,8 @@ The best practice it to separate this message into two different ones so transla
 **2nd step:** replace simple messages with i18n Ally
 {% highlight twig %}{% raw %}
 {% if success %}
-  {{ 'webhook_succeeded'|trans }}
+  {{ 'webhook_succeeded'|trans|raw }}
 {% else %}
-  {{ 'webhook_failed'|trans }}
+  {{ 'webhook_failed'|trans|raw }}
 {% endif %}
 {% endraw %}{% endhighlight %}
