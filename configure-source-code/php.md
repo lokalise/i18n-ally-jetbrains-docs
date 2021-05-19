@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 ---
 
 # PHP source configuration
@@ -18,9 +18,9 @@ Select `Project files` to include all PHP files in your project. Note that for f
 
 It could be any callable PHP structure that wraps arguments into parentheses:
 
-* function: `_(…)`, `__(…)`,
-* object method: `$this->trans(…)`, `$translator->trans(…)`,
-* static method: `\Yii:app(…)`.
+- function: `_(…)`, `__(…)`,
+- object method: `$this->trans(…)`, `$translator->trans(…)`,
+- static method: `\Yii:app(…)`.
 
 Don't include parentheses there: for example, `gettext(…)` function should be written as `gettext`.
 
@@ -34,9 +34,9 @@ Key will be replaced with a string ID that was generated automatically or entere
 
 Map means an associative array that:
 
-* won't be replaced with anything if there are no placeholders use and the default domain is used: `trans('key')`,
-* will be replaced with an empty short syntax array in non-default domain is specified: `trans('key', [], 'validators')`,
-* will be replaced as an associative short syntax array if there are any placeholders detected: `trans('key', ['placeholder' => $placeholder])`.
+- won't be replaced with anything if there are no placeholders use and the default domain is used: `trans('key')`,
+- will be replaced with an empty short syntax array in non-default domain is specified: `trans('key', [], 'validators')`,
+- will be replaced as an associative short syntax array if there are any placeholders detected: `trans('key', ['placeholder' => $placeholder])`.
 
 Initial placeholder names are determined automatically based on a respective variable, constant, function, or method.
 
@@ -49,8 +49,8 @@ Domain (could be called a "namespace") usually means a part of language file pat
 i18n Ally finds hardcoded user-facing strings within callable context and supports multiple cases:
 
 {% highlight php %}
-"Welcome, John"     // trans('welcome') simple strings
-"Welcome, {$name}"  // trans('welcome', ['name' => $name]) interpolated strings
+"Welcome, John" // trans('welcome') simple strings
+"Welcome, {$name}" // trans('welcome', ['name' => $name]) interpolated strings
 "Welcome, " . $name // trans('welcome', ['name' => $name]) concatenated strings
 sprintf("Welcome, %s", $name) // trans('welcome', ['name' => $name]) // sprintf templates
 {% endhighlight %}
@@ -59,23 +59,23 @@ Placeholder names are determined automatically.
 
 ## What's not supported
 
-* Non-ICU placeholders, for example: `Hello, %user%!` string with `trans('hello', ['%user%' => $user])`.
-* Using natural language as message IDs (common approach for raw gettext, Wordpress or Yii).
-* Using an array for message retrieval (common appraoch in PHP legacy codebases, for example `$lang['key']`).
-* Adding the default domain to the translation function (in Yii there shuold always be a domain, `\Yii:t('app', 'key')`).
+- Non-ICU placeholders, for example: `Hello, %user%!` string with `trans('hello', ['%user%' => $user])`.
+- Using natural language as message IDs (common approach for raw gettext, Wordpress or Yii).
+- Using an array for message retrieval (common appraoch in PHP legacy codebases, for example `$lang['key']`).
+- Adding the default domain to the translation function (in Yii there shuold always be a domain, `\Yii:t('app', 'key')`).
 
 ## What strings are skipped
 
-* All arguments passed to functions or methods (except constructors),
-* HEREDOC and NOWDOC strings,
-* Array keys,
-* Class property definitions,
-* Default paramenter values,
-* Constant name specified in `define` first argument,
-* Strings assigned to constants,
-* Default argument values
-* Full SQL queries and most of SQL parts,
-* Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
+- All arguments passed to functions or methods (except constructors),
+- HEREDOC and NOWDOC strings,
+- Array keys,
+- Class property definitions,
+- Default paramenter values,
+- Constant name specified in `define` first argument,
+- Strings assigned to constants,
+- Default argument values
+- Full SQL queries and most of SQL parts,
+- Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
 
 ## Renaming from the editor
 
@@ -94,10 +94,10 @@ Given a Symfony controller with configured autowiring:
 {% highlight php %}
 class BlogController extends BaseController
 {
-    public function commentNew(Request $request)
-    {
-        $message = 'Comment saved!';
-    }
+public function commentNew(Request $request)
+{
+$message = 'Comment saved!';
+}
 }
 {% endhighlight %}
 
@@ -106,10 +106,10 @@ i18n Ally would help to extract a hardcoded string:
 {% highlight php %}
 class BlogController extends BaseController
 {
-    public function commentNew(Request $request)
-    {
-        $message = $tranlator->translate('comment_saved'); # CHANGED by i18n Ally
-    }
+public function commentNew(Request $request)
+{
+$message = $tranlator->translate('comment_saved'); # CHANGED by i18n Ally
+}
 }
 {% endhighlight %}
 
@@ -119,9 +119,9 @@ use Symfony\Contracts\Translation\TranslatorInterface; # CHANGED manually
 
 class BlogController extends BaseController
 {
-    public function commentNew(Request $request, TranslatorInterface $translator) # CHANGED manually
-    {
-        $message = $tranlator->translate('Comment saved!');
-    }
+public function commentNew(Request $request, TranslatorInterface $translator) # CHANGED manually
+{
+$message = $tranlator->translate('Comment saved!');
+}
 }
 {% endhighlight %}

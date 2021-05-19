@@ -133,6 +133,26 @@ body {
   background-color: #8f8c40;
 }
 
+.columns {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 1200px;
+  margin: 0 auto;
+
+  justify-content: space-between;
+}
+
+.columns-aside {
+  width: 270px;
+}
+
+.columns-content {
+  width: 840px;
+}
+
+.columns-content h2 {
+}
+
 @media print, screen and (max-width: 960px) {
   .headline {
     font-size: 30px;

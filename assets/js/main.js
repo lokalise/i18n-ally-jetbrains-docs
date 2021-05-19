@@ -1,9 +1,11 @@
 var button = document.querySelector(".mb-burger");
 var header = document.querySelector(".header");
 
-button.addEventListener("click", function () {
-  header.classList.toggle("mb-open-nav");
-});
+if (button) {
+  button.addEventListener("click", function () {
+    header.classList.toggle("mb-open-nav");
+  });
+}
 
 const toggleLeft = document.querySelector("[data-toggle='ways-column--left']");
 const toggleRight = document.querySelector(
@@ -13,15 +15,19 @@ const toggleRight = document.querySelector(
 const wayLeft = document.querySelector(".ways-column--left");
 const wayRight = document.querySelector(".ways-column--right");
 
-toggleLeft.addEventListener("click", function () {
-  toggleClass(wayRight, wayLeft, "ways-column--active");
-  toggleClass(toggleLeft, toggleRight, "ways-control--active");
-});
+if (toggleLeft) {
+  toggleLeft.addEventListener("click", function () {
+    toggleClass(wayRight, wayLeft, "ways-column--active");
+    toggleClass(toggleLeft, toggleRight, "ways-control--active");
+  });
+}
 
-toggleRight.addEventListener("click", function () {
-  toggleClass(wayRight, wayLeft, "ways-column--active");
-  toggleClass(toggleLeft, toggleRight, "ways-control--active");
-});
+if (toggleRight) {
+  toggleRight.addEventListener("click", function () {
+    toggleClass(wayRight, wayLeft, "ways-column--active");
+    toggleClass(toggleLeft, toggleRight, "ways-control--active");
+  });
+}
 
 function toggleClass(a, b, className) {
   a.classList.toggle(className);

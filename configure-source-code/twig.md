@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: docs
 ---
 
 # Twig source configuration
-
 
 ![Twig Source Code Preferences screenshot](assets/twig-preferences.png){:width="629px" height="auto"}
 
@@ -23,7 +22,6 @@ An example of extaction result difference between block and inline tags:
 {% highlight twig %}{% raw %}
 Three <p>different</p> pieces.
 {{ 'three'|trans }} <p>{{ 'different'|trans }}</p> {{ 'pieces'|trans }}
-
 
 One <b>big</b> piece.
 {{ 'one_big_piece'|trans|raw }}
@@ -54,10 +52,9 @@ If you have a custom function or an array for fetching translations you [create 
 {% highlight php %}
 $filter = new \Twig\TwigFilter('translate', function ($key, $domain = 'messages') {
     textdomain($domain);
-    return gettext($key);
+return gettext($key);
 });
 {% endhighlight %}
-
 
 ## Arguments template
 
@@ -65,9 +62,9 @@ $filter = new \Twig\TwigFilter('translate', function ($key, $domain = 'messages'
 
 Map means an associative array that:
 
-* won't be replaced with anything if there are no placeholders use and the default domain is used: `trans('key')`,
-* will be replaced with an empty short syntax array in non-default domain is specified: `trans('key', {}, 'validators')`,
-* will be replaced as an associative short syntax array if there are any placeholders detected: `trans('key', {'placeholder': $placeholder})`.
+- won't be replaced with anything if there are no placeholders use and the default domain is used: `trans('key')`,
+- will be replaced with an empty short syntax array in non-default domain is specified: `trans('key', {}, 'validators')`,
+- will be replaced as an associative short syntax array if there are any placeholders detected: `trans('key', {'placeholder': $placeholder})`.
 
 Initial placeholder names are determined automatically based on a respective variable.
 
@@ -81,18 +78,18 @@ All strings inside tags and translatable attributes are checked.
 
 ## What's not supported
 
-* Strings inside twig expressions, like {% raw %}`{% set var = 'Hello!' %}`{% endraw %}
-* Extraction with function, like {% raw %}`{{ trans('key') %}`{% endraw %}, or array, like {% raw %}`{{ lang.key %}`{% endraw %}
-* Extraction with `trans` blocks
+- Strings inside twig expressions, like {% raw %}`{% set var = 'Hello!' %}`{% endraw %}
+- Extraction with function, like {% raw %}`{{ trans('key') %}`{% endraw %}, or array, like {% raw %}`{{ lang.key %}`{% endraw %}
+- Extraction with `trans` blocks
 
 ## What strings are skipped
 
-* Pure HTML markup with Twig expressions, like `<p class="mt0"><b>{{ 'summary'|trans }}</b></p>`.
-* All attributes except ones listed in "Translatable attribute names" preference.
-* Content inside `trans` block as it's assumed to be already extracted.
-* Content inside `verbatim` tag.
-* Content inside `script` and `pre` tags.
-* Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
+- Pure HTML markup with Twig expressions, like `<p class="mt0"><b>{{ 'summary'|trans }}</b></p>`.
+- All attributes except ones listed in "Translatable attribute names" preference.
+- Content inside `trans` block as it's assumed to be already extracted.
+- Content inside `verbatim` tag.
+- Content inside `script` and `pre` tags.
+- Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
 
 ## Renaming from the editor
 
@@ -120,18 +117,17 @@ The best practice it to separate this message into two different ones so transla
 **1st step:** manually extract the condition out of the message to get two messages without condition
 {% highlight twig %}{% raw %}
 {% if success %}
-    Webhook <strong>succeeded</strong>.
+Webhook <strong>succeeded</strong>.
 {% else %}
-    Webhook <strong>failed</strong>.
+Webhook <strong>failed</strong>.
 {% endif %}
 {% endraw %}{% endhighlight %}
-
 
 **2nd step:** replace simple messages with i18n Ally
 {% highlight twig %}{% raw %}
 {% if success %}
-  {{ 'webhook_succeeded'|trans|raw }}
+{{ 'webhook_succeeded'|trans|raw }}
 {% else %}
-  {{ 'webhook_failed'|trans|raw }}
+{{ 'webhook_failed'|trans|raw }}
 {% endif %}
 {% endraw %}{% endhighlight %}

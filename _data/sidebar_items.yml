@@ -1,0 +1,14 @@
+- title: Getting started
+  path: ""
+  sub_paths:
+    - title: Changelog
+      path: changelog
+    - title: License
+      path: license
+- title: Configure source code
+  path: configure-source-code
+  sub_paths:
+    - title: PHP
+      path: php
+    - title: Twig
+      path: twig
