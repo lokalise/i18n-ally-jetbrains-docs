@@ -10,6 +10,12 @@
   text-align: center;
 }
 
+.hero-header p {
+  margin: 0;
+
+  color: #bebebe;
+}
+
 .hero-cta {
   display: flex;
   align-items: center;
@@ -57,4 +63,36 @@
 
 .hero-explain p {
   margin: 0;
+}
+
+@media print, screen and (max-width: 960px) {
+  .hero {
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+
+  .hero-header {
+    margin-bottom: 28px;
+
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .hero-header .headline {
+    margin-bottom: 22px;
+    font-size: 35px;
+  }
+
+  .hero-explain {
+    font-size: 12px;
+    line-height: 20px;
+    padding: 10px;
+  }
+}
+
+@media print, screen and (max-width: 375px) {
+  .hero-header .headline {
+    font-size: 26px;
+    line-height: 29px;
+  }
 }

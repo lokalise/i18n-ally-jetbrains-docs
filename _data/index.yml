@@ -32,6 +32,8 @@ ways:
   title: "Free up time for things that matter"
   regular: The regular way
   ally: Automated with i18n Ally
+  controlRegular: The regular way
+  controlAlly: With i18n Ally
 
 quotes:
   - text: Lokalise has turned a task we were dreading into an absolute pleasure. Great platform, intuitive UX, powerful API. The automatic text recognition for screenshots has been a lifesaver, and over-the-air updates are the icing on the cake.”

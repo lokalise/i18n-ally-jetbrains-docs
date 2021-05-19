@@ -4,8 +4,8 @@
 
 .help-columns {
   display: flex;
-  flex-flow: row nowrap;
   align-items: center;
+  flex-flow: row nowrap;
 }
 
 .help-main {
@@ -60,4 +60,56 @@
   content: counter(count) ". ";
 
   font-variant-numeric: tabular-nums;
+}
+
+.help-footer {
+  display: none;
+}
+
+@media print, screen and (max-width: 960px) {
+  .help {
+    padding-top: 51px;
+    padding-bottom: 55px;
+  }
+
+  .help-columns {
+    display: block;
+  }
+
+  .help-main {
+    padding-right: 0;
+
+    text-align: center;
+  }
+
+  .help-main,
+  .help-aside {
+    width: 100%;
+  }
+
+  .help-footer {
+    display: block;
+
+    margin-top: 30px;
+
+    text-align: center;
+  }
+
+  .help-header p {
+    margin: 20px 0 18px;
+
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .help-cta {
+    display: none;
+  }
+
+  .help-list {
+    margin-bottom: 24px;
+
+    font-size: 15px;
+    line-height: 20px;
+  }
 }

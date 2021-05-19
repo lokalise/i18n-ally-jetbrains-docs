@@ -68,3 +68,50 @@
 .plugins-item:nth-child(odd) .plugins-item__text {
   padding-left: 140px;
 }
+
+@media print, screen and (max-width: 960px) {
+  .plugins {
+    padding-top: 57px;
+    padding-bottom: 60px;
+  }
+
+  .plugins .headline {
+    margin-bottom: 38px;
+  }
+
+  .plugins-item,
+  .plugins-item:nth-child(even) {
+    flex-flow: column-reverse nowrap;
+  }
+
+  .plugins-item + .plugins-item {
+    margin-top: 46px;
+  }
+
+  .plugins-item__image,
+  .plugins-item__text {
+    width: 100%;
+  }
+
+  .plugins-item__text {
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .plugins-item .subheadline {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  .plugins-item:nth-child(even) .plugins-item__text,
+  .plugins-item:nth-child(odd) .plugins-item__text {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

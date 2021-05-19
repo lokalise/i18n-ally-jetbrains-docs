@@ -19,3 +19,21 @@
 
   content: "";
 }
+
+@media print, screen and (max-width: 960px) {
+  .supports {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+
+  .supports-image {
+    max-width: 232px;
+
+    background-image: url("/assets/supports-mobile.svg");
+    background-size: 100%;
+  }
+
+  .supports-image::before {
+    padding-bottom: 198.7068965517%;
+  }
+}
