@@ -16,7 +16,7 @@
 title: i18n Ally JetBrains plugin
 email: alexander.terehov@lokalise.com
 description: ""
-baseurl: "/i18n-ally-jetbrains-docs" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "assets/i18n_ally_logo.svg"
 twitter_username: lokalise
