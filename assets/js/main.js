@@ -2,8 +2,10 @@ var button = document.querySelector(".mb-burger");
 var header = document.querySelector(".header");
 
 if (button) {
-  button.addEventListener("click", function () {
+  button.addEventListener("click", function (event) {
     header.classList.toggle("mb-open-nav");
+
+    event.preventDefault();
   });
 }
 

@@ -23,6 +23,16 @@ body {
 .highlight {
   margin-left: 0;
   margin-right: 0;
+  background-color: transparent;
+}
+
+.highlight pre {
+  border-width: 0;
+  filter: invert(1);
+}
+
+.highlight code {
+  color: #000;
 }
 
 .wrapper {
@@ -40,7 +50,8 @@ header {
 h1,
 h2,
 h3,
-code {
+code,
+strong {
   color: #fff;
 }
 
