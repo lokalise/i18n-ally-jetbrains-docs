@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="container">
+    <img
+      src="{{ site.baseurl }}/assets/logo.png"
+      class="logo"
+      alt="i18n ally + PS"
+    />
+
+    <nav class="header-navigation">
+      <ul>
+        {% for item in site.data.index.navigation %}
+        <li><a href="{{item.url}}" target="_blank">{{item.title}}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,21 @@
+.supports {
+  padding: 90px 0;
+
+  background-color: #000;
+}
+
+.supports-image {
+  width: 100%;
+  max-width: 891px;
+  margin: 0 auto;
+
+  background-image: url("/assets/supports-desktop.svg");
+}
+
+.supports-image::before {
+  display: block;
+
+  padding-bottom: 17.2839506173%;
+
+  content: "";
+}

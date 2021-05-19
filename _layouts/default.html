@@ -17,33 +17,21 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        {% if site.logo %}
-          <a href="{{ "/" | relative_url}}">
-            <img src="{{site.logo | relative_url}}" class="logo" alt="Logo: {{ site.title | default: site.github.repository_name }}" />
-          </a>
-        {% else %}
-          <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        {% endif %}
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+      {% include header.html %}
+      
+      <main>
+        {{ content }}
+      </main>
 
-        {% include sidebar.html %}
-
-        <footer>
-          Maintained by<br>
-          <a href="https://lokalise.com/product/for-developers?utm_source=docs&utm_campaign=i18nally-jetbrains&utm_medium=footer">
-            <img src="{{ site.baseurl }}/assets/lokalise_logo.svg" class="logo" alt="Loklaise logo" />
-          </a>
-        </footer>
-      </header>
-
-      <section>
-
-      {{ content }}
-
-      </section>
+      <footer class="footer">
+        <span>{{site.data.index.maintained}}</span>
+        <a href="https://lokalise.com/product/for-developers?utm_source=docs&utm_campaign=i18nally-jetbrains&utm_medium=footer">
+          <img src="{{ site.baseurl }}/assets/lokalise_logo.svg" class="logo" alt="Loklaise logo" />
+        </a>
+      </footer>
     </div>
+
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     {% if site.google_analytics %}
       <script>

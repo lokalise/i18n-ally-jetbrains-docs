@@ -1,0 +1,32 @@
+.features {
+  padding: 112px 0 80px;
+}
+
+.features-columns {
+  display: flex;
+  flex-flow: row wrap;
+
+  margin: 0 -50px;
+}
+
+.features-item {
+  width: 50%;
+  padding: 0 50px;
+  margin-bottom: 70px;
+}
+
+.features-item__image {
+  margin-bottom: 40px;
+
+  background-color: #686764;
+}
+
+.features-item__image img {
+  max-width: 100%;
+}
+
+.features-item__title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 40px;
+}

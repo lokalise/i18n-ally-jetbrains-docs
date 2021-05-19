@@ -1,0 +1,60 @@
+.hero {
+  padding-top: 54px;
+  padding-bottom: 100px;
+}
+
+.hero-header {
+  max-width: 850px;
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+
+  margin-bottom: 12px;
+}
+
+.hero-footnote {
+  padding-top: 23px;
+
+  text-align: center;
+
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.hero-footnote a {
+  color: inherit;
+}
+
+.hero-footnote a:hover {
+  color: #b9b546;
+}
+
+.hero-explain {
+  max-width: 628px;
+  margin: 0 auto;
+  padding: 15px 10px;
+
+  text-align: center;
+
+  color: #000;
+  background-color: #a8a68f;
+
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.hero-explain span {
+  display: block;
+
+  font-weight: 600;
+}
+
+.hero-explain p {
+  margin: 0;
+}

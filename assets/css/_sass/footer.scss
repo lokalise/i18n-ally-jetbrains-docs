@@ -1,0 +1,23 @@
+.footer {
+  background-color: #2b2b2b;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  height: 280px;
+}
+
+.footer span {
+  display: block;
+  color: #fff;
+  margin-bottom: 16px;
+
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.footer img {
+  max-width: 180px;
+}

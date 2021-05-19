@@ -1,0 +1,19 @@
+.configuration {
+  padding: 94px 0 66px;
+}
+
+.configuration .subheadline {
+  margin-bottom: 20px;
+}
+
+.configuration-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.configuration-item {
+  width: 25%;
+  padding: 39px 0;
+
+  text-align: center;
+}

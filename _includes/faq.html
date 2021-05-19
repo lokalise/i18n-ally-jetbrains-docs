@@ -1,0 +1,16 @@
+<section class="section faq">
+  <div class="container">
+    <header class="faq-header">
+      <h2 class="subheadline">{{ site.data.index.faq.title }}</h2>
+    </header>
+
+    <div class="features-faq">
+      {% for item in site.data.index.faq.items %}
+      <div class="faq-item">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

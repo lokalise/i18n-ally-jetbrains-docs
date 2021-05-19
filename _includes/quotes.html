@@ -1,0 +1,20 @@
+<section class="section quotes">
+  <div class="container">
+    <div class="quotes-columns">
+      {% for item in site.data.index.quotes %}
+      <div class="quotes-item">
+        <div class="quotes-item__text">{{ item.text }}</div>
+        <div class="quotes-item__footer">
+          <div class="quotes-item__name">{{item.name}}</div>
+          <div class="quotes-item__role">{{item.role}}</div>
+          {% if item.logo %}
+          <div class="quotes-item__logo">
+            <img src="/assets/{{item.logo}}" />
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+.faq {
+  padding: 112px 0 120px;
+
+  background-color: #000000;
+}
+
+.faq-header {
+  margin-bottom: 75px;
+}
+
+.faq-item {
+  padding: 36px 0 30px;
+}
+
+.faq-item:first-child {
+  padding-top: 0;
+}
+
+.faq-item:last-child {
+  padding-bottom: 0;
+}
+
+.faq-item + .faq-item {
+  border-top: 1px solid #909090;
+}
+
+.faq-item h3 {
+  margin: 0 0 24px;
+
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 35px;
+}
+
+.faq-item p {
+  margin: 0;
+
+  color: #bebebe;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+}
