@@ -4,6 +4,7 @@
 
 .ways .headline {
   max-width: 630px;
+  margin-bottom: 53px;
 }
 
 .ways-columns {
@@ -81,7 +82,8 @@
     display: flex;
     flex-flow: row nowrap;
 
-    margin-bottom: 40px;
+    max-width: 300px;
+    margin: 0 auto 40px;
 
     font-size: 15px;
   }
@@ -97,6 +99,7 @@
     color: #b9b546;
     border: 1px solid #b9b546;
     background: transparent;
+
     font-size: 15px;
     font-weight: 600;
   }
@@ -117,6 +120,6 @@
   }
 
   .ways .headline {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 }
