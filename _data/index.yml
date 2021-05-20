@@ -19,11 +19,6 @@ configuration:
     - "laravel.svg"
     - "yii.svg"
     - "symfony.svg"
-    - "codeigniter.svg"
-    - "cake.svg"
-    - "zend.svg"
-    - "drupal.svg"
-    - "wordpress.svg"
 
 supports:
   title: "Supports custom PHP projects"
