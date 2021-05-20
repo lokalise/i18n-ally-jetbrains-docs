@@ -1,7 +1,5 @@
 maintained: Maintained by
 navigation:
-  - title: GitHub
-    url: "/"
   - title: Documentation
     url: "/"
 
@@ -9,7 +7,7 @@ hero:
   title: A free plugin for PHP internationalization
   subtitle: i18n Ally is a PhpStorm plugin that automatically extracts hardcoded strings – no more copy-pasting or ad-hoc regexes.
   button: Download
-  footnote: "It's <strong>free</strong> and <a href='#'>open source</a>"
+  footnote: "It's <strong>free to use</strong>"
   why_title: Why now?
   why_text: We are in the beta stage, so you can have personal assistance for configuring a plugin for your app and quick reaction for things to be improved to support your particular case.
 
@@ -60,7 +58,7 @@ plugins:
   title: "How the plugin works"
   items:
     - title: "Scan for hardcoded strings"
-      text: "Go into Tools > “Run i18n Ally inspections...” to find  hardcoded strings in the project, folder or particular file."
+      text: "Go into Tools > “Run i18n Ally inspections...” to find hardcoded strings in the project, folder or particular file."
       image: "/assets/plugin-01.png"
     - title: "Extract matches"
       text: "Highlight “Toggle menu” text and make it consistent in before/after in different files and drive attention to the same place in source code that was changed"
