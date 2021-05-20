@@ -74,7 +74,7 @@ help:
   button: Review existing defaults
 
 faq:
-  title: "Frequently asked questions?"
+  title: "Frequently asked questions"
   items:
     - title: "How complex is the configuration?"
       text: "It's automated. Open the project and the plugin will configure everything automatically."
@@ -85,4 +85,4 @@ faq:
     - title: "I work only on a subset of the project, would the plugin apply to the whole project?"
       text: "The plugin can be pointed to work on only a small subset of your app."
     - title: "My colleagues are using VS Code, do you support them?"
-      text: "Yes, but it works a little differently than it does for PhpStorm. Check the extension out here."
+      text: "Yes, but it works a little differently than it does for PhpStorm. <a href=\"https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally\">Check the extension out at VS Code Marketplace</a>."
