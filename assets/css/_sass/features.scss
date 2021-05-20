@@ -3,6 +3,10 @@
   padding-bottom: 80px;
 }
 
+.features .headline {
+  margin-bottom: 83px;
+}
+
 .features-columns {
   display: flex;
   flex-flow: row wrap;
@@ -17,7 +21,7 @@
 }
 
 .features-item__image {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 
   background-color: #686764;
 }
@@ -57,5 +61,9 @@
 
   .features-item__image {
     margin-bottom: 16px;
+  }
+
+  .features .headline {
+    margin-bottom: 40px;
   }
 }

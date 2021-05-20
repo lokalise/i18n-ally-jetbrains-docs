@@ -39,6 +39,16 @@ body {
   width: 1200px;
 }
 
+section a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+section a:hover {
+  font-weight: inherit;
+  color: #b9b546;
+}
+
 section {
   width: 840px;
 }
@@ -116,6 +126,12 @@ footer {
   float: none;
   padding-top: 2em;
   padding-bottom: 5em;
+}
+
+footer a {
+  display: block;
+  margin-top: 10px;
+  width: 135px;
 }
 
 .logo {

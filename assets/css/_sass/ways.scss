@@ -20,6 +20,7 @@
 }
 
 .ways-subtitle {
+  margin-top: 0;
   margin-bottom: 50px;
 
   text-align: center;
@@ -79,21 +80,25 @@
   .ways-controls {
     display: flex;
     flex-flow: row nowrap;
+
     margin-bottom: 40px;
+
     font-size: 15px;
   }
 
   .ways-controls button {
-    font-weight: 600;
     width: 50%;
-    text-decoration: none;
+    height: 47px;
+
     text-align: center;
     white-space: nowrap;
+    text-decoration: none;
 
     color: #b9b546;
     border: 1px solid #b9b546;
     background: transparent;
-    height: 47px;
+    font-size: 15px;
+    font-weight: 600;
   }
 
   .ways-controls button:first-child {
@@ -105,9 +110,10 @@
   }
 
   .ways-controls .ways-control--active {
+    pointer-events: none;
+
     color: #2b2b2b;
     background: #b9b546;
-    pointer-events: none;
   }
 
   .ways .headline {

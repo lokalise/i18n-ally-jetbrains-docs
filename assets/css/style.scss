@@ -40,6 +40,10 @@ body {
   padding-right: 51px;
 }
 
+.section:nth-child(even) {
+  background-color: #000;
+}
+
 .highlight {
   margin-right: 0;
   margin-left: 0;
@@ -133,24 +137,13 @@ body {
   background-color: #8f8c40;
 }
 
-.columns {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 1200px;
-  margin: 0 auto;
-
-  justify-content: space-between;
+.wrapper p a {
+  color: inherit;
+  text-decoration: underline;
 }
 
-.columns-aside {
-  width: 270px;
-}
-
-.columns-content {
-  width: 840px;
-}
-
-.columns-content h2 {
+.wrapper p a:hover {
+  color: #b9b546;
 }
 
 @media print, screen and (max-width: 960px) {
