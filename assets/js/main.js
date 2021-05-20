@@ -4,30 +4,30 @@ var header = document.querySelector(".header");
 if (button) {
   button.addEventListener("click", function (event) {
     header.classList.toggle("mb-open-nav");
-
     event.preventDefault();
   });
 }
 
-const toggleLeft = document.querySelector("[data-toggle='ways-column--left']");
-const toggleRight = document.querySelector(
-  "[data-toggle='ways-column--right']"
-);
-
-const wayLeft = document.querySelector(".ways-column--left");
-const wayRight = document.querySelector(".ways-column--right");
+var toggleLeft = document.querySelector("[data-toggle='ways-column--left']");
+var toggleRight = document.querySelector("[data-toggle='ways-column--right']");
+var wayLeft = document.querySelector(".ways-column--left");
+var wayRight = document.querySelector(".ways-column--right");
 
 if (toggleLeft) {
   toggleLeft.addEventListener("click", function () {
-    toggleClass(wayRight, wayLeft, "ways-column--active");
-    toggleClass(toggleLeft, toggleRight, "ways-control--active");
+    if (!toggleLeft.classList.contains("ways-column--active")) {
+      toggleClass(wayRight, wayLeft, "ways-column--active");
+      toggleClass(toggleLeft, toggleRight, "ways-control--active");
+    }
   });
 }
 
 if (toggleRight) {
   toggleRight.addEventListener("click", function () {
-    toggleClass(wayRight, wayLeft, "ways-column--active");
-    toggleClass(toggleLeft, toggleRight, "ways-control--active");
+    if (!toggleRight.classList.contains("ways-column--active")) {
+      toggleClass(wayRight, wayLeft, "ways-column--active");
+      toggleClass(toggleLeft, toggleRight, "ways-control--active");
+    }
   });
 }
 
