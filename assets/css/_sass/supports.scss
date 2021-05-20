@@ -6,7 +6,7 @@
 
 .supports-image {
   width: 100%;
-  max-width: 891px;
+  max-width: 847px;
   margin: 0 auto;
 
   background-image: url("/assets/supports-desktop.svg");
@@ -15,7 +15,7 @@
 .supports-image::before {
   display: block;
 
-  padding-bottom: 17.2839506173%;
+  padding-bottom: 18.181818182%;
 
   content: "";
 }
@@ -27,13 +27,13 @@
   }
 
   .supports-image {
-    max-width: 232px;
+    max-width: 226px;
 
     background-image: url("/assets/supports-mobile.svg");
     background-size: 100%;
   }
 
   .supports-image::before {
-    padding-bottom: 198.7068965517%;
+    padding-bottom: 204.4247787611%;
   }
 }
