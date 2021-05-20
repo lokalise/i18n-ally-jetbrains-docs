@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% seo %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/{{ "assets/css/style.css?v=" | append: site.github.build_revision }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/{{ "assets/css/docs.css?v=" | append: site.github.build_revision }}">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -17,19 +17,29 @@
   </head>
   <body>
     <div class="wrapper">
+      <header>
+        {% if site.logo %}
+          <a href="{{ "/" | relative_url}}">
+            <img src="{{site.logo | relative_url}}" alt="Logo: {{ site.title | default: site.github.repository_name }}" />
+          </a>
+        {% else %}
+          <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        {% endif %}
 
-      {% include header.html %}
-      
-      <main>
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+        {% include sidebar.html %}
+
+        <footer>
+          Maintained by
+          <a href="https://lokalise.com/product/for-developers?utm_source=docs&utm_campaign=i18nally-jetbrains&utm_medium=footer">
+            <img src="{{ site.baseurl }}/assets/lokalise_logo.svg" alt="Logo: {{ site.title | default: site.github.repository_name }}" style="width: 100%; height: auto;" />
+          </a>
+        </footer>
+      </header>
+      <section>
         {{ content }}
-      </main>
-
-      <footer class="footer">
-        <span>{{site.data.index.maintained}}</span>
-        <a href="https://lokalise.com/product/for-developers?utm_source=docs&utm_campaign=i18nally-jetbrains&utm_medium=footer">
-          <img src="{{ site.baseurl }}/assets/lokalise_logo.svg" class="logo" alt="Loklaise logo" />
-        </a>
-      </footer>
+      </section>
     </div>
 
     <script src="{{ "/assets/js/main.js" | relative_url }}"></script>

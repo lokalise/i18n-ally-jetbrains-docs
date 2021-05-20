@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 ---
 
 # License: BSD 3 Clause

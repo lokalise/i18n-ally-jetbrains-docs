@@ -1,0 +1,60 @@
+.quotes {
+  padding: 120px 0;
+}
+
+.quotes-columns {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.quotes-item {
+  width: 50%;
+  padding: 24px 30px 30px;
+
+  color: #000;
+  background-color: #9b9982;
+}
+
+.quotes-item + .quotes-item {
+  margin-left: 30px;
+}
+
+.quotes-item__text {
+  font-size: 18px;
+  line-height: 30px;
+
+  margin-bottom: 31px;
+}
+
+.quotes-item__footer {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.quotes-item__name {
+  font-weight: 600;
+}
+
+.quotes-item__logo {
+  margin-top: 22px;
+}
+
+@media print, screen and (max-width: 960px) {
+  .quotes {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .quotes-columns {
+    display: block;
+  }
+
+  .quotes-item {
+    width: 100%;
+  }
+
+  .quotes-item + .quotes-item {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}

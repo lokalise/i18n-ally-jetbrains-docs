@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 ---
 
 # PHP source configuration

@@ -1,0 +1,13 @@
+.video {
+  padding-top: 130px;
+  padding-bottom: 130px;
+
+  background-color: #000;
+}
+
+@media print, screen and (max-width: 960px) {
+  .video {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+}

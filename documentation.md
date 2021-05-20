@@ -1,24 +1,8 @@
 ---
-layout: default
+layout: docs
 ---
 
 # i18n Ally JetBrains plugin <small>(closed beta)</small>
-
-<div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/QW-oU6sJuFc?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-## Features
-
-* Automated configuration for Symfony applications and bundles for effortless start.
-* Detection of hardcoded strings in the whole project and within editor to reduce the need to carefully examine all the source code.
-* Extraction hardcoded strings, both manual and automated to remove boring and repetitive work.
-* Renaming keys and placeholders from the source code to prevent jumping between files.
-* Navigation from source to language files for easier strings editing.
-* Excluding particular strings, functions or methods to reduce false positive detection.
-* Sync plugin configuration among your team via file in repository so the plugin would be more and more precise.
-
-<br>
 
 ## Install closed beta version from a received file
 
