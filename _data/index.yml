@@ -6,7 +6,7 @@ navigation:
 hero:
   title: A free plugin for PHP internationalization
   subtitle: i18n Ally is a PhpStorm plugin that automatically extracts hardcoded strings – no more copy-pasting or ad-hoc regexes.
-  button: Download
+  button: Download will be available on June, 2021
   footnote: "It's <strong>free to use</strong>"
   why_title: Why now?
   why_text: We are in the beta stage, so you can have personal assistance for configuring a plugin for your app and quick reaction for things to be improved to support your particular case.
