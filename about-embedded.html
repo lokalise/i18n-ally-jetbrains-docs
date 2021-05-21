@@ -5,3 +5,15 @@ layout: embedded
 <h1>A free plugin for PHP internationalization</h1>
 
 <p>i18n Ally is a PhpStorm plugin that automatically extracts hardcoded strings – no more copy-pasting or ad-hoc regexes.</p>
+
+<p><a href="/">Link</a></p>
+
+<script>
+    const params = (new URL(document.location)).searchParams;
+
+    const styles = document.body.style;
+    styles.backgroundColor = '#' + params.get('bg');
+    styles.color = '#' + params.get('text');
+
+    document.querySelector('a').style.color = '#' + params.get('link');
+</script>
