@@ -9,6 +9,10 @@
   height: 280px;
 }
 
+.footer:nth-child(odd) {
+  background-color: #000;
+}
+
 .footer span {
   display: block;
   color: #fff;

@@ -85,4 +85,11 @@ faq:
     - title: "I work only on a subset of the project, would the plugin apply to the whole project?"
       text: "The plugin can be pointed to work on only a small subset of your app."
     - title: "My colleagues are using VS Code, do you support them?"
-      text: "Yes, but it works a little differently than it does for PhpStorm. <a href=\"https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally\">Check the extension out at VS Code Marketplace</a>."
+      text: 'Yes, but it works a little differently than it does for PhpStorm. <a href="https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally">Check the extension out at VS Code Marketplace</a>.'
+
+form:
+  title: "Release in June 2021"
+  subtitle: "Join the closed beta group to access before launch in Marketplace and individual support."
+  placeholder: "Your work e-mail"
+  button: Sign up
+  success: Welcome!
