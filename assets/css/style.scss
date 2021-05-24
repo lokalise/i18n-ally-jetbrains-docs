@@ -15,6 +15,7 @@
 @import "plugins";
 @import "help";
 @import "faq";
+@import "form";
 
 body {
   margin: 0;
@@ -135,6 +136,30 @@ body {
 .button--green:hover {
   color: #000;
   background-color: #8f8c40;
+}
+
+.button--loading::after {
+  animation: loading 1s ease infinite;
+  content: "";
+  width: 10px;
+  display: inline-block;
+  text-align: left;
+  margin-left: -2px;
+}
+
+@keyframes loading {
+  0% {
+    content: ".";
+  }
+  33% {
+    content: ".";
+  }
+  66% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
 }
 
 .wrapper p a {

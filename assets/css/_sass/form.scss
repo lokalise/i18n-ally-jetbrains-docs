@@ -1,0 +1,145 @@
+.form {
+  padding-top: 117px;
+  padding-bottom: 120px;
+}
+
+.form-header {
+  max-width: 850px;
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.form-header .subheadline {
+  margin: 0 0 28px;
+}
+
+.form-header p {
+  margin: 0;
+
+  color: #bebebe;
+
+  font-size: 25px;
+  line-height: 35px;
+}
+
+.form-field {
+  position: relative;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  width: 410px;
+  margin: 0 auto;
+  padding-right: 110px;
+}
+
+.form-field input {
+  width: 300px;
+  height: 60px;
+
+  text-indent: 24px;
+
+  color: #909090;
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: #6a6a6a;
+  outline-width: 0;
+  background-color: transparent;
+
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.form-field button {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  flex-shrink: 0;
+
+  width: 110px;
+  min-width: auto;
+  height: 60px;
+  padding-right: 0;
+  padding-left: 0;
+
+  transition: all 350ms ease;
+  white-space: nowrap;
+}
+
+.form-field__error {
+  position: absolute;
+  top: 100%;
+
+  padding-top: 8px;
+
+  color: #ff6336;
+
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.form-field .button--wide {
+  width: 100%;
+
+  pointer-events: none;
+}
+
+.form-field .button--wide:hover {
+  cursor: default;
+
+  background-color: #b9b546;
+}
+
+@media print, screen and (max-width: 960px) {
+  .form {
+    padding-top: 57px;
+    padding-bottom: 60px;
+  }
+
+  .form-header {
+    max-width: 330px;
+    margin-bottom: 29px;
+  }
+
+  .form-header .subheadline {
+    margin-bottom: 29px;
+
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .form-header p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .form-field {
+    width: 100%;
+    max-width: 330px;
+    padding-right: 92px;
+  }
+
+  .form-field input {
+    width: 100%;
+    height: 50px;
+
+    font-size: 13px;
+    line-height: 15px;
+  }
+
+  .form-field button {
+    width: 92px;
+    height: 50px;
+
+    font-size: 12px;
+  }
+
+  .form-field__error {
+    padding-top: 12px;
+
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

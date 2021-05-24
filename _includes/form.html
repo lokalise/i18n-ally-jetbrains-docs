@@ -1,0 +1,23 @@
+<section class="section form">
+  <div class="container">
+    <header class="form-header">
+      <h2 class="subheadline align-center">{{ site.data.index.form.title }}</h2>
+      <p>{{ site.data.index.form.subtitle }}</p>
+    </header>
+
+    <form class="form-field">
+      <input type="email" placeholder="{{site.data.index.form.placeholder }}" />
+      <button class="button button--green button--loading" type="submit">
+        Sending
+      </button>
+      <!-- <button class="button button--green" type="submit">
+        {{ site.data.index.form.button }}
+      </button> -->
+      <!-- <button class="button button--green button--wide" type="submit">
+        {{ site.data.index.form.success }}
+      </button> -->
+
+      <span class="form-field__error">Password must contain numbers</span>
+    </form>
+  </div>
+</section>
