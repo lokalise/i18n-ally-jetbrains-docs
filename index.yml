@@ -1,0 +1,95 @@
+---
+maintained: Maintained by
+navigation:
+- title: Documentation
+  url: /documentation
+hero:
+  title: A free plugin for PHP internationalization
+  subtitle: i18n Ally is a PhpStorm plugin that automatically extracts hardcoded strings
+    – no more copy-pasting or ad-hoc regexes.
+  button: Download will be available on June, 2021
+  footnote: It's <strong>free to use</strong>
+  why_title: Why now?
+  why_text: We are managing a beta program with a limited number of participants.
+    By entering this restricted group, you will enjoy one-on-one support to configure
+    the plugin, and your feedback will help build and improve the plugin to solve
+    your individual needs.
+configuration:
+  title: Plug and play configuration
+  items:
+  - laravel.svg
+  - yii.svg
+  - symfony.svg
+supports:
+  title: Supports custom PHP projects
+ways:
+  title: Free up time for things that matter
+  regular: The regular way
+  ally: Automated with i18n Ally
+  controlRegular: The regular way
+  controlAlly: With i18n Ally
+quotes:
+- text: Lokalise has turned a task we were dreading into an absolute pleasure. Great
+    platform, intuitive UX, powerful API. The automatic text recognition for screenshots
+    has been a lifesaver, and over-the-air updates are the icing on the cake.”
+  name: Alexander Makarov
+  role: Chief Mobile Officer
+  logo: quote-yii.svg
+- text: Lokalise has turned a task we were dreading into an absolute pleasure. Great
+    platform, intuitive UX, powerful API. The automatic text recognition for screenshots
+    has been a lifesaver, and over-the-air updates are the icing on the cake.”
+  name: Alexander Makarov
+  role: Chief Mobile Officer
+  logo: quote-joli.svg
+features:
+  title: Features
+  items:
+  - title: Extract hardcoded strings all at once
+    image: /assets/feature-01.png
+  - title: Detect missing strings in the whole project, folder or file
+    image: /assets/feature-02.png
+  - title: Spot hardcoded string in editor
+    image: /assets/feature-03.png
+  - title: Extract hardcoded strings one by one
+    image: /assets/feature-04.png
+  - title: Jump from the editor to the language file
+    image: /assets/feature-05.png
+  - title: Rename keys and placeholders in the editor
+    image: /assets/feature-06.png
+plugins:
+  title: How the plugin works
+  items:
+  - title: Scan for hardcoded strings
+    text: Go into Tools > “Run i18n Ally inspections...” to find hardcoded strings
+      in the project, folder or particular file.
+    image: /assets/plugin-01.png
+  - title: Extract matches
+    text: Highlight “Toggle menu” text and make it consistent in before/after in different
+      files and drive attention to the same place in source code that was changed
+    image: /assets/plugin-02.png
+help:
+  title: How to help?
+  text: Contribute settings for different frameworks
+  list:
+  - Functions to scan for hardcoded strings
+  - Folders to scan and to ignore
+  - Configure translation function
+  button: Review existing defaults
+faq:
+  title: Frequently asked questions
+  items:
+  - title: How complex is the configuration?
+    text: It's automated. Open the project and the plugin will configure everything
+      automatically.
+  - title: Will it support my custom project?
+    text: Yes. The plugin provides flexible manual configuration options.
+  - title: Is it possible that the plugin will break my code and I won't see it?
+    text: Don’t worry – the plugin will not mess up the changes in git and comes with
+      full Undo support.
+  - title: I work only on a subset of the project, would the plugin apply to the whole
+      project?
+    text: The plugin can be pointed to work on only a small subset of your app.
+  - title: My colleagues are using VS Code, do you support them?
+    text: Yes, but it works a little differently than it does for PhpStorm. <a href="https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally">Check
+      the extension out at VS Code Marketplace</a>.
+...
