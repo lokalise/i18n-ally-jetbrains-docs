@@ -14,6 +14,7 @@ layout: embedded
     const styles = document.body.style;
     styles.backgroundColor = '#' + params.get('bg');
     styles.color = '#' + params.get('text');
+    styles.fontFamily = `${params.get('fontUI')}, ui-sans-serif, sans-serif`;
 
     document.querySelector('a').style.color = '#' + params.get('link');
 </script>
