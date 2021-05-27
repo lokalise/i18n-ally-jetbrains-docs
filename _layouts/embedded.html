@@ -36,7 +36,7 @@
         // TODO Whitelist params
         // TODO Process colors correctly
         const cssValue = key.startsWith('font') ? value : '#' + value;
-        basicStyles = basicStyles.replace(`%${key}%`, cssValue)
+        basicStyles = basicStyles.replaceAll(`%${key}%`, cssValue)
         console.log(cssValue, key);
       });
   
