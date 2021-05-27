@@ -40,6 +40,13 @@
       const styleEl = document.createElement('style');
       styleEl.textContent = basicStyles;
       document.head.appendChild(styleEl);
+
+      // Print parameters for reference
+      setTimeout(function() {
+        const preEl = document.createElement('pre');
+        preEl.textContent = 'Debug ' + JSON.stringify(Object.fromEntries(params), undefined, 4);
+        document.body.appendChild(preEl)
+      }, 50);
     </script>
     <script src="https://embed.small.chat/T01QRMV2NR4C0228H4KW2K.js" async></script>
   </head>
