@@ -28,6 +28,9 @@
       }
     </template>
     <script>
+      //
+      // Apply styles from parameters
+      //
       const params = (new URL(document.location)).searchParams;
       let basicStyles = document.querySelector('#css-basic-styles').content.textContent;
 
@@ -41,7 +44,19 @@
       styleEl.textContent = basicStyles;
       document.head.appendChild(styleEl);
 
+      //
+      // Ensure that all links would open in browser
+      //
+      window.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a');
+        for (let ii = 0; ii < links.length; ++ii) {
+          links[ii].target = "_blank";
+        }
+      });
+
+      //
       // Print parameters for reference
+      //
       setTimeout(function() {
         const preEl = document.createElement('pre');
         preEl.textContent = 'Debug ' + JSON.stringify(Object.fromEntries(params), undefined, 4);
