@@ -1,0 +1,46 @@
+---
+---
+
+@import "about-embedded/hero.scss";
+@import "about-embedded/footer.scss";
+
+html {
+    font-size: 13px;
+}
+
+body {
+    margin: 0;
+
+    color: #fff;
+    background-color: #2b2b2b;
+
+    font: 400 13px/20px ui-sans-serif, sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.section {
+    padding: 32px;
+}
+
+.container {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+}

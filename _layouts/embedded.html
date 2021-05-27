@@ -6,6 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="robots" content="noindex, nofollow">
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/{{ "assets/css/about-embedded.css?v=" | append: site.github.build_revision }}">
+    <template id="css-basic-styles">
+      body {
+        color: %text%;
+        background-color: %bg%;
+        font-family: "%fontUI%", -apple-system, system-ui, ui-sans-serif, sans-serif;
+      }
+      
+      a {
+        color: %link%;
+      }
+
+      button {
+        background-color: %btn%;
+      }
+    </template>
+    <script>
+      const params = (new URL(document.location)).searchParams;
+      let basicStyles = document.querySelector('#css-basic-styles').content.textContent;
+      console.log(basicStyles);
+
+      params.forEach(function(value, key) {
+        // TODO Whitelist params
+        // TODO Process colors correctly
+        const cssValue = key.startsWith('font') ? value : '#' + value;
+        basicStyles = basicStyles.replace(`%${key}%`, cssValue)
+        console.log(cssValue, key);
+      });
+  
+      const styleEl = document.createElement('style');
+      styleEl.innerText = basicStyles;
+      document.head.appendChild(styleEl);
+    </script>
     <script src="https://embed.small.chat/T01QRMV2NR4C0228H4KW2K.js" async></script>
   </head>
   <body>

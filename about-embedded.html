@@ -2,19 +2,21 @@
 layout: embedded
 ---
 
-<h1>A free plugin for PHP internationalization</h1>
+<!-- hero -->
+{% include about-embedded/hero.html %}
 
-<p>i18n Ally is a PhpStorm plugin that automatically extracts hardcoded strings – no more copy-pasting or ad-hoc regexes.</p>
+{% comment %}
+    
+    <!-- sandbox-cta -->
+    {% include about-embedded/sandbox-cta.html %}
 
-<p><a href="/">Link</a></p>
+    <!-- features -->
+    {% include about-embedded/features.html %}
 
-<script>
-    const params = (new URL(document.location)).searchParams;
+    <!-- project-setup -->
+    {% include about-embedded/project-setup.html %}
 
-    const styles = document.body.style;
-    styles.backgroundColor = '#' + params.get('bg');
-    styles.color = '#' + params.get('text');
-    styles.fontFamily = `${params.get('fontUI')}, ui-sans-serif, sans-serif`;
+{% endcomment %}
 
-    document.querySelector('a').style.color = '#' + params.get('link');
-</script>
+<!-- footer -->
+{% include about-embedded/footer.html %}
