@@ -3,7 +3,7 @@
   sub_paths:
     - title: Changelog
       path: changelog
-    - title: License
+    - title: BSD 3 License
       path: license
 - title: Configure source code
   path: configure-source-code
