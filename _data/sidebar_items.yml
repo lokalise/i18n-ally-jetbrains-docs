@@ -1,14 +1,31 @@
 - title: Getting started
-  path: ""
+  path: "documentation"
   sub_paths:
     - title: Changelog
       path: changelog
     - title: BSD 3 License
       path: license
-- title: Configure source code
-  path: configure-source-code
+- title: Extract from source code
+  path: source-code
   sub_paths:
-    - title: PHP
-      path: php
+    - title: Blade
+      path: blade
     - title: Twig
       path: twig
+    - title: HTML with PHP
+      path: phphtml
+    - title: PHP
+      path: php
+- title: Extract into language files
+  path: language-files
+  sub_paths:
+    - title: YAML
+      path: yaml
+    - title: JSON
+      path: json
+    - title: XLIFF v1
+      path: xliff-v1
+    - title: XLIFF v2
+      path: xliff-v2
+    - title: PHP
+      path: php
