@@ -75,7 +75,11 @@ a {
 }
 
 button {
+    color: var(--main-text-color);
     background-color: var(--main-btn-color);
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 1rem 2rem;
     border: none;
     cursor: pointer;
 }

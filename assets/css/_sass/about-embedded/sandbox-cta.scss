@@ -1,6 +1,6 @@
 .sandbox-cta-block {
     @include placeholder-bg;
-    padding: 2rem 3rem 3rem;
+    padding: 1.5rem 2rem 2rem;
     border-radius: 2px;
 }
 
@@ -16,18 +16,13 @@
 }
 
 .sandbox-cta-title {
-    max-width: 361px;
-    width: 361px;
+    max-width: 350px;
+    width: 350px;
     @include block_title;
 }
 
 .sandbox-cta-btn {
     align-self: center;
-    padding: 1rem 2rem;
-    font-weight: 600;
     background-color: #2B7B50;
     color: #f1f1f1;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
 }
