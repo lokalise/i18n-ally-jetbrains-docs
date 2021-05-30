@@ -1,8 +1,35 @@
 ---
 ---
 
+:root {
+    --main-bg-color: #2A2C2E;
+    --main-text-color: #BBBBBB;
+    --main-link-color: #589CF4;
+    --main-btn-color: #365880;
+    --main-fontui: -apple-system, system-ui, ui-sans-serif, sans-serif;
+}
+
+@mixin placeholder-bg {
+    background-color: rgba($color: #888888, $alpha: 0.25);
+}
+
+@mixin block_subtitle {
+    opacity: 0.75;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+@mixin block_title {
+    font-size: 2rem;
+    line-height: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+  
+
 @import "about-embedded/hero.scss";
 @import "about-embedded/sandbox-cta.scss";
+@import "about-embedded/project-setup.scss";
 @import "about-embedded/footer.scss";
 
 html {
@@ -12,10 +39,10 @@ html {
 body {
     margin: 0;
 
-    color: #1D1D1D;
-    background-color: #ECECEC;
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
 
-    font: 400 13px/20px -apple-system, system-ui, ui-sans-serif, sans-serif;
+    font: 400 13px/20px var(--main-fontui);
 
     -webkit-font-smoothing: antialiased;
 }
@@ -25,7 +52,7 @@ html::-webkit-scrollbar {
  }
 
 html::-webkit-scrollbar-track {
-  background-color: #ECECEC;
+  background-color: var(--main-bg-color);
 }
 
 html::-webkit-scrollbar-thumb {
@@ -39,11 +66,18 @@ html::-webkit-scrollbar-thumb {
 }
 
 a {
+    color: var(--main-link-color);
     text-decoration: none;
 
     &:hover {
         text-decoration: underline;
     }
+}
+
+button {
+    background-color: var(--main-btn-color);
+    border: none;
+    cursor: pointer;
 }
 
 p {
@@ -55,7 +89,7 @@ p {
 }
 
 .section {
-    padding: 32px;
+    padding: 2rem;
 }
 
 .container {

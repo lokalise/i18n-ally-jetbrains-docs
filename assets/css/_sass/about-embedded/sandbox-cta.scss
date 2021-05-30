@@ -1,12 +1,11 @@
 .sandbox-cta-block {
-    background-color: rgba($color: #888888, $alpha: 0.25);
+    @include placeholder-bg;
     padding: 2rem 3rem 3rem;
     border-radius: 2px;
 }
 
 .sandbox-cta-subtitle {
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    @include block_subtitle;
 }
 
 .sandbox-cta-title-container {
@@ -19,10 +18,7 @@
 .sandbox-cta-title {
     max-width: 361px;
     width: 361px;
-    font-size: 2rem;
-    line-height: 2.3rem;
-    font-weight: 600;
-    margin-bottom: 0;
+    @include block_title;
 }
 
 .sandbox-cta-btn {
