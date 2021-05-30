@@ -1,0 +1,36 @@
+.sandbox-cta-block {
+    background-color: rgba($color: #888888, $alpha: 0.25);
+    padding: 2rem 3rem 3rem;
+    border-radius: 2px;
+}
+
+.sandbox-cta-subtitle {
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.sandbox-cta-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sandbox-cta-title {
+    max-width: 361px;
+    width: 361px;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.sandbox-cta-btn {
+    align-self: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    background-color: #2B7B50;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 2px;
+}
