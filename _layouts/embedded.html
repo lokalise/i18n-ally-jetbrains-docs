@@ -9,23 +9,22 @@
 
     <link rel="stylesheet" href="{{ site.baseurl }}/{{ "assets/css/about-embedded.css?v=" | append: site.github.build_revision }}">
     <script>
-      //
-      // Apply styles from parameters
-      //
-      const params = (new URL(document.location)).searchParams;
-      const docStyle = document.documentElement.style;
+      (function applyStylesFromParamaters() {
+        const params = (new URL(document.location)).searchParams;
+        const docStyle = document.documentElement.style;
 
-      ['bg', 'text', 'link', 'btn'].forEach(function(paramName) {
-        const paramValue = params.get(paramName);
-        if (paramValue && paramValue.length == 6 && !isNaN(Number('0x' + paramValue))) {
-          docStyle.setProperty(`--main-${paramName}-color`, '#' + params.get(paramName));
+        ['bg', 'text', 'link', 'btn'].forEach(function(paramName) {
+          const paramValue = params.get(paramName);
+          if (paramValue && paramValue.length == 6 && !isNaN(Number('0x' + paramValue))) {
+            docStyle.setProperty(`--main-${paramName}-color`, '#' + params.get(paramName));
+          }
+        });
+
+        const fontUI = params.get('fontUI');
+        if (fontUI) {
+          docStyle.setProperty('--main-fontui', `"${fontUI.replaceAll('"', '\'')}", -apple-system, system-ui, ui-sans-serif, sans-serif`);
         }
-      });
-
-      const fontUI = params.get('fontUI');
-      if (fontUI) {
-        docStyle.setProperty('--main-fontui', `"${fontUI.replaceAll('"', '\'')}", -apple-system, system-ui, ui-sans-serif, sans-serif`);
-      }
+      })();
 
       //
       // Ensure that all links would open in browser
