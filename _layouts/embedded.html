@@ -39,11 +39,16 @@
       //
       // Print parameters for reference
       //
-      setTimeout(function() {
-        const preEl = document.createElement('pre');
-        preEl.textContent = 'Debug ' + JSON.stringify(Object.fromEntries(params), undefined, 4);
-        document.body.appendChild(preEl)
-      }, 50);
+      window.addEventListener('DOMContentLoaded', function() {
+        const params = (new URL(document.location)).searchParams;
+        if (params.get('chatId') == '77b16738-0aeb-4baa-9052-b64a8e4d1ea0') { // Alex Terehov installation
+          const preEl = document.createElement('pre');
+          preEl.style.width = '100%';
+          preEl.style.overflow = 'scroll';
+          preEl.textContent = 'Debug ' + document.location.search + '\n' + JSON.stringify(Object.fromEntries(params), undefined, 4);
+          document.body.appendChild(preEl);
+        }
+      });
     </script>
     <script src="https://embed.small.chat/T01QRMV2NR4C0228H4KW2K.js" async></script>
   </head>
