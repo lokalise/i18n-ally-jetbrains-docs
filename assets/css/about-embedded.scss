@@ -25,6 +25,17 @@
     font-weight: 600;
     margin-bottom: 0;
 }
+
+@mixin svg-icon($name, $icon-size: 1.5em) {
+    display: inline-block;
+    content: ' ';
+    background-image: url('/assets/about-embedded/icon-' + $name + '.svg');
+    background-size: $icon-size $icon-size;
+    height: $icon-size;
+    width: $icon-size;
+    vertical-align: text-bottom;
+    margin-right: 0.5em;
+}
   
 
 @import "about-embedded/hero.scss";
