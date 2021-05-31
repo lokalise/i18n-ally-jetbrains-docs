@@ -5,16 +5,16 @@
 @import "header";
 @import "footer";
 
-@import "hero";
-@import "video";
-@import "supports";
-@import "configuration";
-@import "ways";
-@import "quotes";
-@import "features";
-@import "plugins";
-@import "help";
-@import "faq";
+@import "homepage/hero";
+@import "homepage/video";
+@import "homepage/supports";
+@import "homepage/configuration";
+@import "homepage/ways";
+@import "homepage/quotes";
+@import "homepage/features";
+@import "homepage/plugins";
+@import "homepage/help";
+@import "homepage/faq";
 
 body {
   margin: 0;
