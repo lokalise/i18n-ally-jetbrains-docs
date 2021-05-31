@@ -137,12 +137,24 @@
             //
             // Setup click event listeners
             //
-            const buttons = document.querySelectorAll('.checklist-item-status__btn, .project-setup-review-config-btn');
-            for (let ii = 0; ii < buttons.length; ++ii) {
-                buttons[ii].addEventListener('click', event => {
-                    console.log('Click', buttons[ii].textContent.trim());
+            document.querySelector('#checklist-item__open-project-js .checklist-item-status__btn').addEventListener('click', function (event) {
+                window.runEvent('openProject');
+            });
+
+            document.querySelector('#checklist-item__run-inspections-js .checklist-item-status__btn').addEventListener('click', function (event) {
+                window.runEvent('runAllyInspections');
+            });
+
+            const openSettingsselector = [
+                '#checklist-item__config-lang-files-js .checklist-item-status__btn',
+                '#checklist-item__config-sources-js .checklist-item-status__btn',
+                '#project-setup-review-config-js .project-setup-review-config-btn',
+            ].join(', ');            
+            document.querySelectorAll(openSettingsselector).forEach(btnEl => {
+                btnEl.addEventListener('click', function (event) {
+                    window.runEvent('openProjectAllySettings');
                 });
-            }
+            });
         })();
     </script>
 </section>
