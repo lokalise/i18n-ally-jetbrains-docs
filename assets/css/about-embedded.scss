@@ -6,7 +6,9 @@
     --main-text-color: #BBBBBB;
     --main-link-color: #589CF4;
     --main-btn-color: #365880;
+    --main-scroll-color: rgba(#888888, 0.25);
     --main-fontui: -apple-system, system-ui, ui-sans-serif, sans-serif;
+    --main-fontcode: monospace;
 }
 
 @mixin placeholder-bg {
@@ -67,8 +69,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background-color: #888888;
-  opacity: 0.25;
+  background-color: var(--main-scroll-color);
   border-radius: 25px;
 }
 
@@ -97,6 +98,10 @@ button {
 
 p {
     margin-top: 0;
+}
+
+pre {
+    font-family: var(--main-fontcode);
 }
 
 .wrapper {

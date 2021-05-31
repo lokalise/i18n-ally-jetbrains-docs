@@ -43,17 +43,26 @@
         const params = (new URL(document.location)).searchParams;
         const docStyle = document.documentElement.style;
 
-        ['bg', 'text', 'link', 'btn'].forEach(function(paramName) {
+        ['bgHex', 'textHex', 'linkHex', 'btnHex', 'scrollHex'].forEach(function(paramName) {
           const paramValue = params.get(paramName);
           if (paramValue && paramValue.length == 6 && !isNaN(Number('0x' + paramValue))) {
-            docStyle.setProperty(`--main-${paramName}-color`, '#' + params.get(paramName));
+            docStyle.setProperty(`--main-${paramName.replace('Hex', '')}-color`, '#' + params.get(paramName));
           }
         });
 
-        const fontUI = params.get('fontUI');
-        if (fontUI) {
-          docStyle.setProperty('--main-fontui', `"${fontUI.replaceAll('"', '\'')}", -apple-system, system-ui, ui-sans-serif, sans-serif`);
-        }
+        const fonts = Object.entries({
+          'fontUI': '"%fontName%", -apple-system, system-ui, ui-sans-serif, sans-serif',
+          'fontCode': '"%fontName%", monospace'
+        });
+        for (const [paramName, fontTemplate] of fonts) {
+          const font = params.get(paramName);
+          if (font) {
+            docStyle.setProperty(
+              `--main-${paramName.toLowerCase()}`,
+              fontTemplate.replace('%fontName%', font.replaceAll('"', '\''))
+            );
+          }
+        };
       })();
 
       //
