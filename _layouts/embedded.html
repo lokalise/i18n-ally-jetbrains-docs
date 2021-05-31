@@ -13,10 +13,11 @@
       // Build a bridge with Intelij native code (should be calles as early as possible)
       //
       window.runEvent = function (event, url = '') {
-        if (typeof window.runIntelijEvent === "function") { 
-          window.runIntelijEvent(event, url);
+        const eventParams = { event, url };
+        if (typeof window.runIntelijEvent === "function") {
+          window.runIntelijEvent(eventParams);
         } else {
-          console.log('runEvent (no Intelij bridge available)', event, url)
+          console.log('runEvent (no Intelij bridge available)', eventParams);
         }
       }
 
