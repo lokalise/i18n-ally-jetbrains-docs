@@ -13,7 +13,7 @@
       // Build a bridge with Intelij native code (should be calles as early as possible)
       //
       window.runEvent = function (event, url = '') {
-        const eventParams = { event, url };
+        const eventParams = JSON.stringify({ event, url });
         if (typeof window.runIntelijEvent === "function") {
           window.runIntelijEvent(eventParams);
         } else {
