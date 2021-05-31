@@ -68,82 +68,81 @@
             Or review <button class="project-setup-review-config-btn">project configuration</button>
         </div>
     </div>
+    <script>
+        (function() {
+            const params = (new URL(document.location)).searchParams;
+            const statusHash = {
+                actionable: '',
+                done: 'checklist-item--done',
+                hidden: 'checklist-item--hidden',
+                disabled: 'checklist-item--disabled'
+            };
+            const state = {
+                'title': '',
+                'checklist-item__open-project-js': '',
+                'checklist-item__config-lang-files-js': '',
+                'checklist-item__config-sources-js': '',
+                'checklist-item__run-inspections-js': '',
+                'project-setup-review-config-js': '',
+            }
+    
+            //
+            // Determine current state
+            //
+            if (params.get('projectOpened') != 'true') {
+                // No project opened
+                state['title'] = 'Get started with your project';
+                state['checklist-item__open-project-js'] = statusHash.actionable;
+                state['checklist-item__config-lang-files-js'] = statusHash.disabled;
+                state['checklist-item__config-sources-js'] = statusHash.disabled;
+                state['checklist-item__run-inspections-js'] = statusHash.disabled;
+                state['project-setup-review-config-js'] = statusHash.hidden;
+            } else if (params.get('profileConfigured') != 'true') {
+                // Project opened but not configured
+                state['title'] = 'Set up your project files to get started';
+                state['checklist-item__open-project-js'] = statusHash.hidden;
+                state['checklist-item__config-lang-files-js'] = statusHash.actionable;
+                state['checklist-item__config-sources-js'] = statusHash.disabled;
+                state['checklist-item__run-inspections-js'] = statusHash.disabled;
+                state['project-setup-review-config-js'] = statusHash.hidden;
+            } else {
+                // Project opened and configured
+                state['title'] = 'All done, you’re ready to start!';
+                state['checklist-item__open-project-js'] = statusHash.hidden;
+                state['checklist-item__config-lang-files-js'] = statusHash.done;
+                state['checklist-item__config-sources-js'] = statusHash.done;
+                state['checklist-item__run-inspections-js'] = statusHash.actionable;
+                state['project-setup-review-config-js'] = statusHash.actionable;
+            }
+    
+            //
+            // Apply state to DOM
+            //
+            const statuses = Object.values(statusHash).filter(status => status);
+            for (const [itemId, status] of Object.entries(state)) {
+                if (itemId == 'title') {
+                    const titleEl = document.getElementById('project-setup-title-js');
+                    titleEl.textContent = status;
+                    continue;
+                }
+    
+                const itemClassList = document.getElementById(itemId).classList;
+                itemClassList.remove(...statuses);
+    
+                if (status) {
+                    itemClassList.add(status);
+                }
+            }
+    
+            //
+            // Setup click event listeners
+            //
+            const buttons = document.querySelectorAll('.checklist-item-status__btn, .project-setup-review-config-btn');
+            for (let ii = 0; ii < buttons.length; ++ii) {
+                buttons[ii].addEventListener('click', event => {
+                    console.log('Click', buttons[ii].textContent.trim());
+                });
+            }
+        })();
+    </script>
 </section>
-
-<script>
-    (function() {
-        const params = (new URL(document.location)).searchParams;
-        const statusHash = {
-            actionable: '',
-            done: 'checklist-item--done',
-            hidden: 'checklist-item--hidden',
-            disabled: 'checklist-item--disabled'
-        };
-        const state = {
-            'title': '',
-            'checklist-item__open-project-js': '',
-            'checklist-item__config-lang-files-js': '',
-            'checklist-item__config-sources-js': '',
-            'checklist-item__run-inspections-js': '',
-            'project-setup-review-config-js': '',
-        }
-
-        //
-        // Determine current state
-        //
-        if (params.get('projectOpened') != 'true') {
-            // No project opened
-            state['title'] = 'Get started with your project';
-            state['checklist-item__open-project-js'] = statusHash.actionable;
-            state['checklist-item__config-lang-files-js'] = statusHash.disabled;
-            state['checklist-item__config-sources-js'] = statusHash.disabled;
-            state['checklist-item__run-inspections-js'] = statusHash.disabled;
-            state['project-setup-review-config-js'] = statusHash.hidden;
-        } else if (params.get('profileConfigured') != 'true') {
-            // Project opened but not configured
-            state['title'] = 'Set up your project files to get started';
-            state['checklist-item__open-project-js'] = statusHash.hidden;
-            state['checklist-item__config-lang-files-js'] = statusHash.actionable;
-            state['checklist-item__config-sources-js'] = statusHash.disabled;
-            state['checklist-item__run-inspections-js'] = statusHash.disabled;
-            state['project-setup-review-config-js'] = statusHash.hidden;
-        } else {
-            // Project opened and configured
-            state['title'] = 'All done, you’re ready to start!';
-            state['checklist-item__open-project-js'] = statusHash.hidden;
-            state['checklist-item__config-lang-files-js'] = statusHash.done;
-            state['checklist-item__config-sources-js'] = statusHash.done;
-            state['checklist-item__run-inspections-js'] = statusHash.actionable;
-            state['project-setup-review-config-js'] = statusHash.actionable;
-        }
-
-        //
-        // Apply state to DOM
-        //
-        const statuses = Object.values(statusHash).filter(status => status);
-        for (const [itemId, status] of Object.entries(state)) {
-            if (itemId == 'title') {
-                const titleEl = document.getElementById('project-setup-title-js');
-                titleEl.textContent = status;
-                continue;
-            }
-
-            const itemClassList = document.getElementById(itemId).classList;
-            itemClassList.remove(...statuses);
-
-            if (status) {
-                itemClassList.add(status);
-            }
-        }
-
-        //
-        // Setup click event listeners
-        //
-        const buttons = document.querySelectorAll('.checklist-item-status__btn, .project-setup-review-config-btn');
-        for (let ii = 0; ii < buttons.length; ++ii) {
-            buttons[ii].addEventListener('click', event => {
-                console.log('Click', buttons[ii].textContent.trim());
-            });
-        }
-    })();
-</script>
