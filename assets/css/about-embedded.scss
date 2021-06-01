@@ -43,6 +43,7 @@
 
 @import "about-embedded/hero.scss";
 @import "about-embedded/sandbox-cta.scss";
+@import "about-embedded/features.scss";
 @import "about-embedded/project-setup.scss";
 @import "about-embedded/footer.scss";
 
@@ -62,7 +63,7 @@ body {
 }
  
 html::-webkit-scrollbar {
-    width: 10px; 
+    width: 8px; 
  }
 
 html::-webkit-scrollbar-track {
@@ -71,7 +72,7 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb {
   background-color: var(--main-scroll-color);
-  border-radius: 25px;
+  border-radius: 8px;
 }
 
 * {
@@ -111,14 +112,15 @@ pre {
 }
 
 .section {
+    min-width: 599px;
     padding: 0 1.84rem 3.07rem;
 }
 
 .container {
-  max-width: 700px;
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom:  3.07rem;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom:  3.07rem;
 }
 
 .container-border-bottom {
