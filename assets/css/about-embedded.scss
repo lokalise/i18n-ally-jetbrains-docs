@@ -16,16 +16,14 @@
 }
 
 @mixin block_subtitle {
-    opacity: 0.75;
-    text-transform: uppercase;
     margin-bottom: 1.25rem;
 }
 
 @mixin block_title {
-    font-size: 2rem;
-    line-height: 2.3rem;
-    font-weight: 600;
-    margin-bottom: 0;
+    font-size: 1.38rem;
+    line-height: 1.84rem;
+    font-weight: normal;
+    margin: 0;
 }
 
 @mixin svg-icon($name, $icon-size: 1.5em) {
@@ -123,3 +121,6 @@ pre {
 .container-border-bottom {
     border-bottom: 1px solid rgba($color: #888888, $alpha: 0.25);
 }
+
+video::-webkit-media-controls-volume-slider {  display: none; }
+video::-webkit-media-controls-mute-button {  display: none; }

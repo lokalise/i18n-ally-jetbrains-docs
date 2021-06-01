@@ -1,162 +1,40 @@
 <section class="section">
-    <div class="container">
-        <p class="project-setup-subtitle">Project setup</p>
-        <h2 id="project-setup-title-js" class="project-setup-title">All done, you’re ready to start!</h2>
+    <div class="container container-border-bottom">
+        
+        <h2 id="project-setup-title-js" class="project-setup-title">Set up your project</h2>
+        <p class="project-setup-subtitle">No more copy-pasting or ad-hoc regexes</p>
 
-        <div class="checklist">
-            <div id="checklist-item__open-project-js" class="checklist-item checklist-item--hidden">
-                <div class="checklist-item-container">
-                    <h3 class="checklist-iten__title">Open project</h3>
-                    <p class="checklist-item__desc">
-                        Open project that has supported technologies, sources, language files, and a function to retrieve translation strings.
-                    </p>
-                </div>
-                <div class="checklist-item-status">
-                    <button class="checklist-item-status__btn">
-                        Open project
-                    </button>
-                </div>
+        <div class="step">
+            <div class="step-text">
+                <p class="step-subtitle">Step 1</p>
+                <h3 class="step-title">Configure file project</h3>
+                <p class="step-desc">Go to i18n plugin Project configurations > Add setting profile > Select language files properties.</p>
             </div>
-            <div id="checklist-item__config-lang-files-js" class="checklist-item checklist-item--done">
-                <div class="checklist-item-container">
-                    <h3 class="checklist-iten__title">Point to directory with language files</h3>
-                    <p class="checklist-item__desc">
-                        Go to i18n plugin Project configurations > Add setting profile > Select language files properties.
-                    </p>
-                </div>
-                <div class="checklist-item-status">
-                    <span class="checklist-item-status__done">
-                        Auto-configured
-                    </span>
-                    <button class="checklist-item-status__btn">
-                        Configure
-                    </button>
-                </div>
-            </div>
-            <div id="checklist-item__config-sources-js" class="checklist-item checklist-item--done">
-                <div class="checklist-item-container">
-                    <h3 class="checklist-iten__title">Configure source files for i18n</h3>
-                    <p class="checklist-item__desc">
-                        Go to i18n plugin Project configurations > Select setting profile > Add source files.
-                    </p>
-                </div>
-                <div class="checklist-item-status">
-                    <span class="checklist-item-status__done">
-                        Auto-configured
-                    </span>
-                    <button class="checklist-item-status__btn">
-                        Configure
-                    </button>
-                </div>
-            </div>
-            <div id="checklist-item__run-inspections-js" class="checklist-item">
-                <div class="checklist-item-container">
-                    <h3 class="checklist-iten__title">Scan for hardcoded strings</h3>
-                    <p class="checklist-item__desc">
-                        Your project was automatically configured. Run inspection to find and extract hard-coded strings.
-                    </p>
-                </div>
-                <div class="checklist-item-status">
-                    <button class="checklist-item-status__btn">
-                        Run inspections
-                    </button>
-                </div>
-            </div>
+            <video class="step-video" name="media" controls disablepictureinpicture controlsList="nodownload">
+                <source src="/assets/about-embedded/project-setup-01-configure.webm" type="video/webm">
+            </video>
         </div>
-
-        <div id="project-setup-review-config-js">
-            Or review <button class="project-setup-review-config-btn">project configuration</button>
+        <div class="step">
+            <div class="step-text">
+                <p class="step-subtitle">Step 2</p>
+                <h3 class="step-title">Find hardcoded strings</h3>
+                <p class="step-desc">Main menu, select Tools and select “Run i18n Ally inspections” to find and extract hardcoded strings.</p>
+            </div>
+            <video class="step-video" name="media" controls disablepictureinpicture controlsList="nodownload">
+                <source src="/assets/about-embedded/project-setup-01-configure.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="step">
+            <div class="step-text">
+                <p class="step-subtitle">Step 3</p>
+                <h3 class="step-title">Extract strings</h3>
+                <p class="step-desc">In inspection results window, extract strings one by one, the whole file or folder with one button click.</p>
+            </div>
+            <video class="step-video" name="media" controls disablepictureinpicture controlsList="nodownload">
+                <source src="/assets/about-embedded/project-setup-01-configure.webm" type="video/webm">
+            </video>
         </div>
     </div>
-    <script>
-        (function() {
-            const params = (new URL(document.location)).searchParams;
-            const statusHash = {
-                actionable: '',
-                done: 'checklist-item--done',
-                hidden: 'checklist-item--hidden',
-                disabled: 'checklist-item--disabled'
-            };
-            const state = {
-                'title': '',
-                'checklist-item__open-project-js': '',
-                'checklist-item__config-lang-files-js': '',
-                'checklist-item__config-sources-js': '',
-                'checklist-item__run-inspections-js': '',
-                'project-setup-review-config-js': '',
-            }
-    
-            //
-            // Determine current state
-            //
-            if (params.get('projectOpened') != 'true') {
-                // No project opened
-                state['title'] = 'Get started with your project';
-                state['checklist-item__open-project-js'] = statusHash.actionable;
-                state['checklist-item__config-lang-files-js'] = statusHash.disabled;
-                state['checklist-item__config-sources-js'] = statusHash.disabled;
-                state['checklist-item__run-inspections-js'] = statusHash.disabled;
-                state['project-setup-review-config-js'] = statusHash.hidden;
-            } else if (params.get('profileConfigured') != 'true') {
-                // Project opened but not configured
-                state['title'] = 'Set up your project files to get started';
-                state['checklist-item__open-project-js'] = statusHash.hidden;
-                state['checklist-item__config-lang-files-js'] = statusHash.actionable;
-                state['checklist-item__config-sources-js'] = statusHash.disabled;
-                state['checklist-item__run-inspections-js'] = statusHash.disabled;
-                state['project-setup-review-config-js'] = statusHash.hidden;
-            } else {
-                // Project opened and configured
-                state['title'] = 'All done, you’re ready to start!';
-                state['checklist-item__open-project-js'] = statusHash.hidden;
-                state['checklist-item__config-lang-files-js'] = statusHash.done;
-                state['checklist-item__config-sources-js'] = statusHash.done;
-                state['checklist-item__run-inspections-js'] = statusHash.actionable;
-                state['project-setup-review-config-js'] = statusHash.actionable;
-            }
-    
-            //
-            // Apply state to DOM
-            //
-            const statuses = Object.values(statusHash).filter(status => status);
-            for (const [itemId, status] of Object.entries(state)) {
-                if (itemId == 'title') {
-                    const titleEl = document.getElementById('project-setup-title-js');
-                    titleEl.textContent = status;
-                    continue;
-                }
-    
-                const itemClassList = document.getElementById(itemId).classList;
-                itemClassList.remove(...statuses);
-    
-                if (status) {
-                    itemClassList.add(status);
-                }
-            }
-    
-            //
-            // Setup click event listeners
-            //
-            document.querySelector('#checklist-item__open-project-js .checklist-item-status__btn').addEventListener('click', function (event) {
-                window.runEvent('openProject');
-            });
-
-            document.querySelector('#checklist-item__run-inspections-js .checklist-item-status__btn').addEventListener('click', function (event) {
-                window.runEvent('runAllyInspections');
-            });
-
-            const openSettingsselector = [
-                '#checklist-item__config-lang-files-js .checklist-item-status__btn',
-                '#checklist-item__config-sources-js .checklist-item-status__btn',
-                '#project-setup-review-config-js .project-setup-review-config-btn',
-            ].join(', ');            
-            document.querySelectorAll(openSettingsselector).forEach(btnEl => {
-                btnEl.addEventListener('click', function (event) {
-                    window.runEvent('openProjectAllySettings');
-                });
-            });
-        })();
-    </script>
 </section>
 
 <!-- Test video playback in JCEF -->
