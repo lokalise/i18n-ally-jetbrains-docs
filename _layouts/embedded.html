@@ -43,7 +43,7 @@
         const params = (new URL(document.location)).searchParams;
         const docStyle = document.documentElement.style;
 
-        ['bgHex', 'textHex', 'linkHex', 'btnHex', 'scrollHex'].forEach(function(paramName) {
+        ['bgHex', 'textHex', 'linkHex', 'btnHex', 'scrollHex', 'bg', 'text', 'link', 'btn', 'scroll'].forEach(function(paramName) {
           const paramValue = params.get(paramName);
           if (paramValue && paramValue.length == 6 && !isNaN(Number('0x' + paramValue))) {
             docStyle.setProperty(`--main-${paramName.replace('Hex', '')}-color`, '#' + params.get(paramName));
