@@ -1,14 +1,14 @@
 <section class="section">
     <div class="container">
+        <h2 class="footer-setup-title">Explore documentation</h2>
+
         <div class="footer-links">
             {% assign columnsLast = site.data.sidebar_items | first %}
             {% assign columns = site.data.sidebar_items | shift | push: columnsLast %}
             {% for item in columns %}
                 <div>
                     <h3 class="footer-column__title">
-                        <a href="{{ site.baseurl }}/{{ item.path }}">
-                            {{ item.title }}
-                        </a>
+                        {{ item.title }}
                     </h2>
                     {% if item.sub_paths %}
                         <ul class="footer-link__list">
@@ -31,10 +31,6 @@
                 <img src="{{ site.baseurl }}/assets/lokalise-logo-for-universal-bg.svg" 
                     alt="Logo: {{ site.title | default: site.github.repository_name }}"
                     class="footer-maintainer-logo" />
-            </a><br>
-            <a href="https://lokalise.com/product/for-developers?utm_source=docs&utm_campaign=i18nally-jetbrains&utm_medium=footer">
-                Developer-centric translation<br>
-                management system
             </a>
         </div>
     </div>

@@ -1,3 +1,8 @@
+.footer-setup-title {
+    @include block_title;
+    margin-bottom: 2.46rem;
+}
+
 .footer-links {
     opacity: 0.75;
     display: flex;
@@ -5,12 +10,13 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 0px;
+    margin-bottom: 7.38rem;
 }
 
 .footer-column__title {
+    font-weight: normal;
     font-size: 1rem;
-    margin-top: 0;
-    margin-bottom: 1.25rem;
+    margin: 0 0 1.23rem;
 }
 
 .footer-link__list {
@@ -23,13 +29,8 @@
     padding-bottom: 1rem;
 }
 
-.footer-maintainer {
-    margin-top: 3rem;
-    margin-bottom: 5rem;
-    text-align: center;
-}
-
 .footer-maintainer-logo {
     width: 132px;
     height: auto;
+    margin-top: 1rem;
 }

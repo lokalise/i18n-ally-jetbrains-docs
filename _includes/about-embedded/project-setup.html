@@ -1,7 +1,7 @@
 <section class="section">
     <div class="container container-border-bottom">
         
-        <h2 id="project-setup-title-js" class="project-setup-title">Set up your project</h2>
+        <h2 class="project-setup-title">Set up your project</h2>
         <p class="project-setup-subtitle">No more copy-pasting or ad-hoc regexes</p>
 
         <div class="step">
@@ -36,23 +36,3 @@
         </div>
     </div>
 </section>
-
-<!-- Test video playback in JCEF -->
-<template id="project-setup-video-test-js">
-    <style>
-        video::-webkit-media-controls-volume-slider {  display: none; }
-        video::-webkit-media-controls-mute-button {  display: none; }
-      </style>
-      <video name="media" controls disablepictureinpicture>
-        <source src="/assets/about-embedded/project-setup-01-configure.webm" type="video/webm">
-      </video>
-</template>
-<script>
-    (function () {
-        const params = (new URL(document.location)).searchParams;
-        if (params.get('env') != 'dev') return;
-
-        const video = document.getElementById('project-setup-video-test-js').content.cloneNode(true);
-        document.getElementById('project-setup-title-js').append(video);
-    })();
-</script>
