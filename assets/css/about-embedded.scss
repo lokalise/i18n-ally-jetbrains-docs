@@ -6,13 +6,13 @@
     --main-text-color: #BBBBBB;
     --main-link-color: #589CF4;
     --main-btn-color: #365880;
-    --main-scroll-color: rgba(#888888, 0.25);
+    --main-scroll-color: rgba(136, 136, 136, 0.25);
     --main-fontui: -apple-system, system-ui, ui-sans-serif, sans-serif;
     --main-fontcode: monospace;
 }
 
 @mixin placeholder-bg {
-    background-color: rgba($color: #888888, $alpha: 0.25);
+    background-color: rgba(136, 136, 136, 0.25);
 }
 
 @mixin block_subtitle {
