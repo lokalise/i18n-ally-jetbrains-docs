@@ -5,9 +5,10 @@
     --main-bg-color: #2A2C2E;
     --main-text-color: rgb(187, 187, 187);
     --secondary-text-color: rgba(187, 187, 187, 0.72) ;
+    --secondary-divider-color: rgba(187, 187, 187, 0.16);
     --main-link-color: #589CF4;
     --main-btn-color: #365880;
-    --main-scroll-color: rgba(136, 136, 136, 0.25);
+    --main-scroll-color: var(--secondary-divider-color);
     --main-fontui: -apple-system, system-ui, ui-sans-serif, sans-serif;
     --main-fontcode: monospace;
 }
@@ -121,7 +122,7 @@ pre {
 }
 
 .container-border-bottom {
-    border-bottom: 1px solid rgba($color: #888888, $alpha: 0.25);
+    border-bottom: 1px solid var(--secondary-divider-color);
 }
 
 video::-webkit-media-controls-volume-slider {  display: none; }

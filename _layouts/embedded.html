@@ -62,7 +62,9 @@
 
         const mainTextColor = docStyle.getPropertyValue('--main-text-color');
         if (mainTextColor && mainTextColor.startsWith('rgb(')) {
-          docStyle.setProperty('--secondary-text-color', mainTextColor.replace(')', ', 0.72)').replace('rgb', 'rgba'));
+          const colorRgbaTemplate = mainTextColor.replace(')', ', %opacity%)').replace('rgb', 'rgba');
+          docStyle.setProperty('--secondary-text-color', colorRgbaTemplate.replace('%opacity%', 0.72));
+          docStyle.setProperty('--secondary-divider-color', colorRgbaTemplate.replace('%opacity%', 0.16));
         }
 
         function filterColor(colorStringUnsafe) {
