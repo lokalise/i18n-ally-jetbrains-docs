@@ -4,7 +4,6 @@
 }
 
 .footer-links {
-    opacity: 0.75;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -27,6 +26,10 @@
 
 .footer-link__item {
     padding-bottom: 1rem;
+
+    & > a {
+        opacity: 0.72;
+    }
 }
 
 .footer-maintainer-logo {

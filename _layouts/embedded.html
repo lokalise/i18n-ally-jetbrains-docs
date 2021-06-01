@@ -60,6 +60,11 @@
           }
         });
 
+        const mainTextColor = docStyle.getPropertyValue('--main-text-color');
+        if (mainTextColor && mainTextColor.startsWith('rgb(')) {
+          docStyle.setProperty('--secondary-text-color', mainTextColor.replace(')', ', 0.72)').replace('rgb', 'rgba'));
+        }
+
         function filterColor(colorStringUnsafe) {
           const el = document.createElement('div');
           el.style.backgroundColor = colorStringUnsafe;

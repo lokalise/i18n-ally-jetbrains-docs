@@ -3,7 +3,8 @@
 
 :root {
     --main-bg-color: #2A2C2E;
-    --main-text-color: #BBBBBB;
+    --main-text-color: rgb(187, 187, 187);
+    --secondary-text-color: rgba(187, 187, 187, 0.72) ;
     --main-link-color: #589CF4;
     --main-btn-color: #365880;
     --main-scroll-color: rgba(136, 136, 136, 0.25);
@@ -20,6 +21,7 @@
 }
 
 @mixin block_title {
+    color: var(--main-text-color);
     font-size: 1.38rem;
     line-height: 1.84rem;
     font-weight: normal;
@@ -50,7 +52,7 @@ html {
 body {
     margin: 0;
 
-    color: var(--main-text-color);
+    color: var(--secondary-text-color);
     background-color: var(--main-bg-color);
 
     font: 400 13px/18px var(--main-fontui);

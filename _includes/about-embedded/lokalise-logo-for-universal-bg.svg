@@ -6,7 +6,7 @@
 	.st0{fill:#FF6336;}
 	.st1{fill:#FFC501;}
 	.st2{fill:#A4A14A;}
-	.st3{fill: var(--main-text-color);}
+	.st3{fill: var(--secondary-text-color);}
 </style>
 <g>
 	<polygon class="st0" points="393.5,468.8 524.7,468.8 524.7,376.1 355.1,376.1 262.3,468.8 169.6,376.1 0,376.1 0,468.8 
