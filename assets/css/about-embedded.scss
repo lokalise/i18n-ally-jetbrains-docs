@@ -55,7 +55,7 @@ body {
     color: var(--main-text-color);
     background-color: var(--main-bg-color);
 
-    font: 400 13px/20px var(--main-fontui);
+    font: 400 13px/18px var(--main-fontui);
 
     -webkit-font-smoothing: antialiased;
 }
@@ -105,15 +105,21 @@ pre {
 }
 
 .wrapper {
+    padding-top: 1.84rem;
     width: 100%;
 }
 
 .section {
-    padding: 2rem;
+    padding: 0 1.84rem 3.07rem;
 }
 
 .container {
-  max-width: 650px;
+  max-width: 700px;
   width: 100%;
   margin: 0 auto;
+  padding-bottom:  3.07rem;
+}
+
+.container-border-bottom {
+    border-bottom: 1px solid rgba($color: #888888, $alpha: 0.25);
 }

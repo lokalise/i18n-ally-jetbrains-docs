@@ -1,28 +1,32 @@
-.hero {
-    text-align: center;
-}
-
-.hero-logo {
-    width: 160px;
-    height: auto;
-}
-
-.hero-tagline {
-    opacity: 0.75;
-    max-width: 400px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.hero-links {
-    max-width: 400px;
-    width: 100%;
-    margin: 2rem auto 0;
+.hero-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 2.61rem;
 }
 
-.hero-link {
-    font-size: 1.15rem;
+.hero-logo {
+    width: 108px;
+    height: auto;
+}
+
+.hero-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.hero-link-item {
+    margin-left: 0.61rem;
+}
+
+.hero-title {
+    font-size: 1.61rem;
+    line-height: 2.61rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+.hero-tagline {
+    margin: 0;
 }
