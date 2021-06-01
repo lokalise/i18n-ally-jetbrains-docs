@@ -37,19 +37,38 @@
       });
 
       //
-      // Apply colors received from GET params
+      // Apply styles received from GET params
       //
       (function applyStylesFromParamaters() {
         const params = (new URL(document.location)).searchParams;
         const docStyle = document.documentElement.style;
 
+        //
+        // Colors
+        //
         ['bgHex', 'textHex', 'linkHex', 'btnHex', 'scrollHex', 'bg', 'text', 'link', 'btn', 'scroll'].forEach(function(paramName) {
-          const paramValue = params.get(paramName);
-          if (paramValue && paramValue.length == 6 && !isNaN(Number('0x' + paramValue))) {
-            docStyle.setProperty(`--main-${paramName.replace('Hex', '')}-color`, '#' + params.get(paramName));
+          const color = filterColor('#' + params.get(paramName));
+          if (color) {
+            docStyle.setProperty(`--main-${paramName.replace('Hex', '')}-color`, color);
           }
         });
 
+        ['bgRgba', 'textRgba', 'linkRgba', 'btnRgba', 'scrollRgba'].forEach(function(paramName) {
+          const color = filterColor(`rgba(${params.get(paramName)})`);
+          if (color) {
+            docStyle.setProperty(`--main-${paramName.replace('Rgba', '')}-color`, color);
+          }
+        });
+
+        function filterColor(colorStringUnsafe) {
+          const el = document.createElement('div');
+          el.style.backgroundColor = colorStringUnsafe;
+          return el.style.backgroundColor;
+        };
+
+        //
+        // Fonts
+        //
         const fonts = Object.entries({
           'fontUI': '"%fontName%", -apple-system, system-ui, ui-sans-serif, sans-serif',
           'fontCode': '"%fontName%", monospace'
