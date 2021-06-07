@@ -18,7 +18,6 @@ configuration:
   title: Plug and play configuration
   items:
   - laravel.svg
-  - yii.svg
   - symfony.svg
 supports:
   title: Supports custom PHP projects
