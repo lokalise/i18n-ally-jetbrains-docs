@@ -10,33 +10,6 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/{{ "assets/css/about-embedded.css?v=" | append: site.github.build_revision }}">
     <script>
       //
-      // Build a bridge with Intelij native code (should be calles as early as possible)
-      //
-      window.runEvent = function (event, url = '') {
-        const eventParams = JSON.stringify({ event, url });
-        if (typeof window.runIntelijEvent === "function") {
-          window.runIntelijEvent(eventParams);
-        } else {
-          console.log('runEvent (no Intelij bridge available)', eventParams);
-        }
-      }
-
-      window.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('a');
-        for (let ii = 0; ii < links.length; ++ii) {
-          links[ii].addEventListener('click', function (event) {
-            event.preventDefault();
-
-            if (links[ii].href && links[ii].href.length > 1) {
-              window.runEvent('openLinkInExternalBrowser', links[ii].href);
-            }
-
-            return false;
-          });
-        }
-      });
-
-      //
       // Apply styles received from GET params
       //
       (function applyStylesFromParamaters() {
