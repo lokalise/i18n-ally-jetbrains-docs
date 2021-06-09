@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: i18n Ally JetBrains plugin
+title: "i18n Ally JetBrains plugin"
 email: alexander.terehov@lokalise.com
 description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -40,3 +40,10 @@ sass:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      title: "i18n Ally JetBrains plugin"
