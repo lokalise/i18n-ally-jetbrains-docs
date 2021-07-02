@@ -5,11 +5,12 @@ navigation:
   url: /documentation
 hero:
   title: A free plugin for PHP internationalization
-  subtitle: i18n Ally is a PhpStorm plugin that automatically extracts hardcoded strings
-    – no more copy-pasting or ad-hoc regexes.
+  subtitle: i18n ally is a PhpStorm plugin that makes internationalization easy. Skip
+    copy-pasting and ad-hoc regexes, leverage automatic string extraction, and save
+    time for things that matter.
   button: Download will be available on June, 2021
   footnote: It's <strong>free to use</strong>
-  why_title: Why now?
+  why_title: Why install now?
   why_text: We are managing a beta program with a limited number of participants.
     By entering this restricted group, you will enjoy one-on-one support to configure
     the plugin, and your feedback will help build and improve the plugin to solve
