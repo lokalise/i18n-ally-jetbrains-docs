@@ -6,6 +6,8 @@ layout: docs
 
 {{ page.url }}
 
+## Single file vs Namespaced translation storage
+
 ## Placeholder formats
 
 ## Key naming pattern
