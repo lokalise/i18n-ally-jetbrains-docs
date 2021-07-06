@@ -21,6 +21,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "assets/i18n_ally_logo.svg"
 twitter_username: lokalise
 github_username: lokalise
+heap_app_id: 2686949184
 
 # Build settings
 markdown: kramdown
