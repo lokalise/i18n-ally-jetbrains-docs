@@ -19,12 +19,11 @@ some_key:
 multiline: |
     'An explicitly multiline strings
     will be extracted like this.'
-  
 {% endhighlight %}
 
 ## Indentation
 
-Configure formatting at the IDE level in <a href="phpstorm://settings?name=Editor--Code+Style--JSON">Preferences | Editor | Code Style | JSON</a>.
+Configure formatting at the IDE level in <a href="phpstorm://settings?name=Editor--Code+Style--YAML">Preferences | Editor | Code Style | YAML</a>.
 
 ## Unsupported formats
 
