@@ -64,7 +64,7 @@ Request support for your use case at <a href="mailto:i18n-ally@lokalise.com">i18
     ...
     <group merged-trans="yes">
         <trans-unit id="t1">
-            <source>Key within group would not be recognized</source>
+            <source>Key within group would NOT be recognized</source>
             <target equiv-trans="no">Grouped units are NOT supported</target>
         </trans-unit>
         <trans-unit id="t2">
