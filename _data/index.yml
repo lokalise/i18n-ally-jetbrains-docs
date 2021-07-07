@@ -8,7 +8,7 @@ hero:
   subtitle: i18n ally is a PhpStorm plugin that makes internationalization easy. Skip
     copy-pasting and ad-hoc regexes, leverage automatic string extraction, and save
     time for things that matter.
-  button: Download will be available on June, 2021
+  button: Install from JetBrains Marketplace
   footnote: It's <strong>free to use</strong>
   why_title: Why install now?
   why_text: We are managing a beta program with a limited number of participants.
