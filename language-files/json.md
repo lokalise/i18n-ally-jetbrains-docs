@@ -8,14 +8,17 @@ layout: docs
 
 {% highlight json %}
 {
-    "key": "value",
-    "other_key": "value",
+    "key": "Value",
+    "another_key": "Another value",
     ...
-    "extracted": "Extracted string will be added like this"
+    "extracted": "Extracted string will be added like this",
+    ...
+    "multiline": "An explicitly multiline strings\nwill be extracted like this."
+
 }
 {% endhighlight %}
 
-## Formatting
+## Indentation
 
 Configure formatting at the IDE level in <a href="phpstorm://settings?name=Editor--Code+Style--JSON">Preferences | Editor | Code Style | JSON</a>.
 
