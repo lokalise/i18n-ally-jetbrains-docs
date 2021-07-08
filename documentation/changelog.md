@@ -13,6 +13,7 @@ Features:
 - Extract hardcoded strings in bulk or from the editor with Quick fixes (Alt+Enter).
 - Jump from the source code to the language file to update strings (Ctrl+Click on key).
 - Rename keys and params from source code (Context menu → Refactor → Rename).
+- Ignore a string in all sources and ignore a function/argument/array key value in PHP source.
 
 Supports:
 - PHP, HTML with PHP, Blade and Twig source files.
