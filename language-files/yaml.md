@@ -50,7 +50,7 @@ translations:
 
 {% highlight yaml %}
 other_key:
-    translation: 'JSON with complex structure per key are NOT supported'
+    translation: 'Complex structure per key is NOT supported'
     notes: ''
 {% endhighlight %}
 

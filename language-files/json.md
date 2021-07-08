@@ -64,7 +64,7 @@ Request support at <a href="mailto:i18n-ally@lokalise.com">i18n-ally@lokalise.co
 {% highlight json %}
 {
     "other_key": {
-        "translation": "JSON with complex structure per key are NOT supported",
+        "translation": "Complex structure per key is NOT supported",
         "notes": ""
     }
 }
