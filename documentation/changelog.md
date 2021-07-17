@@ -4,6 +4,20 @@ layout: docs
 
 # Changelog
 
+## v1.0.5 (2021-07-16)
+
+Features:
+- Localization hints introduced: see an actual user-facing text instead of translation keys in source code.
+
+Experience improvements:
+- Open a sandbox project to try plugin out from Preferences → i18n Ally → Open sandbox.
+- Warn developers via popup when they run scanning on the project without configuration.
+
+Plug and play configuration improvements:
+- Introduced automatic configuration for Yii apps similar to the official templates.
+- Improved automatic configuration for Symfony with added support for `framework.translator.paths` configuration param: now multiple translation directories would be added by plugin itself.
+- Plugin would try detect whether key nesting is needed for the particular project.
+
 ## v1.0.4 (2021-07-07)
 
 First public release! 🚀
