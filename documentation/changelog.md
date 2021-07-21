@@ -4,6 +4,18 @@ layout: docs
 
 # Changelog
 
+## v1.0.6 (2021-07-21)
+
+Features:
+- Changes in language files are instantly reflected in source code
+
+Bugfixes:
+- Fix an exception thrown when opening PHP files with a disabled Blade plugin
+- Fix “Project is already disposed” exception which sometimes occurred after closing a project
+- Fix exception in plug and play configuration for Yii projects with multiple translation folders
+- When “Apply” button that keeps to be active after click
+
+
 ## v1.0.5 (2021-07-16)
 
 Features:
@@ -17,6 +29,7 @@ Plug and play configuration improvements:
 - Introduced automatic configuration for Yii apps similar to the official templates.
 - Improved automatic configuration for Symfony with added support for `framework.translator.paths` configuration param: now multiple translation directories would be added by plugin itself.
 - Plugin would try detect whether key nesting is needed for the particular project.
+
 
 ## v1.0.4 (2021-07-07)
 
