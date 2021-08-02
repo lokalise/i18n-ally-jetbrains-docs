@@ -1,3 +1,3 @@
-## Run locally
+## Run docs locally
 
-bundle exec jekyll serve --baseurl='' --config _config.yml,_config_dev.yml
+See `documentation/index.md` for details about running docs locally.

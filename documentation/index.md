@@ -45,5 +45,5 @@ Prerequsites: [Ruby v2.*](https://www.ruby-lang.org/en/documentation/installatio
 
 1. Clone the repo.
 2. Run `bundle install --path vendor/bundle`
-3. Run `bundle exec jekyll serve --baseurl=''`.
+3. Run `bundle exec jekyll serve --baseurl='' --config _config.yml,_config_dev.yml`.
 4. Navigate to `http://localhost:4000` and observe the docs.
