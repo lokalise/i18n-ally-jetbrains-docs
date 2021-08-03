@@ -40,10 +40,11 @@ key:
 ### Translations nested under some key are not supported
 
 {% highlight yaml %}
-some_metadata:
-    ...
+metadata:
+    non_translation_stuff_is_here: 000
 translations:
-    key: 'Key/values nested under some key are NOT supported'
+    key:
+        value: 'This is NOT supported, because we call it translations.key.value while the app would use just key.value’
 {% endhighlight %}
 
 ### Complex structures within a key are not supported
