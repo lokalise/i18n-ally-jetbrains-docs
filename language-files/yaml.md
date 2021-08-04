@@ -40,10 +40,11 @@ key:
 ### Translations nested under some key are not supported
 
 {% highlight yaml %}
-some_metadata:
-    ...
+metadata:
+    non_translation_key: true
 translations:
-    key: 'Key/values nested under some key are NOT supported'
+    key:
+        value: 'This is NOT supported, because i18n Ally calls it like `translations.key.value` while the app would use just `key.value`'
 {% endhighlight %}
 
 ### Complex structures within a key are not supported
