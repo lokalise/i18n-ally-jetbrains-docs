@@ -75,7 +75,10 @@ $latest = [
 ];
 {% endhighlight %}
 
-### Translations nested under some key are not supported
+### Translations nested after a different key are not supported
+
+Nested translations are **only** supported if they start from the **root**, in the sample below, the translations are 
+after a different key which is not supported.
 
 {% highlight php %}
 <?php

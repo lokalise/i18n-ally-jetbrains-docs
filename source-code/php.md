@@ -40,9 +40,9 @@ Map means an associative array that:
 
 Initial placeholder names are determined automatically based on a respective variable, constant, function, or method.
 
-### `%domain%`
+### `%namespace%`
 
-Domain (could be called a "namespace") usually means a part of language file path from where translations would be searched for. The default domain is usually `messages`, but could be changed by specifying different first domain in [the Symfony language file](/configure-language-files/symfony).
+Namespace (called 'domain' in Symfony) usually means a part of language file path from where translations would be searched for. The default namespace is usually `messages`, but could be changed by specifying different first namespace in [the Symfony language file](/configure-language-files/symfony).
 
 ## Supported language constructs
 
