@@ -44,10 +44,17 @@ after a different key which is not supported.
 
 {% highlight yaml %}
 metadata:
+<<<<<<< HEAD
 non_translation_stuff_is_here: 000
 translations:
 key:
 value: 'This is NOT supported, because we call it translations.key.value while the app would use just key.value’
+=======
+    non_translation_key: true
+translations:
+    key:
+        value: 'This is NOT supported, because i18n Ally calls it like `translations.key.value` while the app would use just `key.value`'
+>>>>>>> 26acf397d70bdec2bba293042034b488471e50e9
 {% endhighlight %}
 
 ### Complex structures within a key are not supported
