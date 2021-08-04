@@ -41,10 +41,10 @@ key:
 
 {% highlight yaml %}
 metadata:
-    non_translation_stuff_is_here: 000
+    non_translation_key: true
 translations:
     key:
-        value: 'This is NOT supported, because we call it translations.key.value while the app would use just key.value’
+        value: 'This is NOT supported, because i18n Ally calls it like `translations.key.value` while the app would use just `key.value`'
 {% endhighlight %}
 
 ### Complex structures within a key are not supported
