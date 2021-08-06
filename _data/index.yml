@@ -20,6 +20,9 @@ configuration:
   items:
   - laravel.svg
   - symfony.svg
+  - yii.svg
+  - codeigniter.svg
+  - zend.svg
 supports:
   title: Supports custom PHP projects
 ways:
