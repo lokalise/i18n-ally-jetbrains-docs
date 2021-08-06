@@ -46,8 +46,7 @@ after a different key which is not supported.
 metadata:
     non_translation_key: true
 translations:
-    key:
-        value: 'This is NOT supported, because i18n Ally calls it like `translations.key.value` while the app would use just `key.value`'
+    key: 'This is NOT supported, because i18n Ally calls it like `translations.key` while the app would use just `key`'
 {% endhighlight %}
 
 ### Complex structures within a key are not supported

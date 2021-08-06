@@ -84,11 +84,11 @@ after a different key which is not supported.
 <?php
 
 return [
-    'some_metadata' => [
-        ...
+    'metadata' => [
+        'non_translation_key' => true,
     ],
     'translations' => [
-        'key' => 'Key/values nested under some key are NOT supported',
+        'key' => 'This is NOT supported, because i18n Ally calls it like `translations.key` while the app would use just `key`',
     ],
 ];
 {% endhighlight %}
