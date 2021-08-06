@@ -54,7 +54,7 @@ translations:
 
 {% highlight yaml %}
 other_key:
-translation: 'Complex structure per key is NOT supported'
-notes: ''
+		translation: 'Complex structure per key is NOT supported'
+		notes: ''
 {% endhighlight %}
 
