@@ -4,6 +4,31 @@ layout: docs
 
 # Changelog
 
+## v1.0.7 (2021-08-03)
+
+Features:
+- Navigation from language files to sources
+
+Plug and play configuration improvements:
+- Introduced automatic configuration for CodeIgniter v3 and v4
+- Introduced automatic configuration for Zend/Laminas framework
+
+Experience improvements:
+- Added support for the PhpStorm v2021.2.*
+- Show and store relative path to translation directory
+
+Bugfixes:
+- Unescaped blade expressions (`{!! !!}`) are recognized now
+- Support comments in the Blade expressions
+- Allow deleting config and undoing the deletion in one session
+- Missing key inspections was showing for an existing key when multiple profiles were configured on the same scope
+- Allow empty `target` element in XLIFF files
+- Plugin can run seamlessly with Twig plugin disabled in PhpStorm
+- Fixed IndexOutOfBoundsException when scaning PHP projects
+- Scope is not resetting to "Project files" when saving anymore
+- Example fields in source preferences are correctly reflecting source configuration now
+
+
 ## v1.0.6 (2021-07-21)
 
 Features:
