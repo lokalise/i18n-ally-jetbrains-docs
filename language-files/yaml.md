@@ -37,14 +37,16 @@ key:
     - 'Arrays are NOT supported'
 {% endhighlight %}
 
-### Translations nested under some key are not supported
+### Translations nested after a different key are not supported
+
+Nested translations are **only** supported if they start from the **root**, in the sample below, the translations are
+after a different key which is not supported.
 
 {% highlight yaml %}
 metadata:
     non_translation_key: true
 translations:
-    key:
-        value: 'This is NOT supported, because i18n Ally calls it like `translations.key.value` while the app would use just `key.value`'
+    key: 'This is NOT supported, because i18n Ally calls it like `translations.key` while the app would use just `key`'
 {% endhighlight %}
 
 ### Complex structures within a key are not supported

@@ -75,17 +75,20 @@ $latest = [
 ];
 {% endhighlight %}
 
-### Translations nested under some key are not supported
+### Translations nested after a different key are not supported
+
+Nested translations are **only** supported if they start from the **root**, in the sample below, the translations are 
+after a different key which is not supported.
 
 {% highlight php %}
 <?php
 
 return [
-    'some_metadata' => [
-        ...
+    'metadata' => [
+        'non_translation_key' => true,
     ],
     'translations' => [
-        'key' => 'Key/values nested under some key are NOT supported',
+        'key' => 'This is NOT supported, because i18n Ally calls it like `translations.key` while the app would use just `key`',
     ],
 ];
 {% endhighlight %}
