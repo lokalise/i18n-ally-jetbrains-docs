@@ -49,6 +49,9 @@ translations:
     key: 'This is NOT supported, because i18n Ally calls it like `translations.key` while the app would use just `key`'
 {% endhighlight %}
 
+It is still possible to extract strings into complex structures of YAML and examples like the above, but it is **not supported**, because some frameworks parse
+language files differently, e.g., [Ruby on Rails i18n API](https://guides.rubyonrails.org/i18n.html) with the locale as the root key.
+
 ### Complex structures within a key are not supported
 
 {% highlight yaml %}
