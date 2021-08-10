@@ -7,7 +7,7 @@ layout: docs
 ## v1.0.8 (2021-08-09)
 
 Features:
-— Walk-around not to overwrite default unchanged inspection profiles
+— Workaround not to overwrite default unchanged inspection profiles
 
 
 ## v1.0.7 (2021-08-03)
