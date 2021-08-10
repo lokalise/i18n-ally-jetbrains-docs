@@ -4,6 +4,12 @@ layout: docs
 
 # Changelog
 
+## v1.0.8 (2021-08-09)
+
+Features:
+— Workaround not to overwrite default unchanged inspection profiles
+
+
 ## v1.0.7 (2021-08-03)
 
 Features:
