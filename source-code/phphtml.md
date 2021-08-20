@@ -4,8 +4,6 @@ layout: docs
 
 # HTML with PHP source configuration
 
-{{ page.url }}
-
 ![PHP Source Code Preferences screenshot](assets/html-with-php-preferences.png){:width="721px" height="auto"}
 
 ## Scope
@@ -71,9 +69,9 @@ Key will be replaced with a string ID that was generated automatically or entere
 
 Map means an associative array that:
 
-* won't be replaced with anything if there are no placeholders use and the default domain is used: `trans('key')`,
-* will be replaced with an empty short syntax array in non-default domain is specified: `trans('key', [], 'validators')`,
-* will be replaced as an associative short syntax array if there are any placeholders detected: `trans('key', ['placeholder' => $placeholder])`.
+* won't be replaced with anything if there are no placeholders use and the default domain is used: `Yii::t('key')`,
+* will be replaced with an empty short syntax array in non-default domain is specified: `Yii::t('key', [], 'validators')`,
+* will be replaced as an associative short syntax array if there are any placeholders detected: `Yii::t('key', ['placeholder' => $placeholder])`.
 
 Initial placeholder names are determined automatically based on a respective variable, constant, function, or method.
 

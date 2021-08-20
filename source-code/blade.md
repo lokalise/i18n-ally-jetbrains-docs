@@ -4,9 +4,6 @@ layout: docs
 
 # Blade source configuration
 
-{{ page.url }}
-
-
 ![Blade Source Code Preferences screenshot](assets/blade-preferences.png){:width="629px" height="auto"}
 
 ## Scope

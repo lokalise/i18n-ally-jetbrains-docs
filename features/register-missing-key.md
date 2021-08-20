@@ -17,7 +17,7 @@ Missing keys are detected everywhere in the project and also within:
 
 ## Usage
 
-Keys can be registered via the context menu and selecting "Context actions" or with hot keys 
+Keys can be registered via the context menu and selecting `"Context actions"` or with hot keys 
 `Alt + Enter` (`Option + Return` in MacOS).
 
 ![Register missing key](assets/register-missing-key.gif)

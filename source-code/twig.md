@@ -4,7 +4,6 @@ layout: docs
 
 # Twig source configuration
 
-
 ![Twig Source Code Preferences screenshot](assets/twig-preferences.png){:width="629px" height="auto"}
 
 ## Scope
