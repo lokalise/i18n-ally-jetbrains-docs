@@ -31,3 +31,22 @@
       path: php
     - title: PO
       path: po
+- title: Features
+  path: features
+  sub_paths:
+    - title: Localization hints
+      path: localization-hints
+    - title: String extraction
+      path: string-extraction
+    - title: Extract selection
+      path: extract-selection
+    - title: Register a missing key
+      path: register-missing-key
+    - title: Rename keys and placeholders
+      path: rename-keys-and-placeholders
+    - title: Ignore and unignore strings
+      path: ignore-and-unignore-strings
+    - title: Plug and play configuration
+      path: plug-and-play-configuration
+    - title: Scanning and inspection results window
+      path: scanning-and-inspection

@@ -8,11 +8,12 @@ layout: docs
 
 ## Scope
 
-i18n Ally is applying inspections for files that have `.php` extension and are included into [a PhpStorm's scope](https://www.jetbrains.com/help/phpstorm/settings-scopes.html#d55e18f7).
+I18n Ally is applying inspections for files that have `.php` extension and are included into [a PhpStorm's scope](https://www.jetbrains.com/help/phpstorm/settings-scopes.html#d55e18f7).
 
-Create a new scope or adjust existing by clicking on `…` button and handpicking only the meanigfull directories and files.
+Create a new scope or adjust existing by clicking on `…` button and handpicking only the meaningful directories and files.
 
-Select `Project files` to include all PHP files in your project. Note that for frameworks that has autoconfiguration the relevant scope would be specified automatically.
+Select `Project files` to include all PHP files in your project. Note that for frameworks that has autoconfiguration the 
+relevant scope would be specified automatically.
 
 ## Function name
 
@@ -60,9 +61,7 @@ Placeholder names are determined automatically.
 ## What's not supported
 
 * Non-ICU placeholders, for example: `Hello, %user%!` string with `trans('hello', ['%user%' => $user])`.
-* Using natural language as message IDs (common approach for raw gettext, Wordpress or Yii).
-* Using an array for message retrieval (common appraoch in PHP legacy codebases, for example `$lang['key']`).
-* Adding the default domain to the translation function (in Yii there shuold always be a domain, `\Yii:t('app', 'key')`).
+* Using an array for message retrieval (common approach in PHP legacy codebases, for example `$lang['key']`).
 
 ## What strings are skipped
 
@@ -108,7 +107,7 @@ class BlogController extends BaseController
 {
     public function commentNew(Request $request)
     {
-        $message = $tranlator->translate('comment_saved'); # CHANGED by i18n Ally
+        $message = $translator->translate('comment_saved'); # CHANGED by i18n Ally
     }
 }
 {% endhighlight %}
@@ -121,7 +120,7 @@ class BlogController extends BaseController
 {
     public function commentNew(Request $request, TranslatorInterface $translator) # CHANGED manually
     {
-        $message = $tranlator->translate('Comment saved!');
+        $message = $translator->translate('Comment saved!');
     }
 }
 {% endhighlight %}

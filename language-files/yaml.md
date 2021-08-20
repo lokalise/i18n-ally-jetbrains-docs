@@ -39,7 +39,7 @@ key:
 
 ### Translations nested after a different key are not supported
 
-Nested translations are **only** supported if they start from the **root**, in the sample below, the translations are
+Nested translations are **only** supported if they start from the **root**. In the sample below, the translations are
 after a different key which is not supported.
 
 {% highlight yaml %}

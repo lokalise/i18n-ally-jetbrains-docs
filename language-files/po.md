@@ -49,8 +49,8 @@ msgstr "References to source string won't be added during extraction"
 
 ### Creation of POT files and compilation to MO files is not supported
 
-Plugin supports extration into a PO file for source languages.
+Plugin supports extraction into a PO file for source languages.
 
 Other parts of an advanced gettext workflow are not supported:
 * Strings are extracted into PO and not POT file,
-* PO files compilation into MO files is not supported.
+* PO file compilation into MO files is not supported.

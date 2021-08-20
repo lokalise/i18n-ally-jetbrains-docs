@@ -11,15 +11,15 @@ layout: docs
 
 i18n Ally is applying inspections for files that have `.twig` extension and are included into [a PhpStorm's scope](https://www.jetbrains.com/help/phpstorm/settings-scopes.html#d55e18f7).
 
-Create a new scope or adjust existing by clicking on `…` button and handpicking only the meanigfull directories and files.
+Create a new scope or adjust existing by clicking on `…` button and handpicking only the meaningful directories and files.
 
 Select `Project files` to include all PHP files in your project. Note that for frameworks that has autoconfiguration the relevant scope would be specified automatically.
 
 ## Inline tags
 
-List of tags that would be taked inside keys, like `a`, `strong` or `span`. Filled by default with [all "inline" tags listed on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements).
+List of tags that would be taken inside keys, like `a`, `strong` or `span`. Filled by default with [all "inline" tags listed on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements).
 
-An example of extaction result difference between block and inline tags:
+An example of extraction result difference between block and inline tags:
 {% highlight twig %}{% raw %}
 Three <p>different</p> pieces.
 {{ 'three'|trans }} <p>{{ 'different'|trans }}</p> {{ 'pieces'|trans }}
@@ -29,7 +29,7 @@ One <b>big</b> piece.
 {{ 'one_big_piece'|trans|raw }}
 {% endraw %}{% endhighlight %}
 
-Notice the `raw` filter appended to the key that contains inline tags. i18n Ally adds it automatically to ensure corrent rendering of the content.
+Notice the `raw` filter appended to the key that contains inline tags. i18n Ally adds it automatically to ensure current rendering of the content.
 
 You can add custom tags, like `icon`, by appending a new tag to the comma-separated list.
 
@@ -43,11 +43,11 @@ Translatable attributes are also checked for the translatable text:
     data-bs-content="Requires configuration" />
 {% endraw %}{% endhighlight %}
 
-You can add custom attribues, like `data-bs-content`, by appending a new attribute to the comma-separated list.
+You can add custom attributes, like `data-bs-content`, by appending a new attribute to the comma-separated list.
 
 ## Filter name
 
-Filter name to use for extraction is the default one in Symfony framework: `trans` would became {% raw %}`'key'|trans`{% endraw %}.
+Filter name to use for extraction is the default one in Symfony framework: `trans` would become {% raw %}`'key'|trans`{% endraw %}.
 
 If you have a custom function or an array for fetching translations you [create a custom filter](https://twig.symfony.com/doc/3.x/advanced.html#filters):
 
@@ -110,12 +110,12 @@ If you need to extract one string into a multiple keys, then select part of a st
 
 ## Deal with branching in two steps
 
-It's commont to have a small simple branches in the Twig templates for presentation purposes:
+It's common to have a small simple branches in the Twig templates for presentation purposes:
 {% highlight twig %}{% raw %}
 Webhook <strong>{% if success %}succeeded{% else %}failed{% endif %}</strong>.
 {% endraw %}{% endhighlight %}
 
-The best practice it to separate this message into two different ones so translators would be a full context and would be able to adjust word order according the the target language grammar.
+The best practice it to separate this message into two different ones so translators would be a full context and would be able to adjust word order according the target language grammar.
 
 **1st step:** manually extract the condition out of the message to get two messages without condition
 {% highlight twig %}{% raw %}
