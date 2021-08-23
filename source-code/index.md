@@ -11,3 +11,12 @@ Laravel/Symfony the Plug and Play feature automatically creates profiles and sco
 
 Configuring scopes is not always necessary, if there is only one source-sink pair then a project wide scope would suffice, 
 but for multi-source and/or multi-sink projects it is essential, so that the plugin only detects/displays what's in scope.
+
+## Source support
+
+For now there are 4 supported sources (Vue/JS coming soon)
+
+- [Blade]({{ '/source-code/blade' | global_asset_url }})
+- [Twig]({{ '/source-code/twig' | global_asset_url }})
+- [HTML with PHP]({{ '/source-code/phphtml' | global_asset_url }})
+- [PHP]({{ '/source-code/php' | global_asset_url }})

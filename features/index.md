@@ -7,13 +7,13 @@ layout: docs
 {{ page.url }}
 
 Here is a list of features for the plugin:
-- Localization hints
-- String extraction
-- Extract selection
-- Register a missing key
-- Rename keys and placeholders
-- Ignore and unignore strings
-- Plug and play configuration
-- Scanning and inspection results window
+- [Localization hints]({{ '/features/localization-hints' | global_asset_url }})
+- [String extraction]({{ '/features/string-extraction' | global_asset_url }})
+- [Extract selection]({{ '/features/extract-selection' | global_asset_url }})
+- [Register a missing key]({{ '/features/register-missing-key' | global_asset_url }})
+- [Rename keys and placeholders]({{ '/features/rename-keys-and-placeholders' | global_asset_url }})
+- [Ignore and unignore strings]({{ '/features/ignore-and-unignore-strings' | global_asset_url }})
+- [Plug and play configuration]({{ '/features/plug-and-play-configuration' | global_asset_url }})
+- [Scanning and inspection results window]({{ '/features/scanning-and-inspection' | global_asset_url }})
 
-Note that not all source support all of the features, but most them are supported.
+Note that not all sources support all features, but most of them are supported.

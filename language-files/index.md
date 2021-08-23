@@ -8,6 +8,13 @@ layout: docs
 
 ## Supported language files
 
+- [YAML]({{ '/language-files/yaml' | global_resource_url}})
+- [JSON]({{ '/language-files/json' | global_resource_url}})
+- [XLIFF v1]({{ '/language-files/xliff-v1' | global_resource_url}})
+- [XLIFF v2]({{ '/language-files/xliff-v2' | global_resource_url}})
+- [PHP]({{ '/language-files/php' | global_resource_url}})
+- [PO]({{ '/language-files/po' | global_resource_url}})
+
 **JSON**
 
 Extract strings into key-value pairs. Arrays are not supported.
