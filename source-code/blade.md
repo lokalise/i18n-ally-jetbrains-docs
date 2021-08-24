@@ -13,25 +13,27 @@ i18n Ally is applying inspections for files that have `.blade.php` extension and
 
 Create a new scope or adjust existing by clicking on `…` button and handpicking only the meaningful directories and files.
 
-Select `Project files` to include all PHP files in your project. Note that for frameworks that have autoconfiguration
-the relevant scope would be specified automatically.
+Select `Project files` to include all `.blade.php` files in your project.
 
 ## Inline tags
 
-List of tags that would be taken inside keys, like `a`, `strong` or `span`. Filled by default with
+List of tags that would be taken inside translations, like `a`, `strong` or `span`. Filled by default with
 [all "inline" tags listed on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements).
 
 An example of extraction result difference between block and inline tags:
 
-{% highlight php %}{% raw %}
-<div>
-    Three <p>different</p> pieces.
-    {{ trans('language-file.three') }} <p>{{ trans('language-file.different') }}</p> {{ trans('language-file.pieces') }}
-</div>
-<div>
-    One <b>big</b> piece.
-    {{ trans('language-file.oneBigPiece') }}
-</div>
+{% highlight html %}{% raw %}
+Three
+<p>different</p>
+keys.
+<!-- ⬇ will be extracted into -->
+{{ trans('app.three') }}
+<p>{{ trans('app.different') }}</p>
+{{ trans('app.keys') }}
+
+One <b>inclusive</b> key.
+<!-- ⬇ will be extracted into -->
+{{ trans('app.oneInclusiveKey') }}
 {% endraw %}{% endhighlight %}
 
 You can add custom tags, like `icon`, by appending a new tag to the comma-separated list.
@@ -91,24 +93,7 @@ class AppServiceProvider extends ServiceProvider
 }
 {% endhighlight %}
 
-
-## Arguments template
-
-### `%map%`
-
-Map means an associative array that:
-
-* won't be replaced with anything if there are no placeholders use and the default domain is used: `trans('key')`,
-* will be replaced as an associative short syntax array if there are any placeholders detected: 
-`trans('key', ['%placeholder%' => placeholder])`.
-
-Initial placeholder names are determined automatically based on a respective variable.
-
-### `%namespace%`
-
-Namespace (called 'domain' in Symfony) usually means a part of language file path from where translations would be searched for. The default 
-namespace is usually `messages`, but could be changed by specifying different first namespace in 
-[the Symfony language file](/configure-language-files/symfony).
+{% include_relative _includes/preferences_arguments_template.md %}
 
 ## Supported language constructs
 
@@ -167,8 +152,8 @@ Webhook <strong>failed</strong>.
 **2nd step:** replace simple messages with i18n Ally
 {% highlight php %}{% raw %}
 @if ($success)
-{!! trans('language-file.webhookSucceeded') !!}
+{!! trans('app.webhookSucceeded') !!}
 @else
-{!! trans('language-file.webhookFailed') !!}
+{!! trans('app.webhookFailed') !!}
 @endif
 {% endraw %}{% endhighlight %}
