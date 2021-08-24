@@ -39,10 +39,10 @@ Translatable attributes are also checked for the translatable text:
 <img src="…" 
     alt="Checked by default" 
     title="Checked by default" 
-    data-bs-content="Requires configuration" />
+    data-content="Requires configuration" />
 {% endraw %}{% endhighlight %}
 
-You can add custom attributes, like `data-bs-content`, by appending a new attribute to the comma-separated list.
+You can add custom attributes, like `data-content`, by appending a new attribute to the comma-separated list.
 
 ## Filter name
 
