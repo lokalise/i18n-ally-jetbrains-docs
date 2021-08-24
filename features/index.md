@@ -7,6 +7,7 @@ layout: docs
 {{ page.url }}
 
 Here is a list of features for the plugin:
+- [Navigation from/to sink]({{ '/features/navigation-source-sink' | global_asset_url }})
 - [Localization hints]({{ '/features/localization-hints' | global_asset_url }})
 - [String extraction]({{ '/features/string-extraction' | global_asset_url }})
 - [Extract selection]({{ '/features/extract-selection' | global_asset_url }})

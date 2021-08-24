@@ -34,6 +34,8 @@
 - title: Features
   path: features
   sub_paths:
+    - title: Navigation from/to sink
+      path: navigation-source-sink
     - title: Localization hints
       path: localization-hints
     - title: String extraction
