@@ -34,20 +34,27 @@
 - title: Features
   path: features
   sub_paths:
-    - title: Navigation from/to sink
-      path: navigation-source-sink
-    - title: Localization hints
-      path: localization-hints
-    - title: String extraction
-      path: string-extraction
+    - title: Hardcoded strings extraction
+      path: hardcoded-strings-extraction
+      sources: ['blade']
     - title: Extract selection
       path: extract-selection
+      sources: ['blade']
     - title: Register a missing key
       path: register-missing-key
+      sources: ['blade']
+    - title: Navigation from/to language file
+      path: navigation-source-language-file
+      sources: ['blade']
+    - title: Localization hints
+      path: localization-hints
+      sources: ['blade']
     - title: Rename keys and placeholders
       path: rename-keys-and-placeholders
+      sources: ['blade']
     - title: Ignore and unignore strings
       path: ignore-and-unignore-strings
+      sources: ['blade']
     - title: Plug and play configuration
       path: plug-and-play-configuration
     - title: Scanning and inspection results window

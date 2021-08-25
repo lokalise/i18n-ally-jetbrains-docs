@@ -2,158 +2,108 @@
 layout: docs
 ---
 
-# Blade source configuration
+<h1>Blade templates internationalization</h1>
+
+{% highlight html %}{% raw %}
+<p>Hello world!</p>
+⬇
+<p>{{ trans('app.helloWorld') }}</p>
+<!-- resources/lang/en/messages.php: 'helloWorld' => 'Hello world!' -->
+
+<p>Hello world, {{ $user }}!</p>
+⬇
+<p>{{ trans('app.helloWorld', ['user' => $user]) }}</p>
+<!-- resources/lang/en/messages.php: 'helloWorld' => 'Hello world, :user!' -->
+
+<p>Hello <b>world</b>!</p>
+⬇
+<p>{!! trans('app.helloWorld') !!}</p>
+<!-- resources/lang/en/messages.php: 'helloWorld' => 'Hello <b>world</b>!' -->
+{% endraw %}{% endhighlight %}
+
+
+<h3>Table of contents</h3>
+* TOC
+{:toc}
+
+
+# Features supported
+
+<ul>
+{% for item in site.data.sidebar_items %}
+    {% if item.path == 'features' and item.sub_paths %}
+        {% for feature in item.sub_paths %}
+            {% if feature.sources contains 'blade' %}
+                <li>
+                    <a href="{{ site.baseurl }}/{{ item.path }}/{{ feature.path }}.html">{{ feature.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+</ul>
+
+# Configure Blade sources
+
+The plugin should automatically configure itself for Laravel projects, but adjustments could be needed for custom setup.
 
 ![Blade Source Code Preferences screenshot](assets/blade-preferences.png){:width="629px" height="auto"}
 
-## Scope
+{% include_relative _includes/preferences_scope.md %}
 
-i18n Ally is applying inspections for files that have `.blade.php` extension and are included into
-[a PhpStorm's scope](https://www.jetbrains.com/help/phpstorm/settings-scopes.html#d55e18f7).
+{% include_relative _includes/preferences_inline_tags.md %}
 
-Create a new scope or adjust existing by clicking on `…` button and handpicking only the meaningful directories and files.
+{% include_relative _includes/preferences_translatable_attribute_names.md %}
 
-Select `Project files` to include all `.blade.php` files in your project.
-
-## Inline tags
-
-List of tags that would be taken inside translations, like `a`, `strong` or `span`. Filled by default with
-[all "inline" tags listed on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements).
-
-An example of extraction result difference between block and inline tags:
-
-{% highlight html %}{% raw %}
-Three
-<p>different</p>
-keys.
-<!-- ⬇ will be extracted into -->
-{{ trans('app.three') }}
-<p>{{ trans('app.different') }}</p>
-{{ trans('app.keys') }}
-
-One <b>inclusive</b> key.
-<!-- ⬇ will be extracted into -->
-{{ trans('app.oneInclusiveKey') }}
-{% endraw %}{% endhighlight %}
-
-You can add custom tags, like `icon`, by appending a new tag to the comma-separated list.
-
-## Translatable attribute names
-
-Translatable attributes are also checked for the translatable text:
-
-{% highlight html %}{% raw %}
-<img src="…"
-     alt="Checked by default"
-     title="Checked by default"
-     data-content="Requires configuration" />
-{% endraw %}{% endhighlight %}
-
-You can add custom attributes, like `data-content`, by appending a new attribute to the comma-separated list.
-
-## Function name
-
-Function name to use for extraction is the default one in Symfony framework: `trans` would become 
-{% raw %}`trans('key')`{% endraw %}.
-
-If you have a custom function or an array for fetching translations you can 
-[create a custom function](https://laravel.com/docs/5.8/blade#extending-blade):
-
-{% highlight php %}
-<?php
-
-namespace App\Providers;
-
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\ServiceProvider;
-
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Register bindings in the container.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        Blade::directive('datetime', function ($expression) {
-            return "<?php echo ($expression)->format('m/d/Y H:i'); ?>";
-        });
-    }
-}
-{% endhighlight %}
+{% include_relative _includes/preferences_function_name.md %}
 
 {% include_relative _includes/preferences_arguments_template.md %}
 
-## Supported language constructs
+# Supported language constructs
 
 All strings inside tags and translatable attributes are checked.
 
-## What's not supported
+# What's not supported
 
-* Strings inside blade expressions, like {% raw %}`someFunc('String param.')`{% endraw %}
-* Strings within blade directives, like {% raw %}`@if ('this tring' === 1)`{% endraw %}
-* Renaming key names from sink
+* Extracting strings from blade expressions, like {% raw %}`{{ someFunc('Hello world!') }}`{% endraw %}
+* Strings from blade directives, like {% raw %}`@if ($foo === 'Hello world!')`{% endraw %}
+* Renaming key names from language files
 
-## What strings are skipped
+# What strings are skipped
 
-* Pure HTML markup with blade expressions, like `<p class="mt0"><b>{{ 'summary'|trans }}</b></p>`.
+* Pure HTML markup with blade expressions, like {% raw %}`<p class="mt0"><b>{{ someFunc('someParam') }}</b></p>`{% endraw %}.
 * All attributes except ones listed in "Translatable attribute names" preference.
 * Content inside `trans` block as it's assumed to be already extracted.
-* Content inside `verbatim` tag.
+* Content inside `verbatim` directive.
 * Content inside `script` and `pre` tags.
 * Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
-* Strings inside directives, like {% raw %}`@auth('admin')`{% endraw %}
+* Strings inside expressions and directives, like {% raw %}`@auth('Hello world!')`{% endraw %}
 
-## Renaming from the editor
-
-If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
-
-Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
-
-![Twig renaming key and placeholder from editor screencast](assets/twig-renaming.gif){:width="744px" height="auto"}
-
-## Extract selected string
-
-If you need to extract one string into a multiple keys, then select part of a string you want to extract, click `Alt+Enter` or right-click and select "Show Context Actions":
-
-![Twig extracting selection from editor screencast](assets/twig-extract-selection.gif){:width="843px" height="auto"}
-
-## Deal with branching in two steps
+# Best practice: dealing with branching in messages
 
 It's common to have small and simple branches in blade templates for presentation purposes:
-{% highlight blade %}{% raw %}
-Webhook <strong> @if ($success) success @else failed @endif </strong>.
+{% highlight html %}{% raw %}
+Webhook <strong>{{ $success ? 'succeeded' : 'failed' }}</strong>.
 {% endraw %}{% endhighlight %}
 
 The best practice it to separate this message into two different ones so translators would be a full context and would 
 be able to adjust word order according the target language grammar.
 
 **1st step:** manually extract the condition out of the message to get two messages without condition
-{% highlight php %}{% raw %}
+{% highlight html %}{% raw %}
 @if ($success)
-Webhook <strong>succeeded</strong>.
+    Webhook <strong>succeeded</strong>.
 @else
-Webhook <strong>failed</strong>.
+    Webhook <strong>failed</strong>.
 @endif
 {% endraw %}{% endhighlight %}
 
 
 **2nd step:** replace simple messages with i18n Ally
-{% highlight php %}{% raw %}
+{% highlight html %}{% raw %}
 @if ($success)
-{!! trans('app.webhookSucceeded') !!}
+    {!! trans('app.webhookSucceeded') !!}
 @else
-{!! trans('app.webhookFailed') !!}
+    {!! trans('app.webhookFailed') !!}
 @endif
 {% endraw %}{% endhighlight %}
