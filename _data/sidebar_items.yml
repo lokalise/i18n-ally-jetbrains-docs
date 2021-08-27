@@ -29,7 +29,7 @@
       path: xliff-v2
     - title: PHP
       path: php
-    - title: PO
+    - title: PO/POT
       path: po
 - title: Features
   path: features

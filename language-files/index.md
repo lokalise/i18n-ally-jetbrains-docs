@@ -2,47 +2,115 @@
 layout: docs
 ---
 
-# Language files configuration
+# Supported formats for storing translations
 
-{{ page.url }}
+* TOC
+{:toc}
 
-## Supported language files
+## [JSON]({{ 'json' | global_asset_url }}.html)
 
-- [YAML]({{ '/language-files/yaml' | global_resource_url}})
-- [JSON]({{ '/language-files/json' | global_resource_url}})
-- [XLIFF v1]({{ '/language-files/xliff-v1' | global_resource_url}})
-- [XLIFF v2]({{ '/language-files/xliff-v2' | global_resource_url}})
-- [PHP]({{ '/language-files/php' | global_resource_url}})
-- [PO]({{ '/language-files/po' | global_resource_url}})
+{% highlight json %}
+{
+    "key": "Value",
+    "another_key": "Another value",
+    ...
+    "extracted": "Extracted string will be added like this",
+    ...
+    "multiline": "An explicitly multiline strings\nwill be extracted like this."
 
-**JSON**
+}
+{% endhighlight %}
 
-Extract strings into key-value pairs. Arrays are not supported.
+## [YAML]({{ 'yaml' | global_asset_url }}.html)
 
-**YAML**
+{% highlight yaml %}
+key: Value
+another_key: 'Another value'
+...
+extracted: 'Extracted string will be added like this'
+extracted_single_word: Extracted
+...
+some_key:
+    nested_key: 'Nested keys are also supported'
+...
+multiline: |
+    'An explicitly multiline strings
+    will be extracted like this.'
+{% endhighlight %}
 
-Extract strings into key-value pairs with support of key nesting. Sequences are not supported.
+## [XLIFF v1]({{ 'xliff-v1' | global_asset_url }}.html)
 
-**XLIFF v1**
+{% highlight xml %}
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+<body>
+    <trans-unit id="extracted">
+        <source>extracted</source>
+        <target>Extracted string will be added like this</target>
+    </trans-unit>
+    ...
+    <trans-unit id="extracted_with_tags">
+        <source>extracted_with_tags</source>
+        <target><![CDATA[String with tags<br> will be added like this]]></target>
+    </trans-unit>
+</body>
+</file>
+</xliff>
+{% endhighlight %}
 
-Extract strings into a `trans-unit` block per string.
+## [XLIFF v2]({{ 'xliff-v2' | global_asset_url }}.html)
 
-**XLIFF v2**
+{% highlight xml %}
+<?xml version="1.0"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+<file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <unit id="extracted">
+        <segment>
+            <source>extracted</source>
+            <target>Extracted string will be added like this</target>
+        </segment>
+    </unit>
+    ...
+    <unit id="extracted_with_tags">
+        <segment>
+            <source>extracted_with_tags</source>
+            <target><![CDATA[String with tags<br> will be added like this]]></target>
+        </segment>
+    </unit>
+</file>
+</xliff>
+{% endhighlight %}
 
-Extract strings into a `segment` block per string.
+## [PHP]({{ 'php' | global_asset_url }}.html)
 
-**PHP**
+{% highlight php %}
+<?php
 
-Extract into the latest array declaration per page with support of key nesting.
+return [
+    'key' => 'Value',
+    'another_key' => 'Another value',
+    ...
+    'extracted' => 'Extracted string will be added like this',
+    ...
+    'some_key' => [
+        'nested_key' => 'Nested keys are also supported',
+    ],
+    ...
+    'multiline' => 'An explicitly multiline strings
+        will be extracted like this.'
+];
+{% endhighlight %}
 
+# Configure translation storage
 
 ## Single file vs Namespaced translation storage
 
-**Single file**
+### Single file
 
 Extract all strings to a predefined file.
 
-**Namespaced** 
+### Namespaced
 
 choose where to extract strings among multiple files within the default locale (namespaces, domains).
 
@@ -50,7 +118,7 @@ choose where to extract strings among multiple files within the default locale (
 
 Format to store placeholder name in a language file.
 
-**Symfony replacement**
+### Symfony replacement
 
 {% highlight php %}{% raw %}
 Source: {{ 'key'|trans({'%name%': nameVar}) }}
@@ -60,7 +128,7 @@ Source: {{ 'key'|trans({'%name%': nameVar}) }}
 String: My name is %name%.
 {% endraw %}{% endhighlight %}
 
-**ICU**
+### ICU
 
 {% highlight php %}{% raw %}
 Source: {{ 'key'|trans({'name': nameVar}) }}
@@ -70,7 +138,7 @@ Source: {{ 'key'|trans({'name': nameVar}) }}
 String: My name is {name}.
 {% endraw %}{% endhighlight %}
 
-**Laravel**
+### Laravel
 
 {% highlight php %}{% raw %}
 Source: {{ trans('app.key', ['name' => $nameVar])}}
@@ -85,19 +153,19 @@ String: My name is :name.
 
 Generate key names from the source string.
 
-**snake_case**
+### snake_case
 
 {% raw %}
 Hello world! ➞ hello_world
 {% endraw %}
 
-**camelCase**
+### camelCase
 
 {% raw %}
 Hello world! ➞ helloWorld
 {% endraw %}
 
-**Natural language** (not recommended)
+### Natural language (not recommended)
 
 {% raw %}
 Hello world! ➞ Hello world!
@@ -136,13 +204,8 @@ For example:
 A template to build a filename where to extract strings.
 Will be appended to translations directory and should not start with.
 
-**Patterns to use:**
 - `%namespace%` – will use a namespace selected during extraction. Available options are listed in the Namespaces list.
 - `%locale%` – will use a Default locale specified in preferences.
-
-## Language file path
-
-Change the default language file path with settings above.
 
 ## Namespaces
 

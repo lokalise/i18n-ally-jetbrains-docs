@@ -2,7 +2,7 @@
     {% for item in site.data.sidebar_items %}
         {% if item.path == 'features' and item.sub_paths %}
             {% for feature in item.sub_paths %}
-                {% if feature.sources contains include.source_name' %}
+                {% if feature.sources contains include.source_name %}
                     <li>
                         <a href="{{ site.baseurl }}/{{ item.path }}/{{ feature.path }}.html">{{ feature.title }}</a>
                     </li>
