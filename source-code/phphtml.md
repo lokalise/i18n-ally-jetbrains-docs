@@ -2,83 +2,100 @@
 layout: docs
 ---
 
-# HTML with PHP source configuration
+<h1>PHP views internationalization</h1>
+
+{% highlight html %}{% raw %}
+<p>Hello world!</p>
+⬇
+<p><?php _('Hello world') ?></p>
+<!-- messages.po: msgid "Hello world" -->
+
+<p>Hello world, <?php $user ?>!</p>
+⬇
+<p><?php sprintf(_('Hello world, %1$s!'), $user) ?></p>
+<!-- messages.po: msgid "Hello world, %1$s!" -->
+{% endraw %}{% endhighlight %}
+
+
+<h3>Table of contents</h3>
+* TOC
+{:toc}
+
+
+# Features supported
+
+{% 
+  include_relative _includes/features_supported.html
+  source_name='phphtml'
+%}
+
+
+# Configure hardcoded strings extraction from PHP views
+
+The plugin should automatically configure itself for CodeIgniter, CakePHP, Zend and Laminas projects, but adjustments could be needed for custom setup and other frameworks.
 
 ![PHP Source Code Preferences screenshot](assets/html-with-php-preferences.png){:width="721px" height="auto"}
 
-## Scope
+{% 
+  include_relative _includes/preferences_scope.md
+  file_extension='.php'
+%}
+Important! This source would only looks for hardcoded strings within HTML and outside of PHP snippets. To extract hardcoded strings from PHP snippets you have to confire [a PHP source]({{ 'php' | global_asset_url }}.html).
 
-i18n Ally is applying inspections for files that have `.php` extension and are included into 
-[a PhpStorm's scope](https://www.jetbrains.com/help/phpstorm/settings-scopes.html#d55e18f7).
 
-Create a new scope or adjust existing by clicking on `…` button and handpicking only the meaningful directories and files.
-
-Select `Project files` to include all PHP files in your project. Note that for frameworks that has autoconfiguration the 
-relevant scope would be specified automatically.
-
-## Inline tags
-
-List of tags that would be taken inside keys, like `a`, `strong` or `span`. Filled by default with
-[all "inline" tags listed on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements).
-
-An example of extraction result difference between block and inline tags:
+{% capture preferences_inline_tags_sample %}
 
 {% highlight php %}{% raw %}
-<div>
-    Three <p>different</p> pieces.
-    <?= Yii::t('app', 'three') ?> <p><?= Yii::t('app', 'different') ?></p> <?= Yii::t('app', 'pieces') ?>
-</div>
-<div>
-    One <b>big</b> piece.
-    <?= Yii::t('app', 'one_big_piece') ?>
-</div>
+Three
+<p>different</p>
+keys.
+<!-- ⬇ will be extracted into -->
+<?php _('Three') ?>
+<p><?php _('different') ?></p>
+<?php _('keys.') ?>
+
+
+One <b>inclusive</b> key.
+<!-- ⬇ will be extracted into -->
+<?php _('One <b>inclusive</b> key.') ?>
 {% endraw %}{% endhighlight %}
 
-You can add custom tags, like `icon`, by appending a new tag to the comma-separated list.
+{% endcapture %}
+{%
+  include_relative _includes/preferences_inline_tags.md
+  sample=preferences_inline_tags_sample
+%}
 
-## Translatable attribute names
 
-Translatable attributes are also checked for the translatable text:
+{% include_relative _includes/preferences_translatable_attribute_names.md %}
 
-{% highlight php %}{% raw %}
-<img src="…"
-     alt="Checked by default"
-     title="Checked by default"
-     data-content="Requires configuration" />
-{% endraw %}{% endhighlight %}
 
-You can add custom attributes, like `data-content`, by appending a new attribute to the comma-separated list.
-
-## Function name
-
+{% capture preferences_function_name_sample %}
 It could be any callable PHP structure that wraps arguments into parentheses:
 
 * function: `_(…)`, `__(…)`,
 * object method: `$this->trans(…)`, `$translator->trans(…)`,
 * static method: `\Yii:app(…)`.
+{% endcapture %}
+{% 
+  include_relative _includes/preferences_function_name.md
+  sample=preferences_function_name_sample
+%}
 
-Don't include parentheses there: for example, `gettext(…)` function should be written as `gettext`.
 
-## Arguments template
+{% capture preferences_arguments_template_recommended_settings %}
+Recommended value for gettext, CodeIgniter, CakePHP and Zend/Laminas: `'%key%'` with `sprintf` mode enabled.<br>
+Recommended value for Yii v2: `'%namespace%', '%key%', %map%`.<br>
+Recommended value for Yii v3: `'%key%', %map%, '%namespace%'`.
+{% endcapture %}
+{%
+  include_relative _includes/preferences_arguments_template.md
+  recommended_settings=preferences_arguments_template_recommended_settings
+  example_map="<?php echo trans('key', ['foo' => $foo, 'bar' => $bar]) ?>"
+  example_list="<?php echo trans('key', [$foo, $bar]) ?>"
+  example_varargs="<?php echo trans('key', $foo, $bar) ?>"
+%}
 
-### `%key%`
-
-Key will be replaced with a string ID that was generated automatically or entered by you during a hardcoded string extraction (note that you have to specify preferred quotes like `'%key%'`).
-
-### `%map%`
-
-Map means an associative array that:
-
-* won't be replaced with anything if there are no placeholders use and the default domain is used: `Yii::t('key')`,
-* will be replaced with an empty short syntax array in non-default domain is specified: `Yii::t('key', [], 'validators')`,
-* will be replaced as an associative short syntax array if there are any placeholders detected: `Yii::t('key', ['placeholder' => $placeholder])`.
-
-Initial placeholder names are determined automatically based on a respective variable, constant, function, or method.
-
-### `%namespace%`
-
-Namespace usually means a part of language file path from where translations would be searched for. The default 
-namespace is usually `messages`, but could be changed by specifying different first namespace.
 
 ## Supported language constructs
 
@@ -86,31 +103,47 @@ i18n Ally finds hardcoded user-facing strings are only detected inside HTML tags
 
 Placeholder names are determined automatically.
 
+
 ## What's not supported
 
-* Non-ICU placeholders, for example: `Hello, %user%!` string with `trans('hello', ['%user%' => $user])`.
 * Using an array for message retrieval (common approach in PHP legacy codebases, for example `$lang['key']`).
-* Adding the default domain to the translation function (in Yii there should always be a domain, `\Yii:t('app', 'key')`).
+
 
 ## What strings are skipped
 
-* All arguments passed to functions or methods (except constructors),
-* HEREDOC and NOWDOC strings,
-* Array keys,
-* Class property definitions,
-* Default parameter values,
-* Constant name specified in `define` first argument,
-* Strings assigned to constants,
-* Strings in comments,
-* Strings arguments for the echo function, e.g. `echo 'this string';`
-* Strings inside PHP tags, e.g., `<?= "<b>$overallRating[percent]%</b> of 100%"; ?>`
-* Default argument values,
-* Full SQL queries and most of SQL parts,
+* Pure HTML markup with PHP snippets expressions, like `<a href="<?php route('home')?>"><img …></a>`.
+* All attributes except ones listed in "Translatable attribute names" preference.
+* Content inside `script` and `pre` tags.
 * Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
 
-## Renaming from the editor
 
-If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
+# Best practice: dealing with branching in messages
 
-Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
+It's common to have a small simple branches in the Twig templates for presentation purposes:
+{% highlight html %}{% raw %}
+Webhook <strong><?php echo $success ? 'succeeded' : 'failed' ?></strong>.
+{% endraw %}{% endhighlight %}
+
+The best practice it to separate this message into two different ones so translators would be a full context and would be able to adjust word order according the target language grammar.
+
+**1st step:** manually extract the condition out of the message to get two messages without condition
+{% highlight html %}{% raw %}
+<?php if ($success) { ?>
+    Webhook <strong>succeeded</strong>.
+<?php } else { ?>
+    Webhook <strong>failed</strong>.
+<?php } ?>
+{% endraw %}{% endhighlight %}
+
+
+**2nd step:** replace simple messages with i18n Ally
+{% highlight php %}{% raw %}
+<?php
+    if ($success) {
+        echo _('Webhook <strong>succeeded</strong>.')
+    } else {
+        echo _('Webhook <strong>failed</strong>.')
+    }
+?>
+{% endraw %}{% endhighlight %}
 

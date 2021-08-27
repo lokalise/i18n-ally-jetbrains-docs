@@ -42,13 +42,13 @@ The plugin should automatically configure itself for Symfony projects, but adjus
 
 {% 
   include_relative _includes/preferences_scope.md
-  file_extension='twig'
+  file_extension='.twig'
 %}
 
 
 {% capture preferences_inline_tags_sample %}
 
-{% highlight twig %}{% raw %}
+{% highlight html %}{% raw %}
 Three
 <p>different</p>
 keys.
@@ -117,7 +117,7 @@ All strings inside tags and translatable attributes are checked.
 
 ## What strings are skipped
 
-* Pure HTML markup with Twig expressions, like `<p class="mt0"><b>{{ 'summary'|trans }}</b></p>`.
+* Pure HTML markup with Twig expressions, like `<a href="{{ route('home') }}"><img …></a>`.
 * All attributes except ones listed in "Translatable attribute names" preference.
 * Content inside `trans` block as it's assumed to be already extracted.
 * Content inside `verbatim` tag.

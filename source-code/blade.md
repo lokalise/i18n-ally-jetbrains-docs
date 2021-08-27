@@ -71,7 +71,13 @@ One <b>inclusive</b> key.
 {% include_relative _includes/preferences_translatable_attribute_names.md %}
 
 
-{% include_relative _includes/preferences_function_name.md %}
+{% capture preferences_function_name_sample %}
+By default it's `trans` from Laravel framework.
+{% endcapture %}
+{% 
+  include_relative _includes/preferences_function_name.md
+  sample=preferences_function_name_sample
+%}
 
 
 {% capture preferences_arguments_template_recommended_settings %}
@@ -98,7 +104,7 @@ All strings inside tags and translatable attributes are checked.
 
 # What strings are skipped
 
-* Pure HTML markup with blade expressions, like {% raw %}`<p class="mt0"><b>{{ someFunc('someParam') }}</b></p>`{% endraw %}.
+* Pure HTML markup with blade expressions, like {% raw %}`<a href="{{ route('home') }}"><img …></a>`{% endraw %}.
 * All attributes except ones listed in "Translatable attribute names" preference.
 * Content inside `trans` block as it's assumed to be already extracted.
 * Content inside `verbatim` directive.

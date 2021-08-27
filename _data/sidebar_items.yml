@@ -36,25 +36,25 @@
   sub_paths:
     - title: Hardcoded strings extraction
       path: hardcoded-strings-extraction
-      sources: ['blade', 'twig']
+      sources: ['blade', 'twig', 'phphtml']
     - title: Extract selection
       path: extract-selection
-      sources: ['blade', 'twig']
+      sources: ['blade', 'twig', 'phphtml']
     - title: Register a missing key
       path: register-missing-key
-      sources: ['blade', 'twig']
+      sources: ['blade', 'twig', 'phphtml']
     - title: Navigation from/to language file
       path: navigation-source-language-file
-      sources: ['blade', 'twig']
+      sources: ['blade', 'twig', 'phphtml']
     - title: Localization hints
       path: localization-hints
-      sources: ['blade', 'twig']
+      sources: ['blade', 'twig', 'phphtml']
     - title: Rename keys and placeholders
       path: rename-keys-and-placeholders
-      sources: ['blade', 'twig']
+      sources: ['blade', 'twig', 'phphtml']
     - title: Ignore and unignore strings
       path: ignore-and-unignore-strings
-      sources: ['blade', 'twig']
+      sources: ['blade', 'twig', 'phphtml']
     - title: Plug and play configuration
       path: plug-and-play-configuration
     - title: Scanning and inspection results window
