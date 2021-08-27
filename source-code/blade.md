@@ -26,38 +26,65 @@ layout: docs
 * TOC
 {:toc}
 
-
 # Features supported
 
-<ul>
-{% for item in site.data.sidebar_items %}
-    {% if item.path == 'features' and item.sub_paths %}
-        {% for feature in item.sub_paths %}
-            {% if feature.sources contains 'blade' %}
-                <li>
-                    <a href="{{ site.baseurl }}/{{ item.path }}/{{ feature.path }}.html">{{ feature.title }}</a>
-                </li>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-{% endfor %}
-</ul>
+{% 
+  include_relative _includes/features_supported.html
+  source_name='blade'
+%}
 
-# Configure Blade sources
+# Configure hardcoded strings extraction from Blade templates
 
 The plugin should automatically configure itself for Laravel projects, but adjustments could be needed for custom setup.
 
 ![Blade Source Code Preferences screenshot](assets/blade-preferences.png){:width="629px" height="auto"}
 
-{% include_relative _includes/preferences_scope.md %}
+{% 
+  include_relative _includes/preferences_scope.md
+  file_extension='.blade.php'
+%}
 
-{% include_relative _includes/preferences_inline_tags.md %}
+
+{% capture preferences_inline_tags_sample %}
+
+{% highlight html %}{% raw %}
+Three
+<p>different</p>
+keys.
+<!-- ⬇ will be extracted into -->
+{{ trans('app.three') }}
+<p>{{ trans('app.different') }}</p>
+{{ trans('app.keys') }}
+
+One <b>inclusive</b> key.
+<!-- ⬇ will be extracted into -->
+{!! trans('app.oneInclusiveKey') !!}
+{% endraw %}{% endhighlight %}
+
+{% endcapture %}
+{%
+  include_relative _includes/preferences_inline_tags.md
+  sample=preferences_inline_tags_sample
+%}
+
 
 {% include_relative _includes/preferences_translatable_attribute_names.md %}
 
+
 {% include_relative _includes/preferences_function_name.md %}
 
-{% include_relative _includes/preferences_arguments_template.md %}
+
+{% capture preferences_arguments_template_recommended_settings %}
+Recommended value for Laravel v5.0+: `'%namespace%.%key%', %map%`<br>
+with "Skip default namespace" checkbox set to `false`.
+{% endcapture %}
+{%
+  include_relative _includes/preferences_arguments_template.md
+  recommended_settings=preferences_arguments_template_recommended_settings
+  example_map="trans('namespace.key', ['foo' => $foo, 'bar' => $bar])"
+  example_list="trans('namespace.key', [$foo, $bar])"
+  example_varargs="trans('namespace.key', $foo, $bar)"
+%}
 
 # Supported language constructs
 

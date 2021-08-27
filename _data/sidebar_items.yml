@@ -36,25 +36,25 @@
   sub_paths:
     - title: Hardcoded strings extraction
       path: hardcoded-strings-extraction
-      sources: ['blade']
+      sources: ['blade', 'twig']
     - title: Extract selection
       path: extract-selection
-      sources: ['blade']
+      sources: ['blade', 'twig']
     - title: Register a missing key
       path: register-missing-key
-      sources: ['blade']
+      sources: ['blade', 'twig']
     - title: Navigation from/to language file
       path: navigation-source-language-file
-      sources: ['blade']
+      sources: ['blade', 'twig']
     - title: Localization hints
       path: localization-hints
-      sources: ['blade']
+      sources: ['blade', 'twig']
     - title: Rename keys and placeholders
       path: rename-keys-and-placeholders
-      sources: ['blade']
+      sources: ['blade', 'twig']
     - title: Ignore and unignore strings
       path: ignore-and-unignore-strings
-      sources: ['blade']
+      sources: ['blade', 'twig']
     - title: Plug and play configuration
       path: plug-and-play-configuration
     - title: Scanning and inspection results window

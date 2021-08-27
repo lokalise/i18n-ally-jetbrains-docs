@@ -2,47 +2,78 @@
 layout: docs
 ---
 
-# Twig source configuration
+
+<h1>Twig templates internationalization</h1>
+
+{% highlight html %}{% raw %}
+<p>Hello world!</p>
+⬇
+<p>{{ 'hello_world'|trans }}</p>
+<!-- translations/messages.en.yaml: hello_world: 'Hello world!' -->
+
+<p>Hello world, {{ user }}!</p>
+⬇
+<p>{{ 'hello_world'|trans({'user': user}) }}</p>
+<!-- translations/messages.en.yaml: hello_world: 'Hello world, {user}!' -->
+
+<p>Hello <b>world</b>!</p>
+⬇
+<p>{{ 'hello_world'|trans|raw }}</p>
+<!-- translations/messages.en.yaml: hello_world: 'Hello <b>world</b>!' -->
+{% endraw %}{% endhighlight %}
+
+
+<h3>Table of contents</h3>
+* TOC
+{:toc}
+
+# Features supported
+
+{% 
+  include_relative _includes/features_supported.html
+  source_name='twig'
+%}
+
+# Configure hardcoded strings extraction from Twig templates
+
+The plugin should automatically configure itself for Symfony projects, but adjustments could be needed for custom setup and other frameworks.
 
 ![Twig Source Code Preferences screenshot](assets/twig-preferences.png){:width="629px" height="auto"}
 
-## Scope
+{% 
+  include_relative _includes/preferences_scope.md
+  file_extension='twig'
+%}
 
-i18n Ally is applying inspections for files that have `.twig` extension and are included into [a PhpStorm's scope](https://www.jetbrains.com/help/phpstorm/settings-scopes.html#d55e18f7).
 
-Create a new scope or adjust existing by clicking on `…` button and handpicking only the meaningful directories and files.
+{% capture preferences_inline_tags_sample %}
 
-Select `Project files` to include all PHP files in your project. Note that for frameworks that has autoconfiguration the relevant scope would be specified automatically.
-
-## Inline tags
-
-List of tags that would be taken inside keys, like `a`, `strong` or `span`. Filled by default with [all "inline" tags listed on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements).
-
-An example of extraction result difference between block and inline tags:
 {% highlight twig %}{% raw %}
-Three <p>different</p> pieces.
-{{ 'three'|trans }} <p>{{ 'different'|trans }}</p> {{ 'pieces'|trans }}
+Three
+<p>different</p>
+keys.
+<!-- ⬇ will be extracted into -->
+{{ 'three'|trans }}
+<p>{{ 'different'|trans }}</p>
+{{ 'keys'|trans }}
 
 
-One <b>big</b> piece.
-{{ 'one_big_piece'|trans|raw }}
+One <b>inclusive</b> keys.
+<!-- ⬇ will be extracted into -->
+{{ 'one_inclusive_key'|trans|raw }}
 {% endraw %}{% endhighlight %}
 
 Notice the `raw` filter appended to the key that contains inline tags. i18n Ally adds it automatically to ensure current rendering of the content.
 
-You can add custom tags, like `icon`, by appending a new tag to the comma-separated list.
+{% endcapture %}
+{%
+  include_relative _includes/preferences_inline_tags.md
+  sample=preferences_inline_tags_sample
+%}
 
-## Translatable attribute names
 
-Translatable attributes are also checked for the translatable text:
-{% highlight twig %}{% raw %}
-<img src="…" 
-    alt="Checked by default" 
-    title="Checked by default" 
-    data-content="Requires configuration" />
-{% endraw %}{% endhighlight %}
+{% include_relative _includes/preferences_translatable_attribute_names.md %}
 
-You can add custom attributes, like `data-content`, by appending a new attribute to the comma-separated list.
 
 ## Filter name
 
@@ -58,31 +89,31 @@ $filter = new \Twig\TwigFilter('translate', function ($key, $domain = 'messages'
 {% endhighlight %}
 
 
-## Arguments template
+{% capture preferences_arguments_template_recommended_settings %}
+Recommended value for Symfony 3+: `'%key%', %map%, '%namespace%'`<br>
+with "Skip default namespace" checkbox set to `true`.
+{% endcapture %}
+{%
+  include_relative _includes/preferences_arguments_template.md
+  recommended_settings=preferences_arguments_template_recommended_settings
+  key_note=' (not available for Twig)'
+  example_map="{{ 'key'|trans({'foo': foo, 'bar': bar}, 'namespace') }}"
+  example_list="{{ 'key'|trans([foo, bar], 'namespace') }}"
+  example_varargs="{{ 'key'|trans(foo, bar, 'namespace') }}"
+%}
 
-### `%map%`
-
-Map means an associative array that:
-
-* won't be replaced with anything if there are no placeholders use and the default domain is used: `trans('key')`,
-* will be replaced with an empty short syntax array in non-default domain is specified: `trans('key', {}, 'validators')`,
-* will be replaced as an associative short syntax array if there are any placeholders detected: `trans('key', {'placeholder': $placeholder})`.
-
-Initial placeholder names are determined automatically based on a respective variable.
-
-### `%namespace%`
-
-Namespace (called 'domain' in Symfony) usually means a part of language file path from where translations would be searched for. The default namespace is usually `messages`, but could be changed by specifying different first namespace in [the Symfony language file](/configure-language-files/symfony).
 
 ## Supported language constructs
 
 All strings inside tags and translatable attributes are checked.
+
 
 ## What's not supported
 
 * Strings inside twig expressions, like {% raw %}`{% set var = 'Hello!' %}`{% endraw %}
 * Extraction with function, like {% raw %}`{{ trans('key') %}`{% endraw %}, or array, like {% raw %}`{{ lang.key %}`{% endraw %}
 * Extraction with `trans` blocks
+
 
 ## What strings are skipped
 
@@ -93,21 +124,8 @@ All strings inside tags and translatable attributes are checked.
 * Content inside `script` and `pre` tags.
 * Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
 
-## Renaming from the editor
 
-If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
-
-Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
-
-![Twig renaming key and placeholder from editor screencast](assets/twig-renaming.gif){:width="744px" height="auto"}
-
-## Extract selected string
-
-If you need to extract one string into a multiple keys, then select part of a string you want to extract, click `Alt+Enter` or right-click and select "Show Context Actions":
-
-![Twig extracting selection from editor screencast](assets/twig-extract-selection.gif){:width="843px" height="auto"}
-
-## Deal with branching in two steps
+# Best practice: dealing with branching in messages
 
 It's common to have a small simple branches in the Twig templates for presentation purposes:
 {% highlight twig %}{% raw %}
