@@ -2,48 +2,76 @@
 layout: docs
 ---
 
-# PHP source configuration
+<h1>PHP internationalization</h1>
+
+{% highlight php %}{% raw %}
+<?php
+$foo = 'Hello world';
+⬇
+$foo = trans('hello_world');
+// messages.php: 'hello_world' => 'Hello world'
+
+$foo = "Hello world, $user!";
+$foo = 'Hello world, ' . $user . '!';
+$foo = sprintf('Hello world, %s!', $user);
+⬇
+$foo = trans('hello_world', ['user' => $user]);
+// messages.php: 'hello_world' => 'Hello world, %user%!'
+{% endraw %}{% endhighlight %}
+
+
+<h3>Table of contents</h3>
+* TOC
+{:toc}
+
+
+# Features supported
+
+{% 
+  include_relative _includes/features_supported.html
+  source_name='php'
+%}
+
+
+# Configure hardcoded strings extraction from PHP source
+
+The plugin should automatically configure itself for Laravel, Symfony, CodeIgniter, CakePHP, Zend and Laminas projects, but adjustments could be needed for custom setup and other frameworks.
 
 ![PHP Source Code Preferences screenshot](assets/php-preferences.png){:width="721px" height="auto"}
 
-## Scope
 
-I18n Ally is applying inspections for files that have `.php` extension and are included into [a PhpStorm's scope](https://www.jetbrains.com/help/phpstorm/settings-scopes.html#d55e18f7).
+{% 
+  include_relative _includes/preferences_scope.md
+  file_extension='.php'
+%}
+Important! This source would only looks for hardcoded strings within PHP source codeHTML and outside of PHP snippets. To extract hardcoded strings from HTML tags configure [an HTML with PHP source]({{ 'phphtml' | global_asset_url }}.html).
 
-Create a new scope or adjust existing by clicking on `…` button and handpicking only the meaningful directories and files.
-
-Select `Project files` to include all PHP files in your project. Note that for frameworks that has autoconfiguration the 
-relevant scope would be specified automatically.
-
-## Function name
-
+{% capture preferences_function_name_sample %}
 It could be any callable PHP structure that wraps arguments into parentheses:
 
 * function: `_(…)`, `__(…)`,
 * object method: `$this->trans(…)`, `$translator->trans(…)`,
 * static method: `\Yii:app(…)`.
+{% endcapture %}
+{% 
+  include_relative _includes/preferences_function_name.md
+  sample=preferences_function_name_sample
+%}
 
-Don't include parentheses there: for example, `gettext(…)` function should be written as `gettext`.
 
-## Arguments template
+{% capture preferences_arguments_template_recommended_settings %}
+Recommended value for gettext, CodeIgniter, CakePHP and Zend/Laminas: `'%key%'` with `sprintf` mode enabled.<br>
+Recommended value for Yii v2: `'%namespace%', '%key%', %map%`.<br>
+Recommended value for Yii v3: `'%key%', %map%, '%namespace%'`.
+{% endcapture %}
+{%
+  include_relative _includes/preferences_arguments_template.md
+  recommended_settings=preferences_arguments_template_recommended_settings
+  example_map="trans('key', ['foo' => $foo, 'bar' => $bar])"
+  example_list="trans('key', [$foo, $bar])"
+  example_varargs="trans('key', $foo, $bar)"
+%}
 
-### `%key%`
-
-Key will be replaced with a string ID that was generated automatically or entered by you during a hardcoded string extraction (note that you have to specify preferred quotes like `'%key%'`).
-
-### `%map%`
-
-Map means an associative array that:
-
-* won't be replaced with anything if there are no placeholders use and the default domain is used: `trans('key')`,
-* will be replaced with an empty short syntax array in non-default domain is specified: `trans('key', [], 'validators')`,
-* will be replaced as an associative short syntax array if there are any placeholders detected: `trans('key', ['placeholder' => $placeholder])`.
-
-Initial placeholder names are determined automatically based on a respective variable, constant, function, or method.
-
-### `%namespace%`
-
-Namespace (called 'domain' in Symfony) usually means a part of language file path from where translations would be searched for. The default namespace is usually `messages`, but could be changed by specifying different first namespace in [the Symfony language file](/configure-language-files/symfony).
 
 ## Supported language constructs
 
@@ -58,10 +86,11 @@ sprintf("Welcome, %s", $name) // trans('welcome', ['name' => $name]) // sprintf 
 
 Placeholder names are determined automatically.
 
+
 ## What's not supported
 
-* Non-ICU placeholders, for example: `Hello, %user%!` string with `trans('hello', ['%user%' => $user])`.
 * Using an array for message retrieval (common approach in PHP legacy codebases, for example `$lang['key']`).
+
 
 ## What strings are skipped
 
@@ -76,15 +105,8 @@ Placeholder names are determined automatically.
 * Full SQL queries and most of SQL parts,
 * Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
 
-## Renaming from the editor
 
-If an existing key or automatically captured placeholder is not an optimal one you can rename the right from the editor.
-
-Just put a cursor on a key or a placeholder in source code, then hit `Shift+F6`<br>or right click → hover over `Refactor` → click on `Rename…`:
-
-![PHP renaming key and placeholder from editor screencast](assets/php-renaming.gif){:width="795px" height="auto"}
-
-## Wire dependencies manually
+# Limitation: dependencies should be wired manually
 
 When extracting a translation you should still wire dependencies manually if they are not global like [Laravel's helper `__(…)`](https://laravel.com/docs/8.x/localization#retrieving-translation-strings) or [static method in Yii 2.0 `\Yii::t(…)`](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-i18n#1-wrap-a-text-message).
 
@@ -124,3 +146,36 @@ class BlogController extends BaseController
     }
 }
 {% endhighlight %}
+
+
+{% capture preferences_branching_best_practice_initial_string %}
+{% highlight php %}{% raw %}
+$foo = 'Webhook <strong>' . ($success ? 'succeeded' : 'failed') . '</strong>.';
+{% endraw %}{% endhighlight %}
+{% endcapture %}
+
+{% capture preferences_branching_best_practice_first_step %}
+{% highlight php %}{% raw %}
+if ($success) {
+    $foo = 'Webhook <strong>succeeded</strong>.';
+} else {
+    $foo = 'Webhook <strong>failed</strong>.';
+}
+{% endraw %}{% endhighlight %}
+{% endcapture %}
+
+{% capture preferences_branching_best_practice_second_step %}
+{% highlight php %}{% raw %}
+if ($success) {
+    $foo = trans('webhook_succeeded');
+} else {
+    $foo = trans('webhook_failed');
+}
+{% endraw %}{% endhighlight %}
+{% endcapture %}
+{% 
+  include_relative _includes/preferences_branching_best_practice.md
+  initial_string=preferences_branching_best_practice_initial_string
+  first_step=preferences_branching_best_practice_first_step
+  second_step=preferences_branching_best_practice_second_step
+%}

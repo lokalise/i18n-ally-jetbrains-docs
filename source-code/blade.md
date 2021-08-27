@@ -112,17 +112,13 @@ All strings inside tags and translatable attributes are checked.
 * Strings that looks like code: without letters, multiple words without spaces or `camelCased` ones.
 * Strings inside expressions and directives, like {% raw %}`@auth('Hello world!')`{% endraw %}
 
-# Best practice: dealing with branching in messages
-
-It's common to have small and simple branches in blade templates for presentation purposes:
+{% capture preferences_branching_best_practice_initial_string %}
 {% highlight html %}{% raw %}
 Webhook <strong>{{ $success ? 'succeeded' : 'failed' }}</strong>.
 {% endraw %}{% endhighlight %}
+{% endcapture %}
 
-The best practice it to separate this message into two different ones so translators would be a full context and would 
-be able to adjust word order according the target language grammar.
-
-**1st step:** manually extract the condition out of the message to get two messages without condition
+{% capture preferences_branching_best_practice_first_step %}
 {% highlight html %}{% raw %}
 @if ($success)
     Webhook <strong>succeeded</strong>.
@@ -130,9 +126,9 @@ be able to adjust word order according the target language grammar.
     Webhook <strong>failed</strong>.
 @endif
 {% endraw %}{% endhighlight %}
+{% endcapture %}
 
-
-**2nd step:** replace simple messages with i18n Ally
+{% capture preferences_branching_best_practice_second_step %}
 {% highlight html %}{% raw %}
 @if ($success)
     {!! trans('app.webhookSucceeded') !!}
@@ -140,3 +136,10 @@ be able to adjust word order according the target language grammar.
     {!! trans('app.webhookFailed') !!}
 @endif
 {% endraw %}{% endhighlight %}
+{% endcapture %}
+{% 
+  include_relative _includes/preferences_branching_best_practice.md
+  initial_string=preferences_branching_best_practice_initial_string
+  first_step=preferences_branching_best_practice_first_step
+  second_step=preferences_branching_best_practice_second_step
+%}
