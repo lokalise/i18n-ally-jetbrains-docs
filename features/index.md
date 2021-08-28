@@ -2,19 +2,18 @@
 layout: docs
 ---
 
-# i18n Ally features
+# i18n Ally plugin features
 
-{{ page.url }}
+<ul>
+    {% for item in site.data.sidebar_items %}
+        {% if item.path == 'features' and item.sub_paths %}
+            {% for feature in item.sub_paths %}
+                <li>
+                    <a href="{{ site.baseurl }}/{{ item.path }}/{{ feature.path }}.html">{{ feature.title }}</a>
+                </li>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</ul>
 
-Here is a list of features for the plugin:
-- [Navigation from/to sink]({{ '/features/navigation-source-sink' | global_asset_url }})
-- [Localization hints]({{ '/features/localization-hints' | global_asset_url }})
-- [String extraction]({{ '/features/string-extraction' | global_asset_url }})
-- [Extract selection]({{ '/features/extract-selection' | global_asset_url }})
-- [Register a missing key]({{ '/features/register-missing-key' | global_asset_url }})
-- [Rename keys and placeholders]({{ '/features/rename-keys-and-placeholders' | global_asset_url }})
-- [Ignore and unignore strings]({{ '/features/ignore-and-unignore-strings' | global_asset_url }})
-- [Plug and play configuration]({{ '/features/plug-and-play-configuration' | global_asset_url }})
-- [Scanning and inspection results window]({{ '/features/scanning-and-inspection' | global_asset_url }})
-
-Note that not all sources support all features, but most of them are supported.
+Some sources don't support particular features, like PHP does not support extraction of the selection. Please, check the particular source page for a list of supported features.
