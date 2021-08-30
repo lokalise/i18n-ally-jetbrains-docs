@@ -4,6 +4,39 @@ layout: docs
 
 # Changelog
 
+## v1.0.9 (2021-08-26)
+
+Features:
+- Autocomplete key names in Blade sources
+- Support for POT files
+- Support %varargs% and %list% placeholders formats (could be configured from source function arguments)
+
+
+Plug and play configuration improvements:
+- Introduced automatic configuration for CakePHP v3 and v4
+- Allow automatic configuration of multiple frameworks founds in one repository
+
+
+Experience improvements:
+- Limit natural language key extraction to file formats that handle in natively: XLIFF, PO and POT
+- Navigation from YAML nested keys to source code
+- Overcome the “Slow operations are prohibited on EDT” exception appearing in PhpStorm v2021.2
+
+
+Bugfixes:
+- Extraction of strings with HTML tags uses unescaped Blade syntax ({!! ... !!}) now
+- Respect scopes in renaming and navigation for multiple Twig sources
+- It’s possible to extract multiline strings into an existing key from plain PHP source into XLIFF language files
+- Key naming pattern changes now applied without reopening a project
+- Improved stability of syntax checks in Blade templates
+
+
+## v1.0.8 (2021-08-09)
+
+Features:
+— Workaround not to overwrite default unchanged inspection profiles
+
+
 ## v1.0.7 (2021-08-03)
 
 Features:
