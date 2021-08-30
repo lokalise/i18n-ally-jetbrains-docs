@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# PO language file format
+# PO/POT language file format
 
 ## PO file format basics are supported
 
@@ -16,10 +16,24 @@ msgid ""
 msgstr "Keys which are spread across multiple lines are also supported"
 ...
 msgid "extracted"
-msgstr "Extracted string will be added like this"
+msgstr ""
 ...
 msgid "multiline"
 msgstr "An explicitly multiline strings\nwill be extracted like this."
+{% endhighlight %}
+
+## POT files would have empty `msgstr`
+{% highlight po %}
+msgid "Extracted string will be added like this"
+msgstr ""
+...
+msgid ""
+"Keys spread "
+"across multiple lines"
+msgstr ""
+...
+msgid "An explicitly multiline strings\nwill be extracted like this."
+msgstr ""
 {% endhighlight %}
 
 
@@ -47,10 +61,10 @@ msgstr "References to source string won't be added during extraction"
 {% endhighlight %}
 
 
-### Creation of POT files and compilation to MO files is not supported
+### Compilation to MO files is not supported
 
-Plugin supports extration into a PO file for source languages.
+PO files should be compiled into MO files with other tools, like [GNU `msgfmt` utility](https://www.gnu.org/software/gettext/manual/html_node/msgfmt-Invocation.html):
 
-Other parts of an advanced gettext workflow are not supported:
-* Strings are extracted into PO and not POT file,
-* PO files compilation into MO files is not supported.
+{% highlight shell %}
+msgfmt messages.po -o messages.mo
+{% endhighlight %}

@@ -24,7 +24,7 @@ All necessary dependencies are bundled into PhpStorm:
   * `com.jetbrains.twig` for Twig source,
   * `org.jetbrains.plugins.yaml` for YAML language file type.
 
-## Extract harcoded strings one by one
+## Extract hard-coded strings one by one
 
 <div class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/3Lnt-aBy98E?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -41,7 +41,7 @@ All necessary dependencies are bundled into PhpStorm:
 
 ## Previewing the docs locally
 
-Prerequsites: [Ruby v2.*](https://www.ruby-lang.org/en/documentation/installation/#homebrew), [Bundler](https://bundler.io/).
+Prerequisites: [Ruby v2.*](https://www.ruby-lang.org/en/documentation/installation/#homebrew), [Bundler](https://bundler.io/).
 
 1. Clone the repo.
 2. Run `bundle install --path vendor/bundle`
