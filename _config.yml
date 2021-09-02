@@ -22,6 +22,7 @@ logo: "assets/i18n_ally_logo.svg"
 twitter_username: lokalise
 github_username: lokalise
 heap_app_id: 2686949184
+ga_measurement_id: "G-71SFTNNCDP"
 
 # Build settings
 markdown: kramdown
