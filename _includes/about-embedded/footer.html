@@ -6,22 +6,24 @@
             {% assign columnsLast = site.data.sidebar_items | first %}
             {% assign columns = site.data.sidebar_items | shift | push: columnsLast %}
             {% for item in columns %}
-                <div>
-                    <h3 class="footer-column__title">
-                        {{ item.title }}
-                    </h2>
-                    {% if item.sub_paths %}
-                        <ul class="footer-link__list">
-                            {% for sub_item in item.sub_paths %}
-                                <li class="footer-link__item">
-                                    <a href="{{ site.baseurl }}/{{ item.path }}/{{ sub_item.path }}.html">
-                                        {{ sub_item.title }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
+                {% if item.path != "features" %}
+                    <div>
+                        <h3 class="footer-column__title">
+                            {{ item.title }}
+                        </h2>
+                        {% if item.sub_paths %}
+                            <ul class="footer-link__list">
+                                {% for sub_item in item.sub_paths %}
+                                    <li class="footer-link__item">
+                                        <a href="{{ site.baseurl }}/{{ item.path }}/{{ sub_item.path }}.html">
+                                            {{ sub_item.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
 
