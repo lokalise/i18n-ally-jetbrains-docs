@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# XLIFF v2 language file format
+<h1>XLIFF v2 language file format</h1>
 
 {% highlight xml %}
 <?xml version="1.0"?>

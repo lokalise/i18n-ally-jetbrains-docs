@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# YAML language file format
+<h1>YAML language file format</h1>
 
 ## Key/value is the only supported format
 

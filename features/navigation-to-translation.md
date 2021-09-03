@@ -2,12 +2,10 @@
 layout: docs
 ---
 
-# Navigation from/to sink
+<h1>Navigation to translation</h1>
 
 The plugin supports seamless navigation from the source code key to the sink file and back, by interacting with the 
 translation key name. Once the action is performed the source/sink file is opened in the editor.
-
-**Note**, in order for this to work, sink, source and scope configuration needs to be correctly set up.
 
 ## Usage
 

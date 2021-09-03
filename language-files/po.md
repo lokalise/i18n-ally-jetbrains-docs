@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# PO/POT language file format
+<h1>PO/POT language file format</h1>
 
 ## PO file format basics are supported
 

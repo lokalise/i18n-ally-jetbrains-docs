@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# JSON language file format
+<h1>JSON language file format</h1>
 
 ## Key/value is the only supported format
 

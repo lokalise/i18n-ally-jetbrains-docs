@@ -5,7 +5,40 @@
       path: changelog
     - title: BSD 3 License
       path: license
-- title: Extract from source code
+- title: Features
+  path: features
+  sub_paths:
+    - title: Hardcoded strings extraction
+      path: hardcoded-strings-extraction
+      sources: ['blade', 'twig', 'phphtml', 'php']
+    - title: Automatically extract strings in bulk
+      path: automatically-extract-strings-in-bulk
+    - title: Extract selection
+      path: extract-selection
+      sources: ['blade', 'twig', 'phphtml']
+    - title: Register a missing key
+      path: register-missing-key
+      sources: ['blade', 'twig', 'phphtml', 'php']
+    - title: Navigation to translation
+      path: navigation-to-translation
+      sources: ['blade', 'twig', 'phphtml', 'php']
+    - title: Localization hints
+      path: localization-hints
+      sources: ['blade', 'twig', 'phphtml', 'php']
+    - title: Rename keys and placeholders
+      path: rename-keys-and-placeholders
+      sources: ['blade', 'twig', 'phphtml', 'php']
+    - title: Ignore strings by content
+      path: ignore-strings-by-content
+      sources: ['blade', 'twig', 'phphtml', 'php']
+    - title: Ignore strings by function and keys
+      path: ignore-strings-by-functions-and-keys
+      sources: ['php']
+    - title: Plug and play configuration
+      path: plug-and-play-configuration
+    - title: Plugin UI settings
+      path: plugin-ui-settings
+- title: Supported source code
   path: source-code
   sub_paths:
     - title: Blade
@@ -16,7 +49,7 @@
       path: phphtml
     - title: PHP
       path: php
-- title: Extract into language files
+- title: Supported language files
   path: language-files
   sub_paths:
     - title: YAML
@@ -31,39 +64,3 @@
       path: php
     - title: PO/POT
       path: po
-- title: Features
-  path: features
-  sub_paths:
-    - title: Hardcoded strings extraction
-      path: hardcoded-strings-extraction
-      sources: ['blade', 'twig', 'phphtml', 'php']
-    - title: Extract selection
-      path: extract-selection
-      sources: ['blade', 'twig', 'phphtml']
-    - title: Register a missing key
-      path: register-missing-key
-      sources: ['blade', 'twig', 'phphtml', 'php']
-    - title: Navigation from/to language file
-      path: navigation-source-language-file
-      sources: ['blade', 'twig', 'phphtml', 'php']
-    - title: Localization hints
-      path: localization-hints
-      sources: ['blade', 'twig', 'phphtml', 'php']
-    - title: Rename keys and placeholders
-      path: rename-keys-and-placeholders
-      sources: ['blade', 'twig', 'phphtml', 'php']
-    - title: Ignore and unignore strings
-      path: ignore-and-unignore-strings
-      sources: ['blade', 'twig', 'phphtml', 'php']
-    - title: Ignore and unignore arguments
-      path: ignore-and-unignore-strings
-      sources: ['php']
-    - title: Ignore and unignore array values
-      path: ignore-and-unignore-strings
-      sources: ['php']
-    - title: Plug and play configuration
-      path: plug-and-play-configuration
-    - title: Scanning and inspection results window
-      path: scanning-and-inspection
-    - title: Plugin UI settings
-      path: plugin-ui-settings

@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# Plugin UI settings
+<h1>Plugin UI settings</h1>
 
 Plugin UI settings is a part of the plugin (configuration) which controls how the plugin works, including the
 function names, naming structure, where source/sink files will be detected/scanned, etc.
@@ -73,7 +73,7 @@ prefill the input field
 
 By clicking `"OK"` a new profile and/or scope will be created based on the `compose` file.
 
-## Sink configuration
+## Language file configuration
 
 The settings for sink are explained in [this page]({{ '/language-files/' | global_asset_url }}).
 

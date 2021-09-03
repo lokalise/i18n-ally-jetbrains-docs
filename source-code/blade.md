@@ -22,16 +22,13 @@ layout: docs
 {% endraw %}{% endhighlight %}
 
 
-<h3>Table of contents</h3>
-* TOC
-{:toc}
-
 # Features supported
 
 {% 
   include_relative _includes/features_supported.html
   source_name='blade'
 %}
+
 
 # Configure hardcoded strings extraction from Blade templates
 
@@ -92,15 +89,18 @@ with "Skip default namespace" checkbox set to `false`.
   example_varargs="trans('namespace.key', $foo, $bar)"
 %}
 
+
 # Supported language constructs
 
 All strings inside tags and translatable attributes are checked.
+
 
 # What's not supported
 
 * Extracting strings from blade expressions, like {% raw %}`{{ someFunc('Hello world!') }}`{% endraw %}
 * Strings from blade directives, like {% raw %}`@if ($foo === 'Hello world!')`{% endraw %}
 * Renaming key names from language files
+
 
 # What strings are skipped
 

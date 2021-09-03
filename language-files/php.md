@@ -2,9 +2,9 @@
 layout: docs
 ---
 
-# PHP language file format
+<h1>PHP language file format</h1>
 
-## Array definitions are supported
+## Single array definition per file is supported
 
 ### Returning an array is supported
 

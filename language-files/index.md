@@ -2,10 +2,7 @@
 layout: docs
 ---
 
-# Supported formats for storing translations
-
-* TOC
-{:toc}
+# Supported file formats
 
 ## [JSON]({{ 'json' | global_asset_url }}.html)
 
@@ -104,7 +101,7 @@ return [
 
 # Configure translation storage
 
-## Single file vs Namespaced translation storage
+## Single or namespaced storage
 
 ### Single file
 

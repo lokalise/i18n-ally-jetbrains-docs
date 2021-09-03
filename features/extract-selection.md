@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# Extract selection
+<h1>Extract selection</h1>
 
 Extract hard-coded string by selection a part of a string, including a full selection.
 

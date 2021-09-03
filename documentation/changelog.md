@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# Changelog
+<h1>Changelog</h1>
 
 ## v1.0.9 (2021-08-26)
 
@@ -33,8 +33,8 @@ Bugfixes:
 
 ## v1.0.8 (2021-08-09)
 
-Features:
-— Workaround not to overwrite default unchanged inspection profiles
+Experience improvements:
+- Workaround not to overwrite default unchanged inspection profiles
 
 
 ## v1.0.7 (2021-08-03)

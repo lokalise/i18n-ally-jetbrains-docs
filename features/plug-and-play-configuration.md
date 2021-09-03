@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# Plug and play configuration
+<h1>Plug and play configuration</h1>
 
 After opening a project built with Laravel, Symfony or other supported framework,
 the plugin would be automatically configured, where a new profile and scope is created specific to the project
@@ -16,10 +16,6 @@ To scan the project click `"Run inspections..."`, to scan the whole project for 
 
 More than one profile/scope could be generated, for example, when opening a Laravel/Symfony project a profile/scope
 might be generated for PHP and Twig/Blade source and found sink files.
-
-## Usage
-
-Automatically triggered from opening the project.
 
 ## Supported frameworks
 

@@ -1,24 +1,9 @@
-{% for item in site.data.sidebar_items %}
 <nav class="menu">
-  <h3>
-    <a href="{{ site.baseurl }}/{{ item.path }}"> {{ item.title }} </a>
-  </h3>
-
-  {% if item.sub_paths %}
-  <ul>
-    {% for sub_item in item.sub_paths %}
-    <li>
-      <a
-        href="{{ site.baseurl }}/{{ item.path }}{% if item.path != '' %}/{% endif %}{{ sub_item.path }}.html"
-      >
-        {{ sub_item.title }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
+  {% include table-of-contents.html 
+      html=content 
+      skip_no_ids=true 
+      h_max=2 
+      submenu_class="sub_menu" 
+      sanitize=true 
+  %}
 </nav>
-
-{% if forloop.last == false %}
-<hr />
-{% endif %} {% endfor %}
