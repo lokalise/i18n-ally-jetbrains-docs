@@ -117,7 +117,7 @@ All strings inside tags and translatable attributes are checked.
 
 ## What strings are skipped
 
-* Pure HTML markup with Twig expressions, like `<a href="{{ route('home') }}"><img …></a>`.
+* Pure HTML markup with Twig expressions, like {% raw %}`<a href="{{ route('home') }}"><img …></a>`{% endraw %}.
 * All attributes except ones listed in "Translatable attribute names" preference.
 * Content inside `trans` block as it's assumed to be already extracted.
 * Content inside `verbatim` tag.
