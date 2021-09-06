@@ -23,6 +23,7 @@ configuration:
   - yii.svg
   - codeigniter.svg
   - zend.svg
+  - cake.svg
 supports:
   title: Supports custom PHP projects
 ways:
