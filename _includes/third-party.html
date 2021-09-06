@@ -17,3 +17,17 @@
     gtag('config', '{{ site.ga_measurement_id }}');
     </script>
 {% endif %}
+
+<script type="text/javascript">
+    (function () {
+        const params = (new URL(document.location)).searchParams;
+
+        if (heap && typeof heap.identify == 'function') {
+            heap.identify(params.get('chatId'));
+        }
+
+        if (typeof gtag) {
+            gtag('config', '{{ site.ga_measurement_id }}', { 'user_id': params.get('chatId') });
+        }
+    })();
+</script>

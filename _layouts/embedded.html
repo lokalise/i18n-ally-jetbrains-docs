@@ -11,21 +11,27 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/{{ "assets/css/about-embedded.css?v=" | append: site.github.build_revision }}">
 
     {% include third-party.html %}
-    <script type="text/javascript">
-      (function() {
-        const params = (new URL(document.location)).searchParams;
-
-        if (heap && typeof heap.identify == 'function') {
-          heap.identify(params.get('chatId'));  
-        }
-        
-        if (typeof gtag) {
-          gtag('config', '{{ site.ga_measurement_id }}', {'user_id': params.get('chatId')});
-        }
-      })();
-    </script>
-
     <script>
+      //
+      // Preserve chat ID when navigating to outer pages
+      //
+      window.addEventListener('DOMContentLoaded', function() {
+        const params = (new URL(document.location)).searchParams;
+        const chatId = params.get('chatId');
+
+        if (chatId && params.get('env') != 'dev') {
+          document.querySelectorAll('a.js-add-chat-id').forEach(link => {
+            const initialHref = link.href;
+            
+            const hrefUrl = new URL(initialHref);
+            const hrefParams = hrefUrl.searchParams;
+            hrefParams.set('chatId', chatId);
+            
+            link.href = hrefUrl;
+          });
+        }
+      });
+
       //
       // Apply styles received from GET params
       //
