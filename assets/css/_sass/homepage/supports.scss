@@ -11,7 +11,7 @@
   max-width: 803px;
   margin: 0 auto;
 
-  background-image: url("/assets/supports-desktop.svg");
+  background-image: url("/assets/homepage/supports-desktop.svg");
 }
 
 .supports-image::before {
@@ -35,7 +35,7 @@
   .supports-image {
     max-width: 225px;
 
-    background-image: url("/assets/supports-mobile.svg");
+    background-image: url("/assets/homepage/supports-mobile.svg");
     background-size: 100%;
   }
 
