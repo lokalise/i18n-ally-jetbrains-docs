@@ -26,8 +26,26 @@
             heap.identify(params.get('chatId'));
         }
 
-        if (typeof gtag) {
+        if (typeof gtag == 'function') {
             gtag('config', '{{ site.ga_measurement_id }}', { 'user_id': params.get('chatId') });
         }
     })();
+</script>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.js-install-btn').forEach(link => {
+            const uiSource = link.getAttribute('data-ui-source') ? link.getAttribute('data-ui-source') : 'unknown';
+            link.addEventListener('click', () => {
+                if (heap && typeof heap.identify == 'function') {
+                    heap.track('Click on install button', { uiSource });
+                }
+
+                if (typeof gtag == 'function') {
+                    gtag('event', 'Click on install button', { uiSource });
+                }
+            });
+        });
+    });
 </script>
