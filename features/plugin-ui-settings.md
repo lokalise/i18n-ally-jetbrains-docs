@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Plugin UI settings
 ---
 
-<h1>Plugin UI settings</h1>
+<h1>{{ page.title }}</h1>
 
 Plugin UI settings is a part of the plugin (configuration) which controls how the plugin works, including the
 function names, naming structure, where source/sink files will be detected/scanned, etc.

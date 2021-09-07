@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: XLIFF v1 for localization
 ---
 
-<h1>XLIFF v1 language file format</h1>
+<h1>{{ page.title }}</h1>
 
 {% highlight xml %}
 <?xml version="1.0"?>

@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Supported file formats
 ---
 
-# Supported file formats
+# {{ page.title }}
 
 ## [JSON]({{ 'json' | global_asset_url }}.html)
 

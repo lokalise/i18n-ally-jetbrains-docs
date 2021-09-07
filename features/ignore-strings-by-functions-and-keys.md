@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Ignore strings by functions and keys
 ---
 
-<h1>Ignore strings by functions and keys</h1>
+<h1>{{ page.title }}</h1>
 
 Ignoring a hard-coded string will result in the exact string not being detected as hard-coded for the entire project.
 

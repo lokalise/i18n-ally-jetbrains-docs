@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Extract a hardcoded string
 ---
 
-# Extract a hardcoded string
+# {{ page.title }}
 
 Extract a hard-coded string after detection, the strings are automatically detected based on the source configuration.
 

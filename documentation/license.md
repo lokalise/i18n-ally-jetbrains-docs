@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: "License: BSD 3 Clause"
 ---
 
-<h1>License: BSD 3 Clause</h1>
+<h1>{{ page.title }}</h1>
 
 Copyright 2020 Lokalise Group
 

@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: PHP internationalization
 ---
 
-<h1>PHP internationalization</h1>
+<h1>{{ page.title }}</h1>
 
 {% highlight php %}{% raw %}
 <?php

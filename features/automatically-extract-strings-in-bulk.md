@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Automatically extract strings in bulk
 ---
 
-<h1>Automatically extract strings in bulk</h1>
+<h1>{{ page.title }}</h1>
 
 Scanning and inspection is a feature to find hard-coded strings and missing keys in the project, a custom scope or
 other places in the project tree.

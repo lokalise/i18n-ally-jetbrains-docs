@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Documentation
 ---
 
-<h1>i18n Ally JetBrains plugin</h1>
+<h1>{{ page.title }}</h1>
 
 ## Automatically extract hardcoded strings
 

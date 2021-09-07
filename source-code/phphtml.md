@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: PHP views internationalization
 ---
 
-<h1>PHP views internationalization</h1>
+<h1>{{ page.title }}</h1>
 
 {% highlight html %}{% raw %}
 <p>Hello world!</p>

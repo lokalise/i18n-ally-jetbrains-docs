@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Changelog
 ---
 
-<h1>Changelog</h1>
+<h1>{{ page.title }}</h1>
 
 ## v1.0.9 (2021-08-26)
 

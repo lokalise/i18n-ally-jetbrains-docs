@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Features
 ---
 
-# i18n Ally plugin features
+# {{ page.title }}
 
 <ul>
     {% for item in site.data.sidebar_items %}

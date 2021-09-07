@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Rename keys and placeholders
 ---
 
-<h1>Rename keys and placeholders</h1>
+<h1>{{ page.title }}</h1>
 
 Keys can be renamed from the Twig templates
 

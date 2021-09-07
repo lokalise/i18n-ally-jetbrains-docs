@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Internationalize source code
 ---
 
-<h1>Internationalize source code</h1>
+<h1>{{ page.title }}</h1>
 
 In order for the plugin to work as expected, there is a need to configure the source and sink pairs, for popular frameworks, like
 Laravel/Symfony the plugin would automatically create profiles and scopes for the project useful to get the first results.

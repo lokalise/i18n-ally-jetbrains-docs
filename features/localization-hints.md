@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Localization hints
 ---
 
-<h1>Localization hints</h1>
+<h1>{{ page.title }}</h1>
 
 Localization hints is a feature that enables the preview of translations from the
 language file in the source code.

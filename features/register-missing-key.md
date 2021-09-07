@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Register a missing key
 ---
 
-<h1>Register a missing key</h1>
+<h1>{{ page.title }}</h1>
 
 After scanning is complete missing keys within the scope are detected and can be extracted to sink files with empty values. 
 

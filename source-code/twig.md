@@ -1,9 +1,9 @@
 ---
 layout: docs
+title: Twig templates internationalization
 ---
 
-
-<h1>Twig templates internationalization</h1>
+<h1>{{ page.title }}</h1>
 
 {% highlight html %}{% raw %}
 <p>Hello world!</p>
