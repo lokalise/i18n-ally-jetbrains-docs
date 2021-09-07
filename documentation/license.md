@@ -2,7 +2,7 @@
 layout: docs
 ---
 
-# License: BSD 3 Clause
+<h1>License: BSD 3 Clause</h1>
 
 Copyright 2020 Lokalise Group
 

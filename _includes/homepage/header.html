@@ -13,8 +13,9 @@
     <nav class="header-navigation">
       <ul>
         {% for item in site.data.index.navigation %}
-        <li><a href="{{item.url}}" target="_blank">{{item.title}}</a></li>
+        <li><a href="{{item.url}}">{{item.title}}</a></li>
         {% endfor %}
+        <li><a class="js-install-btn" data-ui-source="homepage-topnav" href="https://plugins.jetbrains.com/plugin/17212-i18n-ally">Install</a></li>
       </ul>
     </nav>
   </div>

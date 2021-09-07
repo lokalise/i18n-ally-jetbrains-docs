@@ -10,9 +10,6 @@ Laravel/Symfony the plugin would automatically create profiles and scopes for th
 Configuring scopes is not always necessary, if there is only one source-sink pair then a project wide scope would suffice, 
 but for multi-source and/or multi-sink projects it is essential, so that the plugin only detects/displays what's in scope.
 
-* TOC
-{:toc}
-
 
 ## [Blade templates]({{ 'blade' | global_asset_url }}.html)
 

@@ -17,11 +17,6 @@ layout: docs
 {% endraw %}{% endhighlight %}
 
 
-<h3>Table of contents</h3>
-* TOC
-{:toc}
-
-
 # Features supported
 
 {% 

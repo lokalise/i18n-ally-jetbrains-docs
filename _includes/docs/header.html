@@ -12,7 +12,7 @@
       <ul class="header-navigation-main-list">
         {% for item in site.data.sidebar_items %}
           <li class="header-navigation-link-container">
-            <a href="{{ site.baseurl }}/{{ item.path }}" target="_blank">{{item.title}}</a>
+            <a href="{{ site.baseurl }}/{{ item.path }}">{{item.title}}</a>
 
             {% if item.sub_paths %}
               <ul class="header-navigation-dropdown">
