@@ -38,6 +38,12 @@ body {
   color: #000;
 }
 
+code.language-plaintext {
+  overflow-x: hidden;
+  max-width: 100%;
+  display: inline-block;
+}
+
 .wrapper {
   width: 1200px;
 }
