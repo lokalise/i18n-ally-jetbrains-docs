@@ -1,9 +1,9 @@
 ---
 layout: docs
+title: Twig templates internationalization
 ---
 
-
-<h1>Twig templates internationalization</h1>
+<h1>{{ page.title }}</h1>
 
 {% highlight html %}{% raw %}
 <p>Hello world!</p>
@@ -22,10 +22,6 @@ layout: docs
 <!-- translations/messages.en.yaml: hello_world: 'Hello <b>world</b>!' -->
 {% endraw %}{% endhighlight %}
 
-
-<h3>Table of contents</h3>
-* TOC
-{:toc}
 
 # Features supported
 

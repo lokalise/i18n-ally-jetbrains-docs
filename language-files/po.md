@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: PO and POT for localization
 ---
 
-<h1>PO/POT language file format</h1>
+<h1>{{ page.title }}</h1>
 
 ## PO file format basics are supported
 

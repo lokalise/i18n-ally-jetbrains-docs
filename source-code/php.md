@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: PHP internationalization
 ---
 
-<h1>PHP internationalization</h1>
+<h1>{{ page.title }}</h1>
 
 {% highlight php %}{% raw %}
 <?php
@@ -18,11 +19,6 @@ $foo = sprintf('Hello world, %s!', $user);
 $foo = trans('hello_world', ['user' => $user]);
 // messages.php: 'hello_world' => 'Hello world, %user%!'
 {% endraw %}{% endhighlight %}
-
-
-<h3>Table of contents</h3>
-* TOC
-{:toc}
 
 
 # Features supported

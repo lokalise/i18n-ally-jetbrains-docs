@@ -23,6 +23,7 @@ configuration:
   - yii.svg
   - codeigniter.svg
   - zend.svg
+  - cake.svg
 supports:
   title: Supports custom PHP projects
 ways:
@@ -48,28 +49,28 @@ features:
   title: Features
   items:
   - title: Extract hardcoded strings all at once
-    image: /assets/feature-01.png
+    image: /assets/homepage/feature-01.png
   - title: Detect missing strings in the whole project, folder or file
-    image: /assets/feature-02.png
+    image: /assets/homepage/feature-02.png
   - title: Spot hardcoded string in editor
-    image: /assets/feature-03.png
+    image: /assets/homepage/feature-03.png
   - title: Extract hardcoded strings one by one
-    image: /assets/feature-04.png
+    image: /assets/homepage/feature-04.png
   - title: Jump from the editor to the language file
-    image: /assets/feature-05.png
+    image: /assets/homepage/feature-05.png
   - title: Rename keys and placeholders in the editor
-    image: /assets/feature-06.png
+    image: /assets/homepage/feature-06.png
 plugins:
   title: How the plugin works
   items:
   - title: Scan for hardcoded strings
     text: Go into Tools > “Run i18n Ally inspections...” to find hardcoded strings
       in the project, folder or particular file.
-    image: /assets/plugin-01.png
+    image: /assets/homepage/plugin-01.png
   - title: Extract matches
     text: Highlight “Toggle menu” text and make it consistent in before/after in different
       files and drive attention to the same place in source code that was changed
-    image: /assets/plugin-02.png
+    image: /assets/homepage/plugin-02.png
 help:
   title: How to help?
   text: Contribute settings for different frameworks

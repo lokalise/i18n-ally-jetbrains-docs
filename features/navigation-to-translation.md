@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Navigation to translation
 ---
 
-<h1>Navigation to translation</h1>
+<h1>{{ page.title }}</h1>
 
 The plugin supports seamless navigation from the source code key to the sink file and back, by interacting with the 
 translation key name. Once the action is performed the source/sink file is opened in the editor.

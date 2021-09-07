@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: JSON for localization
 ---
 
-<h1>JSON language file format</h1>
+<h1>{{ page.title }}</h1>
 
 ## Key/value is the only supported format
 

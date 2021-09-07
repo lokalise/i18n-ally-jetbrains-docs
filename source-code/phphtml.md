@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: PHP views internationalization
 ---
 
-<h1>PHP views internationalization</h1>
+<h1>{{ page.title }}</h1>
 
 {% highlight html %}{% raw %}
 <p>Hello world!</p>
@@ -15,11 +16,6 @@ layout: docs
 <p><?php sprintf(_('Hello world, %1$s!'), $user) ?></p>
 <!-- messages.po: msgid "Hello world, %1$s!" -->
 {% endraw %}{% endhighlight %}
-
-
-<h3>Table of contents</h3>
-* TOC
-{:toc}
 
 
 # Features supported

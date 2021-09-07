@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: PHP arrays for localization
 ---
 
-<h1>PHP language file format</h1>
+<h1>{{ page.title }}</h1>
 
 ## Single array definition per file is supported
 

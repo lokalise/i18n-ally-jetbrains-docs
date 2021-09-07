@@ -1,8 +1,9 @@
 ---
 layout: docs
+title: Blade templates internationalization
 ---
 
-<h1>Blade templates internationalization</h1>
+<h1>{{ page.title }}</h1>
 
 {% highlight html %}{% raw %}
 <p>Hello world!</p>
