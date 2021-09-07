@@ -1,60 +1,36 @@
-<header class="hero-header">
-    <div class="hero-logo">
-        <a href="{{ " /" | relative_url}}"></a>
-        <img src="{{site.logo | relative_url}}" class="logo"
-            alt="Logo: {{ site.title | default: site.github.repository_name }}" />
-        </a>
-    </div>
-    <nav class="hero-links">
-      {% for item in site.data.sidebar_items %}
-        <div class="hero-link-item-container">
-          <a class="hero-link-item" href="{{ site.baseurl }}/{{ item.path }}">{{ item.title }}</a>
+<header class="header">
+  <div class="container">
+    <a href="{{ site.baseurl }}/">
+      <img src="{{ site.baseurl }}/assets/i18n_ally_logo.svg" class="logo" alt="i18n Ally logo"/>
+    </a>
 
-          {% if item.sub_paths %}
-            <ul class="hero-links-dropdown">
-              {% for sub_item in item.sub_paths %}
-                <li>
-                  <a href="{{ site.baseurl }}/{{ item.path }}{% if item.path != '' %}/{% endif %}{{ sub_item.path }}.html">
-                    {{ sub_item.title }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </div>
+    <a href="#" class="mb-burger">
+      <span>menu</span>
+    </a>
 
-        {% if forloop.last == false %}
-          <span class="hero-link-item hero-link-item__divider">•</span>
-        {% endif %}
-      {% endfor %}
+    <nav class="header-navigation">
+      <ul class="header-navigation-main-list">
+        {% for item in site.data.sidebar_items %}
+          <li class="header-navigation-link-container">
+            <a href="{{ site.baseurl }}/{{ item.path }}" target="_blank">{{item.title}}</a>
 
-      <a class="js-install-btn hero-btn" data-ui-source="docs" href="https://plugins.jetbrains.com/plugin/17212-i18n-ally">Install</a>
+            {% if item.sub_paths %}
+              <ul class="header-navigation-dropdown">
+                {% for sub_item in item.sub_paths %}
+                  <li>
+                    <a href="{{ site.baseurl }}/{{ item.path }}{% if item.path != '' %}/{% endif %}{{ sub_item.path }}.html">
+                      {{ sub_item.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+        <li>
+          <a class="js-install-btn hero-btn" data-ui-source="docs" href="https://plugins.jetbrains.com/plugin/17212-i18n-ally">Install</a>
+        </li>
+      </ul>
     </nav>
+  </div>
 </header>
-
-<!--
-{% for item in site.data.sidebar_items %}
-<nav class="menu">
-  <h3>
-    <a href="{{ site.baseurl }}/{{ item.path }}"> {{ item.title }} </a>
-  </h3>
-
-  {% if item.sub_paths %}
-  <ul>
-    {% for sub_item in item.sub_paths %}
-    <li>
-      <a
-        href="{{ site.baseurl }}/{{ item.path }}{% if item.path != '' %}/{% endif %}{{ sub_item.path }}.html"
-      >
-        {{ sub_item.title }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-</nav>
-
-{% if forloop.last == false %}
-<hr />
-{% endif %} {% endfor %}
--->

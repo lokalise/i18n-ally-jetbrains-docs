@@ -22,11 +22,11 @@
     <div class="wrapper">
       {% include docs/header.html %}
 
-      <div class="clearfix">
+      <div class="content-wrapper clearfix">
         <aside>
           {% include docs/sidebar.html %}
   
-          <footer>
+          <footer class="hide-mobile">
             Maintained by
             <a href="https://lokalise.com/product/for-developers?utm_source=docs&utm_campaign=i18nally-jetbrains&utm_medium=footer">
               <img src="{{ site.baseurl }}/assets/lokalise_logo.svg" alt="Logo: {{ site.title | default: site.github.repository_name }}" style="width: 100%; height: auto;" />
@@ -37,9 +37,17 @@
         <section>
           {{ content }}
         </section>
+
+        <footer class="hide-desktop">
+          Maintained by
+          <a href="https://lokalise.com/product/for-developers?utm_source=docs&utm_campaign=i18nally-jetbrains&utm_medium=footer">
+            <img src="{{ site.baseurl }}/assets/lokalise_logo.svg" alt="Logo: {{ site.title | default: site.github.repository_name }}" style="width: 100%; height: auto;" />
+          </a>
+        </footer>
       </div>
     </div>
 
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
 </html>
