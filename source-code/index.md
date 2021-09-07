@@ -12,6 +12,40 @@ Configuring scopes is not always necessary, if there is only one source-sink pai
 but for multi-source and/or multi-sink projects it is essential, so that the plugin only detects/displays what's in scope.
 
 
+## [Vue templates]({{ 'vue-templates' | global_asset_url }}.html)
+
+{% highlight html %}{% raw %}
+<p>Hello world!</p>
+⬇
+<p>{{ $t('helloWorld') }}</p>
+<!-- locales/en.js: helloWorld: 'Hello world!' -->
+
+<p>Hello, {{ user }}!</p>
+⬇
+<p>{{ $t('hello', {user: user}) }}</p>
+<!-- locales/en.js: helloWorld: 'Hello, {user}!' -->
+
+<p>Hello, {{ user }}!</p>
+⬇
+<p>{{ $t('hello', [user]) }}</p>
+<!-- locales/en.js: helloWorld: 'Hello, {0}!' -->
+{% endraw %}{% endhighlight %}
+
+## [JavaScript and TypeScript]({{ 'js-and-ts' | global_asset_url }}.html)
+
+{% highlight js %}{% raw %}
+const foo = 'Hello world!';
+⬇
+const foo = $t('helloWorld');
+// locales/en.js: 'helloWorld' => 'Hello world!'
+
+const foo = `Welcome, ${name}`;
+const foo = 'Welcome, ' + name;
+⬇
+const foo = $t('welcome', {name: name});
+// locales/en.js: 'welcome' => 'Welcome, {user}!'
+{% endraw %}{% endhighlight %}
+
 ## [Blade templates]({{ 'blade' | global_asset_url }}.html)
 
 {% highlight html %}{% raw %}

@@ -14,9 +14,31 @@ title: Supported file formats
     ...
     "extracted": "Extracted string will be added like this",
     ...
+    "some_key": {
+        "nested_key": "Nested keys are also supported"
+    },
+    ...
     "multiline": "An explicitly multiline strings\nwill be extracted like this."
-
 }
+{% endhighlight %}
+
+## [JavaScript/TypeScript]({{ 'javascript' | global_asset_url }}.html)
+
+{% highlight js %}
+export default {
+    key: 'Value',
+    anotherKey: 'Another value',
+    ...
+    extracted: 'Extracted string will be added like this',
+    ...
+    some_key: {
+        nested_key: 'Nested keys are also supported',
+    },
+    ...
+    multiline: 'An explicitly multiline strings\nwill be extracted like this.'
+}
+
+// module.exports = {} is also supported
 {% endhighlight %}
 
 ## [YAML]({{ 'yaml' | global_asset_url }}.html)
