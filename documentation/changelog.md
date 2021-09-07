@@ -5,6 +5,36 @@ title: Changelog
 
 <h1>{{ page.title }}</h1>
 
+## v1.0.10 (2021-09-07)
+
+Support for JavaScript, TypeScript and Vue templates 🚀
+The plugin could be installed in WebStorm, PhpStorm, PyCharm, RubyMine and Idea Ultimate.
+
+Features:
+— Support JavaScript and TypeScript source code
+— Support Vue templates
+— Support for JavaScript and Typescript files as language files
+— Support key nesting and indexed arrays in JSON language files
+— Support WebStorm, PyCharm, RubyMine and Idea Ultimate
+
+
+Plug and play configuration improvements:
+— Automatic plugin configuration for vue-i18n, vuex-i18n, nuxt-i18n, @nuxtjs/i18n packages
+
+
+Experience improvements:
+— Significantly reduce the time of project indexing
+— Store config in the hidden folder by default and support project root for existing users and ones who want to share config with team
+
+
+Bugfixes:
+— Fix automatic configuration of a selected translation folder
+— Ensure that plugin can work with file paths on Windows
+— Improve navigation from PO and POT files to sources
+— Detect strings that start with inline tags
+— Prevent saving profiles without sources
+— Fix manual preferences editing
+
 ## v1.0.9 (2021-08-26)
 
 Features:

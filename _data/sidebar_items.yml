@@ -10,30 +10,31 @@
   sub_paths:
     - title: Hardcoded strings extraction
       path: hardcoded-strings-extraction
-      sources: ['blade', 'twig', 'phphtml', 'php']
+      sources: ['blade', 'twig', 'phphtml', 'php', 'vue-templates', 'js-and-ts']
     - title: Automatically extract strings in bulk
       path: automatically-extract-strings-in-bulk
+      sources: ['blade', 'twig', 'phphtml', 'php', 'vue-templates', 'js-and-ts']
     - title: Extract selection
       path: extract-selection
-      sources: ['blade', 'twig', 'phphtml']
+      sources: ['blade', 'twig', 'phphtml', 'vue-templates']
     - title: Register a missing key
       path: register-missing-key
-      sources: ['blade', 'twig', 'phphtml', 'php']
+      sources: ['blade', 'twig', 'phphtml', 'php', 'vue-templates', 'js-and-ts']
     - title: Navigation to translation
       path: navigation-to-translation
-      sources: ['blade', 'twig', 'phphtml', 'php']
+      sources: ['blade', 'twig', 'phphtml', 'php', 'vue-templates', 'js-and-ts']
     - title: Localization hints
       path: localization-hints
       sources: ['blade', 'twig', 'phphtml', 'php']
     - title: Rename keys and placeholders
       path: rename-keys-and-placeholders
-      sources: ['blade', 'twig', 'phphtml', 'php']
+      sources: ['blade', 'twig', 'phphtml', 'php', 'vue-templates', 'js-and-ts']
     - title: Ignore strings by content
       path: ignore-strings-by-content
-      sources: ['blade', 'twig', 'phphtml', 'php']
+      sources: ['blade', 'twig', 'phphtml', 'php', 'vue-templates', 'js-and-ts']
     - title: Ignore strings by function and keys
       path: ignore-strings-by-functions-and-keys
-      sources: ['php']
+      sources: ['php', 'js-and-ts']
     - title: Plug and play configuration
       path: plug-and-play-configuration
     - title: Plugin UI settings
@@ -41,6 +42,10 @@
 - title: Supported source code
   path: source-code
   sub_paths:
+    - title: Vue templates
+      path: vue-templates
+    - title: JavaScript/TypeScript
+      path: js-and-ts
     - title: Blade
       path: blade
     - title: Twig
@@ -52,10 +57,12 @@
 - title: Supported language files
   path: language-files
   sub_paths:
-    - title: YAML
-      path: yaml
+    - title: JS and TS
+      path: javascript
     - title: JSON
       path: json
+    - title: YAML
+      path: yaml
     - title: XLIFF v1
       path: xliff-v1
     - title: XLIFF v2

@@ -14,8 +14,11 @@ title: JSON for localization
     ...
     "extracted": "Extracted string will be added like this",
     ...
+    "some_key": {
+        "nested_key": "Nested keys are also supported"
+    },
+    ...
     "multiline": "An explicitly multiline strings\nwill be extracted like this."
-
 }
 {% endhighlight %}
 
@@ -27,16 +30,6 @@ Configure formatting at the IDE level in <a href="phpstorm://settings?name=Edito
 
 Request support at <a href="mailto:i18n-ally@lokalise.com">i18n-ally@lokalise.com</a>.
 
-### Arrays are not supported
-
-{% highlight json %}
-{
-    "key:": [
-        "Arrays are NOT supported"
-    ]
-}
-{% endhighlight %}
-
 ### Translations nested under some key are not supported
 
 {% highlight json %}
@@ -45,17 +38,7 @@ Request support at <a href="mailto:i18n-ally@lokalise.com">i18n-ally@lokalise.co
         ...
     },
     "translations": {
-        "key": "Key/values nested under some key are NOT supported"
-    }
-}
-{% endhighlight %}
-
-### Nested keys are not supported
-
-{% highlight json %}
-{
-    "some_key": {
-        "nested_key": "Nested keys are NOT supported"
+        "key": "This is NOT supported, because i18n Ally calls it like `translations.key` while the app would use just `key`"
     }
 }
 {% endhighlight %}
