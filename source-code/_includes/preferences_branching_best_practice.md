@@ -1,6 +1,6 @@
 # Best practice: dealing with branching in messages
 
-It's common to have small and simple branches in blade templates for presentation purposes:
+It's common to have small and simple branching for presentation purposes:
 {{ include.initial_string }}
 
 The best practice it to separate this message into two different ones so translators would have a full context and would 
