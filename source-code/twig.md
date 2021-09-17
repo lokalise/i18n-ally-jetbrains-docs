@@ -93,6 +93,7 @@ with "Skip default namespace" checkbox set to `true`.
   include_relative _includes/preferences_arguments_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
   key_note=' (not available for Twig)'
+  map_replaced_with="a hash"
   example_map="{{ 'key'|trans({'foo': foo, 'bar': bar}, 'namespace') }}"
   example_list="{{ 'key'|trans([foo, bar], 'namespace') }}"
   example_varargs="{{ 'key'|trans(foo, bar, 'namespace') }}"

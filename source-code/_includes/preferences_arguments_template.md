@@ -16,7 +16,7 @@ namespace is usually `messages`, but could be changed by putting a namespace in 
 
 If there are no variables in the string, then nothing would be added.
 
-Map will be replaced with an associative short syntax array if there are any placeholders detected: 
+Map will be replaced with {{ include.map_replaced_with }} if there are any placeholders detected: 
 `{{ include.example_map }}`.
 
 Placeholder names will be determined automatically based on a respective variable, function or method name.
@@ -27,7 +27,7 @@ In language files placeholder syntax will be determined based on the Placeholder
 
 If there are no variables in the string, then nothing would be added.
 
-List will be replaced with an indexed short syntax array if there are any placeholders detected: 
+List will be replaced with an array if there are any placeholders detected: 
 `{{ include.example_list }}`.
 
 In language files the ordered placeholder syntax `{0}, {1}` will be enforced.

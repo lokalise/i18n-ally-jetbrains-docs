@@ -63,6 +63,7 @@ Recommended value for Yii v3: `'%key%', %map%, '%namespace%'`.
 {%
   include_relative _includes/preferences_arguments_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
+  map_replaced_with="an associative short syntax array"
   example_map="trans('key', ['foo' => $foo, 'bar' => $bar])"
   example_list="trans('key', [$foo, $bar])"
   example_varargs="trans('key', $foo, $bar)"

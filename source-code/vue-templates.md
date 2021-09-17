@@ -66,6 +66,7 @@ Recommended value for `vue-i18n` and `nuxt-i18n` packages: `'%key%', %map%`.
 {%
   include_relative _includes/preferences_arguments_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
+  map_replaced_with="an object"
   example_map="$t('key', {foo: fooVariable, bar: barVariable})"
   example_list="$t('key', [fooVariable, barVariable])"
   example_varargs="$t('key', fooVariable, barVariable)"

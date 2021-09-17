@@ -85,6 +85,7 @@ with "Skip default namespace" checkbox set to `false`.
 {%
   include_relative _includes/preferences_arguments_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
+  map_replaced_with="an associative short syntax array"
   example_map="trans('namespace.key', ['foo' => $foo, 'bar' => $bar])"
   example_list="trans('namespace.key', [$foo, $bar])"
   example_varargs="trans('namespace.key', $foo, $bar)"
