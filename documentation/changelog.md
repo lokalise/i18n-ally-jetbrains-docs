@@ -8,23 +8,23 @@ title: Changelog
 ## v1.0.11 (2021-09-14)
 
 Plug and play configuration improvements:
-— Automatic plugin configuration for Yii v3 projects
+- Automatic plugin configuration for Yii v3 projects
 
 Experience improvements:
-— Ignore tagged template literals by default in JavaScript source
+- Ignore tagged template literals by default in JavaScript source
 
 Bugfixes:
-— Fix AlreadyDisposedException after re-opening the project
-— Fix StringIndexOutOfBoundsException and NullPointerException after string extraction from Vue
-— Fix IOException when trying to create i18nally.json in missing idea folder
-— Fix NoClassDefFoundError after removing a quote in string concatenation in PHP source
-— Fix missing key registration in JavaScript and Vue sources if the key already exists in unrelated language file
-— Fix incorrect error text for missing language file
-— Fix NullPointerException in IntelliJ Ultimate on bulk extraction using scanning window
-— Fix information level warnings when scanning project for hardcoded strings
-— Prevent parts of PHP expressions from being extracted when selected in HTML with PHP source
-— Ensure that modifications to source scopes are always applied to generated configuration
-— Extracted strings with more than one space not correctly registered with natural language in PHP source and XLIFF language file
+- Fix AlreadyDisposedException after re-opening the project
+- Fix StringIndexOutOfBoundsException and NullPointerException after string extraction from Vue
+- Fix IOException when trying to create i18nally.json in missing idea folder
+- Fix NoClassDefFoundError after removing a quote in string concatenation in PHP source
+- Fix missing key registration in JavaScript and Vue sources if the key already exists in unrelated language file
+- Fix incorrect error text for missing language file
+- Fix NullPointerException in IntelliJ Ultimate on bulk extraction using scanning window
+- Fix information level warnings when scanning project for hardcoded strings
+- Prevent parts of PHP expressions from being extracted when selected in HTML with PHP source
+- Ensure that modifications to source scopes are always applied to generated configuration
+- Extracted strings with more than one space not correctly registered with natural language in PHP source and XLIFF language file
 
 ## v1.0.10 (2021-09-07)
 
@@ -32,29 +32,29 @@ Support for JavaScript, TypeScript and Vue templates 🚀
 The plugin could be installed in WebStorm, PhpStorm, PyCharm, RubyMine and Idea Ultimate.
 
 Features:
-— Support JavaScript and TypeScript source code
-— Support Vue templates
-— Support for JavaScript and Typescript files as language files
-— Support key nesting and indexed arrays in JSON language files
-— Support WebStorm, PyCharm, RubyMine and Idea Ultimate
+- Support JavaScript and TypeScript source code
+- Support Vue templates
+- Support for JavaScript and Typescript files as language files
+- Support key nesting and indexed arrays in JSON language files
+- Support WebStorm, PyCharm, RubyMine and Idea Ultimate
 
 
 Plug and play configuration improvements:
-— Automatic plugin configuration for vue-i18n, vuex-i18n, nuxt-i18n, @nuxtjs/i18n packages
+- Automatic plugin configuration for vue-i18n, vuex-i18n, nuxt-i18n, @nuxtjs/i18n packages
 
 
 Experience improvements:
-— Significantly reduce the time of project indexing
-— Store config in the hidden folder by default and support project root for existing users and ones who want to share config with team
+- Significantly reduce the time of project indexing
+- Store config in the hidden folder by default and support project root for existing users and ones who want to share config with team
 
 
 Bugfixes:
-— Fix automatic configuration of a selected translation folder
-— Ensure that plugin can work with file paths on Windows
-— Improve navigation from PO and POT files to sources
-— Detect strings that start with inline tags
-— Prevent saving profiles without sources
-— Fix manual preferences editing
+- Fix automatic configuration of a selected translation folder
+- Ensure that plugin can work with file paths on Windows
+- Improve navigation from PO and POT files to sources
+- Detect strings that start with inline tags
+- Prevent saving profiles without sources
+- Fix manual preferences editing
 
 ## v1.0.9 (2021-08-26)
 

@@ -5,6 +5,8 @@
       path: changelog
     - title: BSD 3 License
       path: license
+    - title: Supported IDEs
+      path: ide-support
 - title: Features
   path: features
   sub_paths:
@@ -16,6 +18,9 @@
       sources: ['blade', 'twig', 'phphtml', 'php', 'vue-templates', 'js-and-ts']
     - title: Extract selection
       path: extract-selection
+      sources: ['blade', 'twig', 'phphtml', 'vue-templates']
+    - title: Inline tag extraction
+      path: inline-tag-extraction
       sources: ['blade', 'twig', 'phphtml', 'vue-templates']
     - title: Register a missing key
       path: register-missing-key
