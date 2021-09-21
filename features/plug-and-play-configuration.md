@@ -23,8 +23,9 @@ might be generated for PHP and Twig/Blade source and found sink files.
 - PHP
   - Symfony
   - Laravel
-  - Yii
+  - Yii (v2 and v3)
   - Zend & Laminas
   - CodeIgniter
   - CakePHP
-- JS/Vue (Coming soon)
+- JS/Vue
+  - vue-i18n, vuex-i18n, nuxt-i18n, @nuxtjs/i18n packages
