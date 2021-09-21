@@ -81,6 +81,7 @@ All strings inside tags and translatable attributes are checked.
 # What's not supported
 
 * Extracting strings from expressions, like {% raw %}`{{ someFunc('Hello world!') }}`{% endraw %}
+* Reading and extracting keys from a `<i18n>` tag within single-file components
 * Renaming key names from language files
 
 
