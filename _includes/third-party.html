@@ -37,15 +37,20 @@
     window.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.js-install-btn').forEach(link => {
             const uiSource = link.getAttribute('data-ui-source') ? link.getAttribute('data-ui-source') : 'unknown';
-            link.addEventListener('click', () => {
+            const textContent = link.textContent ? link.textContent : 'unknown';
+            const countClick = function() {
                 if (heap && typeof heap.identify == 'function') {
-                    heap.track('Click on install button', { uiSource });
+                    heap.track('Click on install button', { uiSource, textContent});
                 }
 
                 if (typeof gtag == 'function') {
-                    gtag('event', 'Click on install button', { uiSource });
+                    gtag('event', 'Click on install button', { uiSource, textContent });
                 }
-            });
+            };
+
+            link.addEventListener('click', countClick);
+            link.addEventListener('auxclick', countClick);
+            link.addEventListener('contextmenu', countClick);
         });
     });
 </script>

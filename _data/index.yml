@@ -49,28 +49,27 @@ features:
   title: Features
   items:
   - title: Extract hardcoded strings all at once
-    image: /assets/homepage/feature-01.png
+    image: extract-hardcoded-strings-all-at-once
   - title: Detect missing strings in the whole project, folder or file
-    image: /assets/homepage/feature-02.png
+    image: detect-hardcoded-strings-in-the-whole-project-folder-file
   - title: Spot hardcoded string in editor
-    image: /assets/homepage/feature-03.png
+    image: spot-hardcoded-string-in-editor
   - title: Extract hardcoded strings one by one
-    image: /assets/homepage/feature-04.png
-  - title: Jump from the editor to the language file
-    image: /assets/homepage/feature-05.png
-  - title: Rename keys and placeholders in the editor
-    image: /assets/homepage/feature-06.png
+    image: extract-hardcoded-strings-one-by-one
+  - title: Navigate from the editor to the language file
+    image: jump-from-editor-to=language-file
+  - title: Rename keys and placeholders in-place, right in the editor pane.
+    image: rename-keys-and-placeholders-in-place
 plugins:
   title: How the plugin works
   items:
   - title: Scan for hardcoded strings
     text: Go into Tools > “Run i18n Ally inspections...” to find hardcoded strings
       in the project, folder or particular file.
-    image: /assets/homepage/plugin-01.png
+    image: how-it-works-scan
   - title: Extract matches
-    text: Highlight “Toggle menu” text and make it consistent in before/after in different
-      files and drive attention to the same place in source code that was changed
-    image: /assets/homepage/plugin-02.png
+    text: Use quick fix to extract hardcoded string<br>from source code into a language file.
+    image: how-it-works-extract
 help:
   title: How to help?
   text: Contribute settings for different frameworks
@@ -92,8 +91,4 @@ faq:
       full Undo support.
   - title: I work only on a subset of the project, would the plugin apply to the whole
       project?
-    text: The plugin can be pointed to work on only a small subset of your app.
-  - title: My colleagues are using VS Code, do you support them?
-    text: Yes, but it works a little differently than it does for PhpStorm. <a href="https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally">Check
-      the extension out at VS Code Marketplace</a>.
-...
+    text: The plugin can be pointed to work on only a small subset of your app by selection in the file tree.
