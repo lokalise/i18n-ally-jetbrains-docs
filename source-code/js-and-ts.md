@@ -46,17 +46,12 @@ It could be any callable JavaScript structure that wraps arguments into parenthe
 * function: `$t(…)`, `__(…)`,
 * object method: `this.$t(…)`, `parent.$t(…)`.
 {% endcapture %}
-{% 
-  include_relative _includes/preferences_function_name.md
-  sample=preferences_function_name_sample
-%}
-
-
 {% capture preferences_arguments_template_recommended_settings %}
-Recommended value for `vue-i18n` and `nuxt-i18n` packages: `'%key%', %map%`.
+Recommended value for `vue-i18n` and `nuxt-i18n` packages: `$t('%key%', %map%)`.
 {% endcapture %}
 {%
-  include_relative _includes/preferences_arguments_template.md
+  include_relative _includes/preferences_replacement_template.md
+  function_name_sample=preferences_function_name_sample
   recommended_settings=preferences_arguments_template_recommended_settings
   map_replaced_with="an object"
   example_map="$t('key', {foo: fooVariable, bar: barVariable})"

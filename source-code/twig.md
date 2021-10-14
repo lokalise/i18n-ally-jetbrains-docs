@@ -86,11 +86,11 @@ $filter = new \Twig\TwigFilter('translate', function ($key, $domain = 'messages'
 
 
 {% capture preferences_arguments_template_recommended_settings %}
-Recommended value for Symfony 3+: `'%key%', %map%, '%namespace%'`<br>
+Recommended value for Symfony 3+: `trans(%map%, '%namespace%')`<br>
 with "Skip default namespace" checkbox set to `true`.
 {% endcapture %}
 {%
-  include_relative _includes/preferences_arguments_template.md
+  include_relative _includes/preferences_replacement_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
   key_note=' (not available for Twig)'
   map_replaced_with="a hash"

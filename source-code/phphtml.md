@@ -73,19 +73,14 @@ It could be any callable PHP structure that wraps arguments into parentheses:
 * object method: `$this->trans(…)`, `$translator->trans(…)`,
 * static method: `\Yii:app(…)`.
 {% endcapture %}
-{% 
-  include_relative _includes/preferences_function_name.md
-  sample=preferences_function_name_sample
-%}
-
-
 {% capture preferences_arguments_template_recommended_settings %}
-Recommended value for gettext, CodeIgniter, CakePHP and Zend/Laminas: `'%key%'` with `sprintf` mode enabled.<br>
-Recommended value for Yii v2: `'%namespace%', '%key%', %map%`.<br>
-Recommended value for Yii v3: `'%key%', %map%, '%namespace%'`.
+Recommended value for gettext, CodeIgniter, CakePHP and Zend/Laminas: `_('%key%')` with `sprintf` mode enabled.<br>
+Recommended value for Yii v2: `_('%namespace%', '%key%', %map%)`.<br>
+Recommended value for Yii v3: `_('%key%', %map%, '%namespace%')`.
 {% endcapture %}
 {%
-  include_relative _includes/preferences_arguments_template.md
+  include_relative _includes/preferences_replacement_template.md
+  function_name_sample=preferences_function_name_sample
   recommended_settings=preferences_arguments_template_recommended_settings
   map_replaced_with="an associative short syntax array"
   example_map="<?php echo trans('key', ['foo' => $foo, 'bar' => $bar]) ?>"

@@ -1,5 +1,13 @@
 
-## Arguments template
+## Replacement template
+
+The "Replacement template" consists of two components: function name and arguments template.
+
+**Function name** to use for extraction.
+
+{{ include.function_name_sample }}
+
+First, the **function name** is needed, e.g. `trans()` and as its arguments provide the **argument template**.
 
 {{ include.recommended_settings }}
 
