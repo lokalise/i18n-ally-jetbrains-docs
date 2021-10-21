@@ -51,16 +51,11 @@ Extraction of strings with a special treatment of inline tags is not currently s
 {% include_relative _includes/preferences_translatable_attribute_names.md %}
 
 
-{% capture preferences_function_name_sample %}
-By default it's `$t` from `vue-i18n` package.
-{% endcapture %}
-
 {% capture preferences_arguments_template_recommended_settings %}
 Recommended value for `vue-i18n` and `nuxt-i18n` packages: `$t('%key%', %map%)`.
 {% endcapture %}
 {%
   include_relative _includes/preferences_replacement_template.md
-  function_name_sample=preferences_function_name_sample
   recommended_settings=preferences_arguments_template_recommended_settings
   map_replaced_with="an object"
   example_map="$t('key', {foo: fooVariable, bar: barVariable})"

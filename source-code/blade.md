@@ -68,16 +68,12 @@ One <b>inclusive</b> key.
 
 {% include_relative _includes/preferences_translatable_attribute_names.md %}
 
-{% capture preferences_function_name_sample %}
-By default it's `trans` from Laravel framework.
-{% endcapture %}
 {% capture preferences_arguments_template_recommended_settings %}
 Recommended value for Laravel v5.0+: `trans('%namespace%.%key%', %map%)`<br>
 with "Skip default namespace" checkbox set to `false`.
 {% endcapture %}
 {%
   include_relative _includes/preferences_replacement_template.md
-  function_name_sample=preferences_function_name_sample
   recommended_settings=preferences_arguments_template_recommended_settings
   map_replaced_with="an associative short syntax array"
   example_map="trans('namespace.key', ['foo' => $foo, 'bar' => $bar])"

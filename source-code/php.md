@@ -42,21 +42,20 @@ The plugin should automatically configure itself for Laravel, Symfony, CodeIgnit
 %}
 Important! This source would only looks for hardcoded strings within PHP source codeHTML and outside of PHP snippets. To extract hardcoded strings from HTML tags configure [an HTML with PHP source]({{ 'phphtml' | global_asset_url }}.html).
 
-{% capture preferences_function_name_sample %}
+{% capture preferences_arguments_template_recommended_settings %}
+Recommended value for gettext, CodeIgniter, CakePHP and Zend/Laminas: `_('%key%')` with `sprintf` mode enabled.
+<br>
+Recommended value for Yii v2: `_('%namespace%', '%key%', %map%)`.<br>
+Recommended value for Yii v3: `_('%key%', %map%, '%namespace%')`.
+
 It could be any callable PHP structure that wraps arguments into parentheses:
 
 * function: `_(…)`, `__(…)`,
 * object method: `$this->trans(…)`, `$translator->trans(…)`,
 * static method: `\Yii:app(…)`.
 {% endcapture %}
-{% capture preferences_arguments_template_recommended_settings %}
-Recommended value for gettext, CodeIgniter, CakePHP and Zend/Laminas: `_('%key%')` with `sprintf` mode enabled.<br>
-Recommended value for Yii v2: `_('%namespace%', '%key%', %map%)`.<br>
-Recommended value for Yii v3: `_('%key%', %map%, '%namespace%')`.
-{% endcapture %}
 {%
   include_relative _includes/preferences_replacement_template.md
-  function_name_sample=preferences_function_name_sample
   recommended_settings=preferences_arguments_template_recommended_settings
   map_replaced_with="an associative short syntax array"
   example_map="trans('key', ['foo' => $foo, 'bar' => $bar])"
@@ -65,7 +64,7 @@ Recommended value for Yii v3: `_('%key%', %map%, '%namespace%')`.
 %}
 
 
-## Supported language constructs
+# Supported language constructs
 
 i18n Ally finds hardcoded user-facing strings within callable context and supports multiple cases:
 
@@ -79,12 +78,12 @@ sprintf("Welcome, %s", $name) // trans('welcome', ['name' => $name]) // sprintf 
 Placeholder names are determined automatically.
 
 
-## What's not supported
+# What's not supported
 
 * Using an array for message retrieval (common approach in PHP legacy codebases, for example `$lang['key']`).
 
 
-## What strings are skipped
+# What strings are skipped
 
 * All arguments passed to functions or methods (except constructors),
 * HEREDOC and NOWDOC strings,
