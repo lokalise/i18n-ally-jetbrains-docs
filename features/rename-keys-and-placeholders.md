@@ -21,8 +21,7 @@ keys `Shift + F6` or by right-clicking the highlighted part and selecting `Refac
 
 ## Support
 
-Renaming keys within source is supported for all sources, but renaming placeholders is only supported for these
-sink files:
+Renaming keys within source is supported for all sources, but renaming placeholders is only supported for these sink files:
 - JSON
 - YAML
 - PO
