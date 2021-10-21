@@ -1,5 +1,7 @@
 
-## Arguments template
+## Replacement template
+
+The "Replacement template" reflects the result of the hardcoded string extraction.function name and arguments template.
 
 {{ include.recommended_settings }}
 

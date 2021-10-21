@@ -86,11 +86,11 @@ $filter = new \Twig\TwigFilter('translate', function ($key, $domain = 'messages'
 
 
 {% capture preferences_arguments_template_recommended_settings %}
-Recommended value for Symfony 3+: `'%key%', %map%, '%namespace%'`<br>
+Recommended value for Symfony 3+: `trans(%map%, '%namespace%')`<br>
 with "Skip default namespace" checkbox set to `true`.
 {% endcapture %}
 {%
-  include_relative _includes/preferences_arguments_template.md
+  include_relative _includes/preferences_replacement_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
   key_note=' (not available for Twig)'
   map_replaced_with="a hash"
@@ -100,19 +100,19 @@ with "Skip default namespace" checkbox set to `true`.
 %}
 
 
-## Supported language constructs
+# Supported language constructs
 
 All strings inside tags and translatable attributes are checked.
 
 
-## What's not supported
+# What's not supported
 
 * Strings inside twig expressions, like {% raw %}`{% set var = 'Hello!' %}`{% endraw %}
 * Extraction with function, like {% raw %}`{{ trans('key') %}`{% endraw %}, or array, like {% raw %}`{{ lang.key %}`{% endraw %}
 * Extraction with `trans` blocks
 
 
-## What strings are skipped
+# What strings are skipped
 
 * Pure HTML markup with Twig expressions, like {% raw %}`<a href="{{ route('home') }}"><img …></a>`{% endraw %}.
 * All attributes except ones listed in "Translatable attribute names" preference.

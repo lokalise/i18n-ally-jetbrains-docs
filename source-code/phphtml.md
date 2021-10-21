@@ -66,26 +66,19 @@ One <b>inclusive</b> key.
 {% include_relative _includes/preferences_translatable_attribute_names.md %}
 
 
-{% capture preferences_function_name_sample %}
+{% capture preferences_arguments_template_recommended_settings %}
+Recommended value for gettext, CodeIgniter, CakePHP and Zend/Laminas: `_('%key%')` with `sprintf` mode enabled.<br>
+Recommended value for Yii v2: `_('%namespace%', '%key%', %map%)`.<br>
+Recommended value for Yii v3: `_('%key%', %map%, '%namespace%')`.
+
 It could be any callable PHP structure that wraps arguments into parentheses:
 
 * function: `_(…)`, `__(…)`,
 * object method: `$this->trans(…)`, `$translator->trans(…)`,
 * static method: `\Yii:app(…)`.
 {% endcapture %}
-{% 
-  include_relative _includes/preferences_function_name.md
-  sample=preferences_function_name_sample
-%}
-
-
-{% capture preferences_arguments_template_recommended_settings %}
-Recommended value for gettext, CodeIgniter, CakePHP and Zend/Laminas: `'%key%'` with `sprintf` mode enabled.<br>
-Recommended value for Yii v2: `'%namespace%', '%key%', %map%`.<br>
-Recommended value for Yii v3: `'%key%', %map%, '%namespace%'`.
-{% endcapture %}
 {%
-  include_relative _includes/preferences_arguments_template.md
+  include_relative _includes/preferences_replacement_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
   map_replaced_with="an associative short syntax array"
   example_map="<?php echo trans('key', ['foo' => $foo, 'bar' => $bar]) ?>"
@@ -94,19 +87,19 @@ Recommended value for Yii v3: `'%key%', %map%, '%namespace%'`.
 %}
 
 
-## Supported language constructs
+# Supported language constructs
 
 i18n Ally finds hardcoded user-facing strings are only detected inside HTML tags.
 
 Placeholder names are determined automatically.
 
 
-## What's not supported
+# What's not supported
 
 * Using an array for message retrieval (common approach in PHP legacy codebases, for example `$lang['key']`).
 
 
-## What strings are skipped
+# What strings are skipped
 
 * Pure HTML markup with PHP snippets expressions, like `<a href="<?php route('home')?>"><img …></a>`.
 * All attributes except ones listed in "Translatable attribute names" preference.

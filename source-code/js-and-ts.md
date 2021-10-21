@@ -40,23 +40,16 @@ The plugin should automatically configure itself for project with dependencies o
 %}
 
 
-{% capture preferences_function_name_sample %}
+{% capture preferences_arguments_template_recommended_settings %}
+Recommended value for `vue-i18n` and `nuxt-i18n` packages: `$t('%key%', %map%)`.
+
 It could be any callable JavaScript structure that wraps arguments into parentheses:
 
 * function: `$t(…)`, `__(…)`,
 * object method: `this.$t(…)`, `parent.$t(…)`.
 {% endcapture %}
-{% 
-  include_relative _includes/preferences_function_name.md
-  sample=preferences_function_name_sample
-%}
-
-
-{% capture preferences_arguments_template_recommended_settings %}
-Recommended value for `vue-i18n` and `nuxt-i18n` packages: `'%key%', %map%`.
-{% endcapture %}
 {%
-  include_relative _includes/preferences_arguments_template.md
+  include_relative _includes/preferences_replacement_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
   map_replaced_with="an object"
   example_map="$t('key', {foo: fooVariable, bar: barVariable})"
@@ -65,7 +58,7 @@ Recommended value for `vue-i18n` and `nuxt-i18n` packages: `'%key%', %map%`.
 %}
 
 
-## Supported language constructs
+# Supported language constructs
 
 i18n Ally finds hardcoded user-facing strings and template literals:
 
@@ -78,7 +71,7 @@ i18n Ally finds hardcoded user-facing strings and template literals:
 Placeholder names are determined automatically.
 
 
-## What strings are skipped
+# What strings are skipped
 
 * All arguments passed to functions or methods (except constructors), but avaialbe to unignore case by case
 * Array keys,
