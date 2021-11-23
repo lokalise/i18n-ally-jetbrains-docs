@@ -18,4 +18,4 @@ or toggling the checkbox in `Preferences/Settings | i18n Ally | Feature flags ta
 
 ## Support
 
-Not supported for Vue templates.
+Supported on every source.
