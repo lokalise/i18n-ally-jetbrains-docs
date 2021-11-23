@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Vue templates internationalization
+title: React (JSX/TSX) internationalization
 ---
 
 <h1>{{ page.title }}</h1>
@@ -8,18 +8,13 @@ title: Vue templates internationalization
 {% highlight html %}{% raw %}
 <p>Hello world!</p>
 ⬇
-<p>{{ $t('helloWorld') }}</p>
+<p>{t('helloWorld')}</p>
 <!-- locales/en.js: helloWorld: 'Hello world!' -->
 
-<p>Hello, {{ user }}!</p>
+<p>Hello, {user}!</p>
 ⬇
-<p>{{ $t('hello', {user: user}) }}</p>
-<!-- locales/en.js: helloWorld: 'Hello, {user}!' -->
-
-<p>Hello, {{ user }}!</p>
-⬇
-<p>{{ $t('hello', [user]) }}</p>
-<!-- locales/en.js: helloWorld: 'Hello, {0}!' -->
+<p>{t('hello', {user: user})}</p>
+<!-- locales/en.js: helloWorld: 'Hello, {{user}}!' -->
 {% endraw %}{% endhighlight %}
 
 
@@ -27,15 +22,15 @@ title: Vue templates internationalization
 
 {% 
   include_relative _includes/features_supported.html
-  source_name='vue-templates'
+  source_name='react-jsx-tsx'
 %}
 
 
 # Configure hardcoded strings extraction from Vue templates
 
-The plugin should automatically configure itself for project with dependencies on `vue-i18n` and `nuxt-i18n`, but adjustments could be needed for custom setup.
+The plugin should automatically configure itself for project with dependencies on `react-i18next`, but adjustments could be needed for custom setup.
 
-![Vue Templates Preferences screenshot](assets/vue-templates.png){:width="629px" height="auto"}
+![Ract Source Code Preferences screenshot](assets/react-jsx-tsx.png){:width="629px" height="auto"}
 
 {% 
   include_relative _includes/preferences_scope.md
@@ -52,28 +47,21 @@ Extraction of strings with a special treatment of inline tags is not currently s
 
 
 {% capture preferences_arguments_template_recommended_settings %}
-Recommended value for `vue-i18n` and `nuxt-i18n` packages: `$t('%key%', %map%)`.
+Recommended value for `react-i18next` packages: `t('%namespace%:%key%', %map%)`.
 {% endcapture %}
 {%
   include_relative _includes/preferences_replacement_template.md
   recommended_settings=preferences_arguments_template_recommended_settings
   map_replaced_with="an object"
-  example_map="$t('key', {foo: fooVariable, bar: barVariable})"
-  example_list="$t('key', [fooVariable, barVariable])"
-  example_varargs="$t('key', fooVariable, barVariable)"
+  example_map="t('namespace:key', {foo: fooVariable, bar: barVariable})"
+  example_list="t('namespace:key', [fooVariable, barVariable])"
+  example_varargs="t('namespace:key', fooVariable, barVariable)"
 %}
 
 
 # Supported language constructs
 
 All strings inside tags and translatable attributes are checked.
-
-
-# What's not supported
-
-* Extracting strings from expressions, like {% raw %}`{{ someFunc('Hello world!') }}`{% endraw %}
-* Reading and extracting keys from a `<i18n>` tag within single-file components
-* Renaming key names from language files
 
 
 # What strings are skipped
@@ -83,21 +71,23 @@ All strings inside tags and translatable attributes are checked.
 
 {% capture preferences_branching_best_practice_initial_string %}
 {% highlight html %}{% raw %}
-Webhook {{ isSuccess ? 'succeeded' : 'failed' }}.
+return <>Webhook {isSuccess ? 'succeeded' : 'failed'}.</>;
 {% endraw %}{% endhighlight %}
 {% endcapture %}
 
 {% capture preferences_branching_best_practice_first_step %}
 {% highlight html %}{% raw %}
-<template v-if="isSuccess">Webhook succeeded.</template>
-<template v-else>Webhook failed.</template>
+return isSuccess
+  ? return <>Webhook succeeded.</>
+  : return <>Webhook failed.</>;
 {% endraw %}{% endhighlight %}
 {% endcapture %}
 
 {% capture preferences_branching_best_practice_second_step %}
 {% highlight html %}{% raw %}
-<template v-if="isSuccess">{{ $t('webhookSucceeded') }}</template>
-<template v-else>{{ $t('webhookFailed') }}</template>
+return isSuccess
+  ? return <>{t('webhookSucceeded')}</>
+  : return <>{t('webhookFailed')}</>;
 {% endraw %}{% endhighlight %}
 {% endcapture %}
 {% 

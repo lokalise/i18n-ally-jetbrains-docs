@@ -31,7 +31,7 @@ const foo = $t('welcome', {name: name});
 
 The plugin should automatically configure itself for project with dependencies on `vue-i18n` and `nuxt-i18n`, but adjustments could be needed for custom setup.
 
-![PHP Source Code Preferences screenshot](assets/php-preferences.png){:width="721px" height="auto"}
+![JavaScript Source Code Preferences screenshot](assets/js-and-ts.png){:width="721px" height="auto"}
 
 
 {% 
