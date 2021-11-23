@@ -26,7 +26,7 @@ title: React (JSX/TSX) internationalization
 %}
 
 
-# Configure hardcoded strings extraction from Vue templates
+# Configure hardcoded strings extraction from React (JSX/TSX) templates
 
 The plugin should automatically configure itself for project with dependencies on `react-i18next`, but adjustments could be needed for custom setup.
 
@@ -34,7 +34,7 @@ The plugin should automatically configure itself for project with dependencies o
 
 {% 
   include_relative _includes/preferences_scope.md
-  file_extension='.vue'
+  file_extension='.js/.jsx/.tsx'
 %}
 
 
