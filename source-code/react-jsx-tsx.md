@@ -5,7 +5,7 @@ title: React (JSX/TSX) internationalization
 
 <h1>{{ page.title }}</h1>
 
-<p><b>Important!</b> Always configure both Ract and <a href="js-and-ts.html">plain JavaScript sources</a> together.</p>
+<p><b>Important!</b> Always configure both React and <a href="js-and-ts.html">plain JavaScript sources</a> together.</p>
 
 {% highlight html %}{% raw %}
 <p>Hello world!</p>
