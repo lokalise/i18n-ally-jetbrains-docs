@@ -11,6 +11,20 @@ Laravel/Symfony the plugin would automatically create profiles and scopes for th
 Configuring scopes is not always necessary, if there is only one source-sink pair then a project wide scope would suffice, 
 but for multi-source and/or multi-sink projects it is essential, so that the plugin only detects/displays what's in scope.
 
+## [React (JSX/TSX)]({{ 'react-jsx-tsx' | global_asset_url }}.html)
+
+{% highlight html %}{% raw %}
+<p>Hello world!</p>
+⬇
+<p>{t('helloWorld')}</p>
+<!-- locales/en.js: helloWorld: 'Hello world!' -->
+
+<p>Hello, {user}!</p>
+⬇
+<p>{t('hello', {user: user})}</p>
+<!-- locales/en.js: helloWorld: 'Hello, {{user}}!' -->
+{% endraw %}{% endhighlight %}
+
 
 ## [Vue templates]({{ 'vue-templates' | global_asset_url }}.html)
 
