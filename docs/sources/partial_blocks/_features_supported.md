@@ -1,0 +1,8 @@
+- [Hardcoded strings extraction](../features/hardcoded_string_extractiond.md)
+- [Automatically extract strings in bulk](../features/automatically_extract_strings_in_bulk.md)
+- [Extract selection](../features/extract_selection.md)
+- [Register a missing key](../features/register_a_missing_key.md)
+- [Navigation to translation](../features/navigation_to_translation.md)
+- [Localization hints](../features/localization_hints.md)
+- [Rename keys and placeholders](../features/rename_keys_and_placeholders.md)
+- [Ignore strings by content](../features/ignore_strings_by_content.md)

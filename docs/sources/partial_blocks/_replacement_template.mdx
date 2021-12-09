@@ -1,0 +1,40 @@
+#### `%key%`
+<p>{props.keyExtraInfo}</p>
+Short key or a natural language string that defines a translation.
+
+#### `%namespace%`
+Namespace (called ‘domain’ in Symfony) usually means a part of language file path from where translations would be searched for. <br/>
+The default namespace is usually `messages`, but could be changed by putting a namespace in first position in “Namespaces” field.
+
+#### `%map%`
+If there are no variables in the string, then nothing would be added.
+
+<p>
+    Map will be replaced with an object if there are any placeholders detected:<br/>
+    <code>{props.mapTemplate}</code>.
+</p>
+
+Placeholder names will be determined automatically based on a respective variable, function or method name.
+
+In language files placeholder syntax will be determined based on the Placeholder format setting of the language file.
+
+#### `%list%`
+If there are no variables in the string, then nothing would be added.
+
+<p>
+    List will be replaced with an array if there are any placeholders detected:<br/>
+    <code>{props.listTemplate}</code>
+</p>
+
+In language files the ordered placeholder syntax `{0}, {1}` will be enforced.
+
+#### `%varargs%`
+If there are no variables in the string, then nothing would be added.
+
+<p>
+    Varargs will be replaced with placeholder passed directly to the translation function if there are any placeholders
+    detected:<br/>
+    <code>{props.argsTemplate}</code>
+</p>
+
+In language files the ordered placeholder syntax `{0}, {1}` will be enforced.
