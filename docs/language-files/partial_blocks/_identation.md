@@ -1,0 +1,1 @@
+Configure formatting at the IDE level in [Preferences | Editor | Code Style | JSON](phpstorm://settings?name=Editor--Code+Style--JSON).

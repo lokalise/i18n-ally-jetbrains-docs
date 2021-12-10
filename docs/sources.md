@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # Internationalize source code
@@ -7,7 +7,7 @@ In order for the plugin to work as expected, there is a need to configure the so
 
 Configuring scopes is not always necessary, if there is only one source-sink pair then a project wide scope would suffice, but for multi-source and/or multi-sink projects it is essential, so that the plugin only detects/displays what’s in scope.
 
-## [React (JSX/TSX) internationalization](sources/jsx.md)
+## [React (JSX/TSX) internationalization](sources/jsx.mdx)
 ```jsx
 <p>Hello world!</p>
 ⬇
@@ -20,7 +20,7 @@ Configuring scopes is not always necessary, if there is only one source-sink pai
 <!-- locales/en.js: helloWorld: 'Hello, {{user}}!' -->
 ```
 
-## Vue templates
+## [Vue templates](sources/vue.mdx)
 ```html
 <p>Hello world!</p>
 ⬇
@@ -38,7 +38,7 @@ Configuring scopes is not always necessary, if there is only one source-sink pai
 <!-- locales/en.js: helloWorld: 'Hello, {0}!' -->
 ```
 
-## JavaScript and TypeScript
+## [JavaScript and TypeScript](sources/plain_js.mdx)
 ```javascript
 const foo = 'Hello world!';
 ⬇
@@ -52,7 +52,7 @@ const foo = $t('welcome', {name: name});
 // locales/en.js: 'welcome' => 'Welcome, {user}!'
 ```
 
-## Blade templates
+## [Blade templates](sources/blade.mdx)
 ```html
 <p>Hello world!</p>
 ⬇
@@ -70,7 +70,7 @@ const foo = $t('welcome', {name: name});
 <!-- resources/lang/en/messages.php: 'helloWorld' => 'Hello <b>world</b>!' -->
 ```
 
-## Twig templates
+## [Twig templates](sources/twig.mdx)
 ```html
 <p>Hello world!</p>
 ⬇
@@ -88,7 +88,7 @@ const foo = $t('welcome', {name: name});
 <!-- translations/messages.en.yaml: hello_world: 'Hello <b>world</b>!' -->
 ```
 
-## PHP views with HTML
+## [PHP views with HTML](sources/html_php.mdx)
 ```html
 <p>Hello world!</p>
 ⬇
@@ -101,8 +101,8 @@ const foo = $t('welcome', {name: name});
 <!-- messages.po: msgid "Hello world, %1$s!" -->
 ```
 
-## PHP source code
-```injectablephp
+## [PHP source code](sources/php.mdx)
+```php
 <?php
 $foo = 'Hello world';
 ⬇

@@ -10,7 +10,6 @@ import ReplacementTemplate from './partial_blocks/_replacement_template.mdx';
 import SupportedConstructs from './partial_blocks/_supported_constructs.mdx';
 import TranslatableAttribute from './partial_blocks/_translatable_attribute.md';
 import InlineTags from './partial_blocks/_inline_tags.md';
-import NotSupported from './partial_blocks/_not_supported.mdx';
 import BestPractises from './partial_blocks/_best_practises.mdx';
 
 
@@ -111,26 +110,21 @@ with “Skip default namespace” checkbox set to true.
 
 ## Best practice: dealing with branching in messages
 
-It’s common to have small and simple branching for presentation purposes:
-```html
-return <>Webhook {isSuccess ? 'succeeded' : 'failed'}.</>;
-```
-The best practice it to separate this message into two different ones so translators would have a full context and would be able to adjust word order according the target language grammar.
+export const firstBlock = `return <>Webhook {isSuccess ? 'succeeded' : 'failed'}.</>;`
 
-**1st step**: manually extract the condition out of the message to get two messages without condition
-```html
-@if ($success)
+
+export const firstStep = `@if ($success)
     Webhook <strong>succeeded</strong>.
 @else
     Webhook <strong>failed</strong>.
-@endif
-```
+@endif`
 
-**2nd step**: replace simple messages with i18n Ally
-```html
-@if ($success)
+export const secondStep = `@if ($success)
     {!! trans('app.webhookSucceeded') !!}
 @else
     {!! trans('app.webhookFailed') !!}
-@endif
-```
+@endif`
+
+<BestPractises firstBlock={firstBlock} firstStep={firstStep} secondStep={secondStep}/>
+
+

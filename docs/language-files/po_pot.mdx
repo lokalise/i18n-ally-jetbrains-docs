@@ -1,0 +1,63 @@
+---
+sidebar_label: 'PO/POT'
+title: ""
+---
+
+import UnsupportedFormats from './partial_blocks/_unsupported_formats.md';
+
+## PO and POT for localization
+### PO file format basics are supported
+```json
+msgid "key"
+msgstr "Value"
+...
+msgid ""
+"Keys spread "
+"across multiple lines"
+msgstr "Keys which are spread across multiple lines are also supported"
+...
+msgid "extracted"
+msgstr ""
+...
+msgid "multiline"
+msgstr "An explicitly multiline strings\nwill be extracted like this."
+```
+### POT files would have empty **`msgstr`**
+```json
+msgid "Extracted string will be added like this"
+msgstr ""
+...
+msgid ""
+"Keys spread "
+"across multiple lines"
+msgstr ""
+...
+msgid "An explicitly multiline strings\nwill be extracted like this."
+msgstr ""
+```
+
+### Indentation
+No formatting options are available for PO files.
+
+### Unsupported formats
+<UnsupportedFormats/>
+
+#### Nested keys are not supported
+```json
+msgid "some_key.nested_key"
+msgstr "Nested keys are not supported by the file format"
+```
+
+#### References are not added during extraction nested under some key are not supported
+```json
+#: public/i18n.php:13
+msgid "key"
+msgstr "References to source string won't be added during extraction"
+```
+
+#### Compilation to MO files is not supported
+PO files should be compiled into MO files with other tools, like [GNU **`msgfmt`** utility](https://www.gnu.org/software/gettext/manual/html_node/msgfmt-Invocation.html):
+
+```
+msgfmt messages.po -o messages.mo
+```

@@ -28,4 +28,4 @@ Custom translatable attributes like data-popover can be added in the Preferences
 settings.
 
 ## Support
-Supported on every source. (see [Supported sources](/sources))
+Supported on every source. (see [Supported sources](/sources.md))

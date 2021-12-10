@@ -1,0 +1,1 @@
+Request support at [i18n-ally@lokalise.com](mailto:i18n-ally@lokalise.com).

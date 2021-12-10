@@ -1,0 +1,28 @@
+---
+sidebar_label: 'Rename keys and placeholders'
+title: ""
+---
+
+
+import NestingSupported from '../language-files/partial_blocks/_nesting_supported.md';
+
+# Rename keys and placeholders
+
+Keys can be renamed from the Twig templates
+
+## Usage
+**Keys** are renamed via the hot keys `Shift + F6` or by right-clicking the highlighted part and selecting `Refactor -> "Rename…"`.
+
+If the new name contains a nesting separator then the key will be nested if supported by sink file.
+Supported sinks: <NestingSupported/>
+
+**Placeholders** can be renamed within the source file, put a cursor into the placeholder `name` rename it via the hot keys `Shift + F6` 
+or by right-clicking the highlighted part and selecting `Refactor -> "Rename…"`.
+
+![rename-keys-and-placeholders](assets/rename-keys-and-placeholders.gif)
+
+## Support
+Renaming keys within source is supported for all sources, but renaming placeholders is only supported for these sink files:
+ - [JSON](./language-files/json.mdx)
+ - [YAML](./language-files/yaml.mdx)
+ - [PO](./language-files/po_pot.mdx)

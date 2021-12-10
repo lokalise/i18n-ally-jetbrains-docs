@@ -1,0 +1,37 @@
+.hero-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2.61rem;
+}
+
+.hero-logo {
+  width: 108px;
+  height: auto;
+}
+
+.hero-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-link-item {
+  margin-left: 0.61rem;
+}
+
+.hero-link-item__divider {
+  opacity: 0.75;
+}
+
+.hero-title {
+  font-size: 1.61rem;
+  line-height: 2.61rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.hero-tagline {
+  margin: 0;
+}

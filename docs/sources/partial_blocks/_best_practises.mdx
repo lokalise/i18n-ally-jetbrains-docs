@@ -1,22 +1,18 @@
-It’s common to have small and simple branching for presentation purposes:
-<pre>
-    <code>{props.firstBlock}</code>
-</pre>
-```html
-return <>Webhook {isSuccess ? 'succeeded' : 'failed'}.</>;
-```
-The best practice it to separate this message into two different ones so translators would have a full context and would be able to adjust word order according the target language grammar.
+<p>
+    It’s common to have small and simple branching for presentation purposes:<br/>
+    <code className="language-jsx">{props.firstBlock}</code>
+</p>
+The best practice it to separate this message into two different ones so translators would have a full context and
+would be able to adjust word order according the target language grammar.
 
 **1st step**: manually extract the condition out of the message to get two messages without condition
-<pre>
-    <code>{props.secondBlock}</code>
-</pre>
+
+<p>
+    <code className="language-jsx">{props.firstStep}</code>
+</p>
 
 **2nd step**: replace simple messages with i18n Ally
-```html
-@if ($success)
-    {!! trans('app.webhookSucceeded') !!}
-@else
-    {!! trans('app.webhookFailed') !!}
-@endif
-```
+
+<p>
+    <code className="language-jsx">{props.secondStep}</code>
+</p>
