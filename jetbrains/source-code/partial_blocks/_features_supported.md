@@ -1,0 +1,8 @@
+- [Hardcoded strings extraction](../jetbrains/features/hardcoded_string_extractiond.md)
+- [Automatically extract strings in bulk](../jetbrains/features/automatically_extract_strings_in_bulk.md)
+- [Extract selection](../jetbrains/features/extract_selection.md)
+- [Register a missing key](../jetbrains/features/register_a_missing_key.md)
+- [Navigation to translation](../jetbrains/features/navigation_to_translation.md)
+- [Localization hints](../jetbrains/features/localization_hints.md)
+- [Rename keys and placeholders](../jetbrains/features/rename_keys_and_placeholders.mdx)
+- [Ignore strings by content](../jetbrains/features/ignore_strings_by_content.md)

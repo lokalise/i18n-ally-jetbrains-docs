@@ -12,9 +12,9 @@ or with hot keys `Alt + Enter` (`Option + Return` in MacOS).
 ![extract-selection](assets/extract-selection.gif)
 
 ## Supported sources
- - [Twig](sources/twig.mdx)
- - [Blade](sources/blade.mdx)
- - [HTML with PHP](sources/html_php.mdx)
+ - [Twig](source-code/twig.mdx)
+ - [Blade](source-code/blade.mdx)
+ - [HTML with PHP](source-code/htmlphp.mdx)
 
 ## Unsupported sources
- - [PHP](sources/php.mdx)
+ - [PHP](source-code/php.mdx)

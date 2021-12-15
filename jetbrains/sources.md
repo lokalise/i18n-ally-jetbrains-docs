@@ -7,7 +7,7 @@ In order for the plugin to work as expected, there is a need to configure the so
 
 Configuring scopes is not always necessary, if there is only one source-sink pair then a project wide scope would suffice, but for multi-source and/or multi-sink projects it is essential, so that the plugin only detects/displays what’s in scope.
 
-## [React (JSX/TSX) internationalization](sources/jsx.mdx)
+## [React (JSX/TSX) internationalization](source-code/react-jsx-tsx.mdx)
 ```jsx
 <p>Hello world!</p>
 ⬇
@@ -20,7 +20,7 @@ Configuring scopes is not always necessary, if there is only one source-sink pai
 <!-- locales/en.js: helloWorld: 'Hello, {{user}}!' -->
 ```
 
-## [Vue templates](sources/vue.mdx)
+## [Vue templates](source-code/vue-templates.mdx)
 ```html
 <p>Hello world!</p>
 ⬇
@@ -38,7 +38,7 @@ Configuring scopes is not always necessary, if there is only one source-sink pai
 <!-- locales/en.js: helloWorld: 'Hello, {0}!' -->
 ```
 
-## [JavaScript and TypeScript](sources/plain_js.mdx)
+## [JavaScript and TypeScript](source-code/js-and-ts.mdx)
 ```javascript
 const foo = 'Hello world!';
 ⬇
@@ -52,7 +52,7 @@ const foo = $t('welcome', {name: name});
 // locales/en.js: 'welcome' => 'Welcome, {user}!'
 ```
 
-## [Blade templates](sources/blade.mdx)
+## [Blade templates](source-code/blade.mdx)
 ```html
 <p>Hello world!</p>
 ⬇
@@ -70,7 +70,7 @@ const foo = $t('welcome', {name: name});
 <!-- resources/lang/en/messages.php: 'helloWorld' => 'Hello <b>world</b>!' -->
 ```
 
-## [Twig templates](sources/twig.mdx)
+## [Twig templates](source-code/twig.mdx)
 ```html
 <p>Hello world!</p>
 ⬇
@@ -88,7 +88,7 @@ const foo = $t('welcome', {name: name});
 <!-- translations/messages.en.yaml: hello_world: 'Hello <b>world</b>!' -->
 ```
 
-## [PHP views with HTML](sources/html_php.mdx)
+## [PHP views with HTML](source-code/phphtml.mdx)
 ```html
 <p>Hello world!</p>
 ⬇
@@ -101,7 +101,7 @@ const foo = $t('welcome', {name: name});
 <!-- messages.po: msgid "Hello world, %1$s!" -->
 ```
 
-## [PHP source code](sources/php.mdx)
+## [PHP source code](source-code/php.mdx)
 ```php
 <?php
 $foo = 'Hello world';

@@ -41,7 +41,7 @@ Both of these sources will apply escaped formatting on the tags
 ```
 
 ## Not supported sources
-[**Vue**](sources/vue.mdx) - Not supported yet
+[**Vue**](source-code/vue.mdx) - Not supported yet
 
-[**PHP**](sources/php.mdx) and [**JS**](sources/plain_js.mdx) - These sources have no concept of inline tags, but are dealing with strings, thus there is no configuration
+[**PHP**](source-code/php.mdx) and [**JS**](source-code/js-and-ts.mdx) - These sources have no concept of inline tags, but are dealing with strings, thus there is no configuration
 and inline tags are considered the same as regular strings.

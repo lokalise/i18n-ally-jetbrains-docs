@@ -22,6 +22,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'jetbrains',
+          routeBasePath: '/jetbrains',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/lokalise/i18n-ally-jetbrains-docs/',
@@ -49,7 +51,7 @@ const config = {
           src: 'img/i18n_ally_logo.svg',
         },
         items: [
-          {to: '/docs/introduction', label: 'Docs', position: 'left'},
+          {to: '/jetbrains/introduction', label: 'Documentation', position: 'left'},
           {
             href: 'https://github.com/lokalise/i18n-ally-jetbrains-docs',
             label: 'GitHub',
@@ -61,11 +63,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/introduction',
+                to: '/jetbrains/introduction',
               },
             ],
           },
@@ -77,13 +79,13 @@ const config = {
                 href: 'https://github.com/lokalise/i18n-ally-jetbrains-docs',
               },
               {
-                label: 'License',
-                to: '/license',
+                label: 'License: 3-Clause BSD',
+                to: '/license-3-clause-bsd',
               }
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Lokalise, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Lokalise Group`,
       },
       prism: {
         theme: lightCodeTheme,
