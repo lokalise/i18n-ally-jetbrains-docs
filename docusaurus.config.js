@@ -25,14 +25,14 @@ const config = {
           path: 'jetbrains',
           routeBasePath: '/jetbrains',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/lokalise/i18n-ally-jetbrains-docs/',
         },
         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+          path: 'changelog',
+          routeBasePath: '/changelog',
+          blogSidebarCount: 10,
+          blogSidebarTitle: 'Changelog',
+          editUrl: 'https://github.com/lokalise/i18n-ally-jetbrains-docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -52,6 +52,7 @@ const config = {
         },
         items: [
           {to: '/jetbrains/introduction', label: 'Documentation', position: 'left'},
+          {to: 'changelog', label: 'Changelog', position: 'left'},
           {
             href: 'https://github.com/lokalise/i18n-ally-jetbrains-docs',
             label: 'GitHub',
