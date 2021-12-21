@@ -6,7 +6,7 @@ For languages that support nesting (PHP and YAML), if the includes a nesting sep
 
 ## Detection
 Missing keys are detected everywhere in the project and also within:
- - Inline tags (also see [inline tag extraction](./inline_tag_extraction))
+ - Inline tags (also see [inline tag extraction](./inline-tag-extraction))
  - Attributes
  - Custom tags and attributes (must be defined in the plugin settings)
 

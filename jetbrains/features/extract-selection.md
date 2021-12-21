@@ -14,7 +14,7 @@ or with hot keys `Alt + Enter` (`Option + Return` in MacOS).
 ## Supported sources
  - [Twig](source-code/twig.mdx)
  - [Blade](source-code/blade.mdx)
- - [HTML with PHP](source-code/htmlphp.mdx)
+ - [HTML with PHP](source-code/phphtml.mdx)
 
 ## Unsupported sources
  - [PHP](source-code/php.mdx)
