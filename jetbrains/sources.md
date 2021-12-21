@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+id: sources
 ---
 
 # Internationalize source code

@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Supported IDEs
 
 - [PhpStorm](https://www.jetbrains.com/phpstorm/)
