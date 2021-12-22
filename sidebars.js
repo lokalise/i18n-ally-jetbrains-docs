@@ -53,7 +53,6 @@ module.exports = {
                'source-code/vue-templates',
             ],
         },
-        'ide-support',
     ],
 };
 
