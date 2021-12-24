@@ -1,0 +1,47 @@
+---
+title: "Source settings"
+---
+
+import ReplacementTemplate from '/jetbrains/source-code/_partials/_replacement_template.mdx';
+
+## Scope
+Scope of files for applying i18n ally inspections.
+
+By default, it is `Project files`, in this case IDE will look for potential string for extractions inside every file.
+
+Always better to reduce it to the files that are really should be checked, by defining custom scope.
+
+## Default template
+Determines the source code that would be placed instead of the extracted string.
+
+Expects function name and arguments, like `t('%namespace%:%key%', %map%)`,
+methods could be used too: `some.nested.method('%key%')`.
+
+
+<ReplacementTemplate mapTemplate="t('namespace:key', {foo: fooVariable, bar: barVariable})"
+                     listTemplate="t('namespace:key', [fooVariable, barVariable])"
+                     argsTemplate="t('namespace.key', fooVariable, barVariable)"/>
+
+## Read-only templates
+Templates (separated by `;` or new line in expanded input) that would be used to add
+all features **except extraction**, for example navigation to language file or key autocomplete.
+
+## Attribute template
+Replacement template that would be used only when extracting from attributes:
+
+`<img src="…" alt="String within attribute" />`
+
+When empty, then the [Default template](#default-template) would be used.
+
+## Inline tags
+
+## Inline tags template
+Replacement template that would be used when extracting a string that contains one of the [inline tags](#inline-tags):
+```
+<div>
+    String <i>with</i> inline tags.
+</div>
+```
+
+When empty, then the [Default template](#default-template) would be used.
+

@@ -4,6 +4,16 @@ module.exports = {
         'introduction',
         {
             type: 'category',
+            label: 'Guide',
+            items: [
+                'guide/install-plugin',
+                'guide/profile-configuration',
+                'guide/source-configuration',
+                'guide/working-example',
+            ]
+        },
+        {
+            type: 'category',
             label: 'Features',
             link: {
                 type: 'doc',
@@ -26,6 +36,10 @@ module.exports = {
         {
             type: 'category',
             label: 'Supported file formats',
+            link: {
+                type: 'doc',
+                id: 'file-formats',
+            },
             items: [
                 'language-files/javascript',
                 'language-files/json',
@@ -51,6 +65,15 @@ module.exports = {
                'source-code/react-jsx-tsx',
                'source-code/twig',
                'source-code/vue-templates',
+            ],
+        },
+        {
+            type: 'category',
+            label: 'Advanced',
+            items: [
+                'advanced/profile-settings',
+                'advanced/source-settings',
+                'advanced/sandbox',
             ],
         },
     ],
