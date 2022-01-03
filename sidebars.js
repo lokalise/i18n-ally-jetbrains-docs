@@ -76,6 +76,7 @@ module.exports = {
                 'advanced/sandbox',
             ],
         },
+      'license-3-clause-bsd'
     ],
 };
 

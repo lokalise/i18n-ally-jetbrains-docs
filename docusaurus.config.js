@@ -54,39 +54,10 @@ const config = {
         items: [
           {to: '/jetbrains/introduction', label: 'Documentation', position: 'left'},
           {to: 'changelog', label: 'Changelog', position: 'left'},
-          {
-            href: 'https://github.com/lokalise/i18n-ally-jetbrains-docs',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Documentation',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/jetbrains/introduction',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/lokalise/i18n-ally-jetbrains-docs',
-              },
-              {
-                label: 'License: 3-Clause BSD',
-                to: '/license-3-clause-bsd',
-              }
-            ],
-          },
-        ],
         copyright: `Copyright © ${new Date().getFullYear()} Lokalise Group`,
       },
       prism: {
