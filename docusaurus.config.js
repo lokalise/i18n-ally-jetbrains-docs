@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const glob = require('glob');
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -35,7 +36,7 @@ const config = {
           editUrl: 'https://github.com/lokalise/i18n-ally-jetbrains-docs/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: glob.sync('./src/css/**/*.css').map(require.resolve),
         },
       }),
     ],

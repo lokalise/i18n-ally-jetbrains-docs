@@ -1,0 +1,122 @@
+.hero {
+  padding-top: 54px;
+  padding-bottom: 100px;
+}
+
+.hero-header {
+  max-width: 894px;
+  margin: 0 auto 50px;
+
+  text-align: center;
+
+  font-size: 25px;
+  line-height: 35px;
+}
+
+.hero-header p {
+  max-width: 850px;
+  margin: 0 auto;
+
+  color: #bebebe;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+
+  margin-bottom: 32px;
+}
+
+.hero-cta > .button {
+  border-radius: 0;
+}
+
+.hero-footnote {
+  padding-top: 13px;
+
+  text-align: center;
+
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.hero-footnote a {
+  color: inherit;
+}
+
+.hero-footnote a:hover {
+  color: #b9b546;
+}
+
+.hero-explain {
+  max-width: 628px;
+  margin: 0 auto;
+  padding: 15px 10px;
+
+  text-align: center;
+
+  color: #000;
+  background-color: #a8a68f;
+
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.hero-explain span {
+  display: block;
+
+  font-weight: 600;
+}
+
+.hero-explain p {
+  margin: 0;
+}
+
+.hero-header .headline {
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+
+@media print, screen and (max-width: 960px) {
+  .hero {
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+
+  .hero-header {
+    margin-bottom: 28px;
+
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .hero-header .headline {
+    margin-bottom: 22px;
+
+    font-size: 35px;
+  }
+
+  .hero-explain {
+    padding: 10px;
+
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .hero-cta {
+    margin-bottom: 26px;
+  }
+
+  .hero-footnote {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media print, screen and (max-width: 375px) {
+  .hero-header .headline {
+    font-size: 26px;
+    line-height: 29px;
+  }
+}
