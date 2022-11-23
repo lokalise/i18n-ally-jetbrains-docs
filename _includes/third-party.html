@@ -5,7 +5,9 @@
     </script>
 {% endif %}
 
+{% if 1 == 0 %}
 <script src="https://embed.small.chat/T01QRMV2NR4C0228H4KW2K.js" async></script>
+{% endif %}
 
 {% if site.ga_measurement_id != blank %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_measurement_id }}"></script>
@@ -18,7 +20,6 @@
     </script>
 {% endif %}
 
-{% if 1 == 0 %}
 <script type="text/javascript">
     (function () {
         const params = (new URL(document.location)).searchParams;
@@ -32,8 +33,6 @@
         }
     })();
 </script>
-{% endif %}
-
 
 <script>
     window.addEventListener('DOMContentLoaded', function() {
